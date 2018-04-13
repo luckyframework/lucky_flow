@@ -7,3 +7,11 @@ authors:
 crystal: 0.24.2
 
 license: MIT
+
+dependencies:
+  selenium:
+    github: ysbaddaden/selenium-webdriver-crystal
+    branch: master
+  habitat:
+    github: luckyframework/habitat
+    version: ~> 0.2.1
