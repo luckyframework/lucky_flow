@@ -1,3 +1,3 @@
-module LuckyFlow
+class LuckyFlow
   VERSION = "0.1.0"
 end
