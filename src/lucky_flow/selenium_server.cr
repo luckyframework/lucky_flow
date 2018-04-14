@@ -3,13 +3,12 @@ require "http/client"
 
 class LuckyFlow::SeleniumServer
   SELENIUM_SERVER_URL  = "https://selenium-release.storage.googleapis.com/3.11/selenium-server-standalone-3.11.0.jar"
-  SELENIUM_SERVER_PATH = "./tmp/selenium-server.jar"
+  SELENIUM_SERVER_PATH = "./selenium-server.jar"
 
   private property process : Process
 
   private def initialize
     ensure_java_is_installed
-    ensure_selenium_jar_is_downloaded
     @process = start_selenium_server
   end
 
@@ -26,20 +25,6 @@ class LuckyFlow::SeleniumServer
         ▸ On Linux: https://www.java.com/en/download/help/linux_x64_install.xml
 
       ERROR
-    end
-  end
-
-  private def ensure_selenium_jar_is_downloaded
-    FileUtils.mkdir_p("./tmp/")
-
-    unless File.exists?(SELENIUM_SERVER_PATH)
-      HTTP::Client.get(SELENIUM_SERVER_URL) do |response|
-        if response.success?
-          File.write(SELENIUM_SERVER_PATH, response.body_io)
-        else
-          raise "Error retrieving Selenium: #{response.body_io}"
-        end
-      end
     end
   end
 
