@@ -23,7 +23,7 @@ class LuckyFlow::Server
   }
 
   @session : Selenium::Session?
-  @selenium_server : Process?
+  @selenium_server : LuckyFlow::SeleniumServer?
 
   # Use LuckyFlow::Server::INSTANCE instead
   private def initialize
@@ -51,27 +51,11 @@ class LuckyFlow::Server
   end
 
   private def start_selenium_server
-    io = IO::Memory.new
-    @selenium_server ||= Process.new(
-      command: "selenium-server",
-      output: io,
-      error: io
-    )
-    wait_for_selenium_to_start(io)
-  end
-
-  private def wait_for_selenium_to_start(io : IO)
-    timeout_after = 2.seconds.from_now
-    while Time.new <= timeout_after
-      break if io.to_s.includes?("up and running")
-      sleep(0.01)
-    end
+    @selenium_server = LuckyFlow::SeleniumServer.start
   end
 
   def shutdown
     @session.try(&.stop)
-    @selenium_server.try do |server|
-      server.kill unless server.terminated?
-    end
+    @selenium_server.try(&.stop)
   end
 end
