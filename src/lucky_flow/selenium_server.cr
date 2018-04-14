@@ -47,7 +47,6 @@ class LuckyFlow::SeleniumServer
   # https://github.com/SeleniumHQ/selenium/blob/5085838e163be17ecc081f18201adeb890fad040/rb/lib/selenium/server.rb#L231
   private def start_selenium_server : Process
     io = IO::Memory.new
-    io = STDOUT
     process = Process.new(
       command: "java -jar #{SELENIUM_SERVER_PATH}",
       output: io,
@@ -58,12 +57,17 @@ class LuckyFlow::SeleniumServer
     process
   end
 
-  private def wait_for_selenium_to_start(io : IO)
+  private def wait_for_selenium_to_start(io : IO) : Void
     timeout_after = 2.seconds.from_now
     while Time.new <= timeout_after
-      break if io.to_s.includes?("up and running")
+      break if up_and_running?(io)
       sleep(0.01)
     end
+    raise io.to_s unless up_and_running?(io)
+  end
+
+  private def up_and_running?(io)
+    io.to_s.includes?("up and running")
   end
 
   def stop
