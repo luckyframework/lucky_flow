@@ -5,7 +5,6 @@ class LuckyFlow::Server
 
   CAPABILITIES = {
     browserName:              "chrome",
-    version:                  "",
     platform:                 "ANY",
     javascriptEnabled:        true,
     takesScreenshot:          true,
