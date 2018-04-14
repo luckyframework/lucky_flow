@@ -18,11 +18,12 @@ class LuckyFlow::Server
     rotatable:                true,
     acceptSslCerts:           true,
     nativeEvents:             true,
-    # args:                     "--headless",
+    # chromeOptions:            {args: ["no-sandbox", "headless", "disable-gpu"]},
   }
 
+  @retry_limit : Time?
   @session : Selenium::Session?
-  @selenium_server : LuckyFlow::SeleniumServer?
+  @chromedriver : LuckyFlow::Chromedriver?
 
   # Use LuckyFlow::Server::INSTANCE instead
   private def initialize
@@ -30,14 +31,30 @@ class LuckyFlow::Server
 
   # Start a new selenium session with Chromedriver
   def session : Selenium::Session
-    @session ||= start_new_session
+    @session ||= create_session
   end
 
-  private def start_new_session : Selenium::Session
+  private def create_session : Selenium::Session
+    @retry_limit = 2.seconds.from_now
     prepare_screenshot_directory
-    start_selenium_server
+    start_chromedriver
+    start_session
+  end
+
+  private def start_session
     driver = Selenium::Webdriver.new
     Selenium::Session.new(driver, CAPABILITIES)
+  rescue e : Errno
+    retry_start_session(e)
+  end
+
+  private def retry_start_session(e)
+    if Time.now <= @retry_limit.not_nil!
+      sleep(0.1)
+      start_session
+    else
+      raise e
+    end
   end
 
   private def prepare_screenshot_directory
@@ -49,12 +66,12 @@ class LuckyFlow::Server
     LuckyFlow.settings.screenshot_directory
   end
 
-  private def start_selenium_server
-    @selenium_server = LuckyFlow::SeleniumServer.start
+  private def start_chromedriver
+    @chromedriver ||= LuckyFlow::Chromedriver.start
   end
 
   def shutdown
     @session.try(&.stop)
-    @selenium_server.try(&.stop)
+    @chromedriver.try(&.stop)
   end
 end
