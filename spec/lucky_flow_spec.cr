@@ -80,7 +80,7 @@ describe LuckyFlow do
     flow.session.cookies.set("hello", "world")
     flow.session.cookies.get("hello").value.should eq "world"
 
-    LuckyFlow::Server::INSTANCE.reset
+    LuckyFlow.reset
 
     expect_raises KeyError do
       flow.session.cookies.get("hello").value

@@ -93,4 +93,8 @@ class LuckyFlow
   def self.shutdown
     SERVER.shutdown
   end
+
+  def self.reset
+    SERVER.reset
+  end
 end
