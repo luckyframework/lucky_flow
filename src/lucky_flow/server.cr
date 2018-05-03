@@ -70,6 +70,10 @@ class LuckyFlow::Server
     @chromedriver ||= LuckyFlow::Chromedriver.start
   end
 
+  def reset
+    @session.try &.cookies.clear
+  end
+
   def shutdown
     @session.try(&.stop)
     @chromedriver.try(&.stop)

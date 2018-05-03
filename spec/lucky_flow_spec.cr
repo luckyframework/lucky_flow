@@ -74,6 +74,18 @@ describe LuckyFlow do
     fake_process.shell.should be_true
     fake_process.command.should eq "open ./tmp/screenshots/#{time.epoch}.png"
   end
+
+  it "can reset the session" do
+    flow = LuckyFlow.new
+    flow.session.cookies.set("hello", "world")
+    flow.session.cookies.get("hello").value.should eq "world"
+
+    LuckyFlow::Server::INSTANCE.reset
+
+    expect_raises KeyError do
+      flow.session.cookies.get("hello").value
+    end
+  end
 end
 
 private class FakeProcess
