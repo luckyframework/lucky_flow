@@ -12,13 +12,13 @@ class LuckyFlow
 
   Habitat.create do
     setting screenshot_directory : String = "./tmp/screenshots"
-    setting url_root : String
+    setting base_uri : String
     setting retry_delay : Time::Span = 10.milliseconds
     setting stop_retrying_after : Time::Span = 1.second
   end
 
   def visit(path : String)
-    session.url = "#{settings.url_root}#{path}"
+    session.url = "#{settings.base_uri}#{path}"
   end
 
   def visit(action : Lucky::Action.class, as user : User? = nil)
