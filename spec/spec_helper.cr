@@ -12,7 +12,7 @@ Spec.before_each do
 end
 
 LuckyFlow.configure do
-  settings.url_root = "localhost:3002"
+  settings.base_uri = "http://localhost:3002"
   settings.stop_retrying_after = 40.milliseconds
 end
 
