@@ -3,6 +3,8 @@
 LuckyFlow is a library for testing user flows in the browser. It is similar to
 Ruby's Capybara.
 
+![LuckyFlow example](https://user-images.githubusercontent.com/22394/40257158-1a2f30b8-5abb-11e8-90c2-94463638e65d.png)
+
 ## Installation in [Lucky](https://luckyframework.org) projects
 
 LuckyFlow is already installed and configured. Check out the guides
