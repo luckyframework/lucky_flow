@@ -1,5 +1,5 @@
 name: lucky_flow
-version: 0.1.0
+version: 0.1.1
 
 authors:
   - Paul Smith <paulcsmith0218@gmail.com>
@@ -14,4 +14,3 @@ dependencies:
     branch: master
   habitat:
     github: luckyframework/habitat
-    version: ~> 0.2.1
