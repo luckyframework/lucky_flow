@@ -35,7 +35,7 @@ LuckyFlow.configure do
   settings.screenshot_directory = "./tmp/screenshots"
 end
 
-# Put this at the bottom of the filejjj.
+# Put this at the bottom of the file.
 # If a required setting is missing, this will catch it.
 Habitat.raise_if_missing_settings!
 ```
