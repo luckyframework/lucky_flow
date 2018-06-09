@@ -40,7 +40,7 @@ end
 Habitat.raise_if_missing_settings!
 ```
 
-Then install Chromedriver and view the guides: https://luckyframework.org/guides/browser-tests/
+Then view the guides: https://luckyframework.org/guides/browser-tests/
 
 You should be ready to go!
 
@@ -61,4 +61,4 @@ View guide at: https://luckyframework.org/guides/browser-tests/
 
 ## Contributors
 
-* [paulcsmith](https://github.com/paulcsmith) Paul Smith - creator, maintainer
+- [paulcsmith](https://github.com/paulcsmith) Paul Smith - creator, maintainer
