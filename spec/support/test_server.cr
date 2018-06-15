@@ -3,7 +3,7 @@ class TestServer
   class_property routes = {} of String => String
 
   def initialize(port : Int32)
-    @server = HTTP::Server.new(port) do |context|
+    @server = HTTP::Server.new do |context|
       if context.request.resource == "/favicon.ico"
         context.response.print ""
       else
@@ -12,6 +12,7 @@ class TestServer
         context.response.print html
       end
     end
+    @server.bind_tcp port: port
   end
 
   def self.route(path : String, html : String)
