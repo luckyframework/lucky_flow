@@ -1,3 +1,5 @@
+require "levenshtein"
+
 # Find element on a page with a retry
 class LuckyFlow::FindElement
   property tries : Int32 = 0
@@ -45,7 +47,8 @@ class LuckyFlow::FindElement
   end
 
   private def raise_element_not_found_error
-    raise LuckyFlow::ElementNotFoundError.new(selector: selector, inner_text: inner_text)
+    raise LuckyFlow::ElementNotFoundError.new(selector: selector, inner_text:
+                                              inner_text, helper: nearest_match)
   end
 
   private def matching_elements : Array(Selenium::WebElement)
@@ -57,5 +60,13 @@ class LuckyFlow::FindElement
         true
       end
     end
+  end
+
+  private def all_elements  : Array(String)
+    session.find_elements(:css, "[flow-id]").map(&.attribute("flow-id")).uniq
+  end
+
+  private def nearest_match : String?
+    best_match = Levenshtein::Finder.find selector, all_elements, tolerance: 15
   end
 end
