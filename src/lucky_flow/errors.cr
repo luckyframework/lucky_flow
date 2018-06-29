@@ -6,8 +6,9 @@ class LuckyFlow
   end
 
   class ElementNotFoundError < Error
-    def initialize(selector : String, inner_text : String?)
-      super LuckyFlow::ErrorMessageWhenNotFound.build(selector, inner_text)
+    def initialize(selector : String, inner_text : String?, helper : String?)
+      super LuckyFlow::ErrorMessageWhenNotFound.build(selector, inner_text,
+                                                      helper)
     end
   end
 end
