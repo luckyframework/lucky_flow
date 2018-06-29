@@ -16,6 +16,14 @@ describe LuckyFlow do
     flow.el("@heading").text.should eq "Home"
   end
 
+  it "gives a recommendation if element not found" do
+    flow = visit_page_with "<span flow-id='heading'>Home</span>"
+
+    expect_raises LuckyFlow::ElementNotFoundError, "@heading" do
+      flow.el("@harding").displayed?
+    end
+  end
+
   it "can find a flow id" do
     flow = visit_page_with "<h1 flow-id='test-me'>Hello</h1>"
     flow.el("@test-me", text: "Hello").should be_on_page
