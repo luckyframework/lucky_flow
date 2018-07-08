@@ -19,8 +19,16 @@ class LuckyFlow::Chromedriver
       ["--port=4444", "--url-base=/wd/hub"],
       output: log_io,
       error: STDERR,
-      shell: true
+      shell: spawn_in_shell?
     )
+  end
+
+  private def spawn_in_shell?
+    {% if flag?(:linux) %}
+      false
+    {% else %}
+      true
+    {% end %}
   end
 
   private def os
