@@ -38,7 +38,11 @@ class LuckyFlow
 
   def open_screenshot(process = Process, time = Time.now, fullsize = false) : Void
     filename = "#{settings.screenshot_directory}/#{time.epoch}.png"
-    with_fullsized_page(fullsize) { session.save_screenshot(filename) }
+    if fullsize
+      with_fullsized_page { session.save_screenshot(filename) }
+    else
+      session.save_screenshot(filename)
+    end
     process.new(command: "#{open_command(process)} #{filename}", shell: true)
   end
 
@@ -49,11 +53,12 @@ class LuckyFlow
     window.resize_to(width+100, height+100)
   end
 
-  private def with_fullsized_page(fullsize = true, &block)
-    original_size = session.window.rect if fullsize
+  def with_fullsized_page(&block)
+    original_size = session.window.rect
+    expand_page_to_fullsize
     yield
   ensure
-    session.window.rect = original_size if fullsize
+    session.window.rect = original_size
   end
 
   private def open_command(process) : String
