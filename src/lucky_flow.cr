@@ -50,7 +50,7 @@ class LuckyFlow
     width = session.execute("return Math.max(document.body.scrollWidth, document.body.offsetWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth);").as_i
     height = session.execute("return Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);").as_i
     window = session.window
-    window.resize_to(width+100, height+100)
+    window.resize_to(width + 100, height + 100)
   end
 
   def with_fullsized_page(&block)
