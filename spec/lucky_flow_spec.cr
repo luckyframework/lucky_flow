@@ -75,6 +75,17 @@ describe LuckyFlow do
     fake_process.command.should eq "open ./tmp/screenshots/#{time.epoch}.png"
   end
 
+  it "can open fullsize screenshots" do
+    flow = LuckyFlow.new
+    fake_process = FakeProcess
+    time = Time.now
+
+    flow.open_screenshot(fake_process, time, fullsize: true)
+
+    fake_process.shell.should be_true
+    fake_process.command.should eq "open ./tmp/screenshots/#{time.epoch}.png"
+  end
+
   it "can reset the session" do
     flow = LuckyFlow.new
     flow.session.cookies.set("hello", "world")
