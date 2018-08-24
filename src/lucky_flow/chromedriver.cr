@@ -14,8 +14,9 @@ class LuckyFlow::Chromedriver
   end
 
   private def start_chromedriver : Process
+    driver_path = LuckyFlow.settings.chromedriver_path || "#{__DIR__}/../../vendor/chromedriver-2.40-#{os}"
     Process.new(
-      "#{__DIR__}/../../vendor/chromedriver-2.40-#{os}",
+      driver_path.as(String),
       ["--port=4444", "--url-base=/wd/hub"],
       output: log_io,
       error: STDERR,
