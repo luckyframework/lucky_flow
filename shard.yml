@@ -10,7 +10,7 @@ license: MIT
 
 dependencies:
   selenium:
-    github: paulcsmith/selenium-webdriver-crystal
-    tag: crystal-v0.25
+    github: ysbaddaden/selenium-webdriver-crystal
+    branch: master
   habitat:
     github: luckyframework/habitat
