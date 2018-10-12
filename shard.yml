@@ -11,6 +11,7 @@ license: MIT
 dependencies:
   selenium:
     github: ysbaddaden/selenium-webdriver-crystal
-    branch: master
+    commit: a6d0e63ab7ddc6a20923bf4157bc6247c1fa2acc
   habitat:
     github: luckyframework/habitat
+    version: ~> 0.4
