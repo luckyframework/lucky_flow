@@ -72,7 +72,7 @@ describe LuckyFlow do
     flow.open_screenshot(fake_process, time)
 
     fake_process.shell.should be_true
-    fake_process.command.should eq "open ./tmp/screenshots/#{time.epoch}.png"
+    fake_process.command.should eq "open ./tmp/screenshots/#{time.to_unix}.png"
   end
 
   it "can open fullsize screenshots" do
@@ -83,7 +83,7 @@ describe LuckyFlow do
     flow.open_screenshot(fake_process, time, fullsize: true)
 
     fake_process.shell.should be_true
-    fake_process.command.should eq "open ./tmp/screenshots/#{time.epoch}.png"
+    fake_process.command.should eq "open ./tmp/screenshots/#{time.to_unix}.png"
   end
 
   it "can reset the session" do
