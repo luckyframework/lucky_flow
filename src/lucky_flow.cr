@@ -38,7 +38,7 @@ class LuckyFlow
   end
 
   def open_screenshot(process = Process, time = Time.now, fullsize = false) : Void
-    filename = "#{settings.screenshot_directory}/#{time.epoch}.png"
+    filename = "#{settings.screenshot_directory}/#{time.to_unix}.png"
     if fullsize
       with_fullsized_page { session.save_screenshot(filename) }
     else
