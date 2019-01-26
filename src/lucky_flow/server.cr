@@ -18,7 +18,7 @@ class LuckyFlow::Server
     rotatable:                true,
     acceptSslCerts:           true,
     nativeEvents:             true,
-    # chromeOptions:            {args: ["no-sandbox", "headless", "disable-gpu"]},
+    chromeOptions:            {args: ["no-sandbox", "headless", "disable-gpu"]},
   }
 
   @retry_limit : Time?

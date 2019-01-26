@@ -1,10 +1,7 @@
-language: crystal
-addons:
-  chrome: stable
+language: minimal
+services:
+  - docker
 before_install:
-  # Setup chromedriver for use with Luckybara
-  - sudo apt-get install chromium-chromedriver
-  - sudo ln -s /usr/lib/chromium-browser/chromedriver /usr/bin/chromedriver
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+  - bin/setup
+script:
+  - bin/test
