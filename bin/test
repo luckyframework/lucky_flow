@@ -1,8 +1,12 @@
 #! /bin/bash
 
-printf "\nbuilding shards with 'shards build'\n\n"
-shards build
+# Exit if any subcommand fails
+set -e
+set -o pipefail
+
+COMPOSE="docker-compose run app"
+
 printf "\nrunning specs with 'crystal spec'\n\n"
-crystal spec
+$COMPOSE crystal spec
 printf "\nformatting code with 'crystal tool format src spec'\n\n"
-crystal tool format src spec
+$COMPOSE crystal tool format src spec

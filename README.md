@@ -54,12 +54,14 @@ View guide at: https://luckyframework.org/guides/browser-tests/
 ## Contributing
 
 1.  Fork it ( https://github.com/luckyframework/lucky_flow/fork )
-2.  Create your feature branch (git checkout -b my-new-feature)
-3.  Make your changes
-4.  Run `./bin/test` to run the specs, build shards, and check formatting 
-5.  Commit your changes (git commit -am 'Add some feature')
-6.  Push to the branch (git push origin my-new-feature)
-7.  Create a new Pull Request
+1.  Create your feature branch (git checkout -b my-new-feature)
+1.  Install docker and docker-compose: https://docs.docker.com/compose/install/
+1.  Run `bin/setup`
+1.  Make your changes
+1.  Run `./bin/test` to run the specs, build shards, and check formatting
+1.  Commit your changes (git commit -am 'Add some feature')
+1.  Push to the branch (git push origin my-new-feature)
+1.  Create a new Pull Request
 
 ## Contributors
 
