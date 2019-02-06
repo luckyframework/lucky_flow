@@ -84,9 +84,9 @@ class LuckyFlow
     field(name_attr).fill(value)
   end
 
-  # Fill a form created by Lucky that uses a LuckyRecord::Form
+  # Fill a form created by Lucky that uses an Avram::Form
   #
-  # Note that Lucky and LuckyRecord are required to use this method
+  # Note that Lucky and Avram are required to use this method
   #
   # ```
   # fill_form QuestionForm,
@@ -94,7 +94,7 @@ class LuckyFlow
   #   body: "Just wondering what day it is"
   # ```
   def fill_form(
-    form : LuckyRecord::Form.class | LuckyRecord::VirtualForm.class,
+    form : Avram::Form.class | Avram::VirtualForm.class,
     **fields_and_values
   )
     fields_and_values.each do |name, value|
