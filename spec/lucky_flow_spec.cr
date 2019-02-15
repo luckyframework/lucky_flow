@@ -16,11 +16,37 @@ describe LuckyFlow do
     flow.el("@heading").text.should eq "Home"
   end
 
-  it "gives a recommendation if element not found" do
-    flow = visit_page_with "<span flow-id='heading'>Home</span>"
+  describe "helpful errors" do
+    it "gives a suggestion if element not found" do
+      flow = visit_page_with "<span flow-id='heading'>Home</span>"
 
-    expect_raises LuckyFlow::ElementNotFoundError, "@heading" do
-      flow.el("@harding").displayed?
+      expect_raises LuckyFlow::ElementNotFoundError, "@heading" do
+        flow.el("@harding").displayed?
+      end
+    end
+
+    it "does not give a suggestion if not similar enough" do
+      flow = visit_page_with "<span flow-id='heading'>Home</span>"
+
+      expect_to_raise_without_suggestion do
+        flow.el("@headboard").displayed?
+      end
+    end
+
+    it "does not give recommendations for non flow-ids" do
+      flow = visit_page_with "<span class='heading'>Home</span><span flow-id='headingg'></span>"
+
+      expect_to_raise_without_suggestion do
+        flow.el(".headinggg").displayed?
+      end
+    end
+
+    it "does not give a suggestion if the flow id is correct but text is not" do
+      flow = visit_page_with "<span flow-id='heading'>Home</span>"
+
+      expect_to_raise_without_suggestion do
+        flow.el("@heading", text: "Not Home").displayed?
+      end
     end
   end
 
@@ -121,9 +147,9 @@ private class FakeProcess
   end
 end
 
-private def visit_page_with(html) : LuckyFlow
-  TestServer.route "/home", html
-  flow = LuckyFlow.new
-  flow.visit("/home")
-  flow
+private def expect_to_raise_without_suggestion
+  error = expect_raises LuckyFlow::ElementNotFoundError do
+    yield
+  end
+  error.to_s.should_not contain("Did you mean")
 end
