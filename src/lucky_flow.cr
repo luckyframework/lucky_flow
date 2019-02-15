@@ -103,18 +103,22 @@ class LuckyFlow
   end
 
   def el(css_selector : String, text : String)
-    Element.new(session, css_selector, text)
+    Element.new(css_selector, text)
   end
 
   def el(css_selector : String)
-    Element.new(session, css_selector)
+    Element.new(css_selector)
   end
 
   def field(name_attr : String)
-    Element.new(session, "[name='#{name_attr}']")
+    Element.new("[name='#{name_attr}']")
   end
 
   def session
+    self.class.session
+  end
+
+  def self.session
     SERVER.session
   end
 

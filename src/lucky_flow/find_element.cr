@@ -46,11 +46,6 @@ class LuckyFlow::FindElement
     LuckyFlow.settings
   end
 
-  private def raise_element_not_found_error
-    raise LuckyFlow::ElementNotFoundError.new(selector: selector, inner_text:
-                                              inner_text, helper: nearest_match)
-  end
-
   private def matching_elements : Array(Selenium::WebElement)
     session.find_elements(:css, selector).select do |element|
       text_to_check_for = inner_text
@@ -62,11 +57,10 @@ class LuckyFlow::FindElement
     end
   end
 
-  private def all_elements  : Array(String)
-    session.find_elements(:css, "[flow-id]").map(&.attribute("flow-id")).uniq
-  end
-
-  private def nearest_match : String?
-    best_match = Levenshtein::Finder.find selector, all_elements, tolerance: 15
+  private def raise_element_not_found_error
+    raise LuckyFlow::ElementNotFoundError.new(
+      selector: selector,
+      inner_text: inner_text
+    )
   end
 end

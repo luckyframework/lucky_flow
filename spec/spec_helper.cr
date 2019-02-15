@@ -24,3 +24,10 @@ at_exit do
   LuckyFlow.shutdown
   server.close
 end
+
+def visit_page_with(html) : LuckyFlow
+  TestServer.route "/home", html
+  flow = LuckyFlow.new
+  flow.visit("/home")
+  flow
+end

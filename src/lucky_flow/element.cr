@@ -1,9 +1,10 @@
 class LuckyFlow::Element
-  private getter raw_selector, session
+  private getter raw_selector
   getter inner_text
   delegate text, click, send_keys, displayed?, attribute, to: element
+  delegate session, to: LuckyFlow
 
-  def initialize(@session : Selenium::Session, @raw_selector : String, text @inner_text : String? = nil)
+  def initialize(@raw_selector : String, text @inner_text : String? = nil)
   end
 
   @_element : Selenium::WebElement?
