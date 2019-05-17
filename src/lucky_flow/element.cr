@@ -18,10 +18,15 @@ class LuckyFlow::Element
   end
 
   def fill(value : String)
+    clear
     send_keys value
   end
 
   def selector : String
     Selector.new(raw_selector).parse
+  end
+
+  def clear
+    element.clear
   end
 end
