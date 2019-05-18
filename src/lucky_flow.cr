@@ -80,8 +80,24 @@ class LuckyFlow
     el(css_selector).click
   end
 
+  # Set the text of a form field, clearing any existing text
+  #
+  # ```crystal
+  # fill("comment:body", with: "Lucky is great!")
+  # ```
   def fill(name_attr : String, with value : String)
     field(name_attr).fill(value)
+  end
+
+  # Add text to the end of a field
+  #
+  # ```crystal
+  # fill("comment:body", with: "Lucky is:")
+  #
+  # append("comment:body", " So much fun!")
+  # ```
+  def append(name_attr : String, with value : String)
+    field(name_attr).append(value)
   end
 
   # Fill a form created by Lucky that uses an Avram::Form

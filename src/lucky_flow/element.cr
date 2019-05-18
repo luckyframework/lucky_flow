@@ -17,11 +17,36 @@ class LuckyFlow::Element
     attribute("value")
   end
 
+  # Set the text of a form field
+  #
+  # ```crystal
+  # field = el("input[name='comment']")
+  #
+  # field.fill("Lucky is great!")
+  # ```
   def fill(value : String)
+    clear
+    send_keys value
+  end
+
+  # Add text to the end of a field
+  #
+  # ```crystal
+  # field = el("input[name='comment']")
+  # field.fill("Lucky is:")
+  #
+  # field.append(" So much fun!")
+  # ```
+  def append(value : String)
     send_keys value
   end
 
   def selector : String
     Selector.new(raw_selector).parse
+  end
+
+  # Remove the text from a form field
+  def clear
+    element.clear
   end
 end
