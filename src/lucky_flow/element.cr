@@ -22,6 +22,10 @@ class LuckyFlow::Element
     send_keys value
   end
 
+  def append(value : String)
+    send_keys value
+  end
+
   def selector : String
     Selector.new(raw_selector).parse
   end

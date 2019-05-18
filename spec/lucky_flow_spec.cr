@@ -92,6 +92,21 @@ describe LuckyFlow do
     flow.field("question:body").value.should eq "vim"
   end
 
+  it "appends to existing text" do
+    flow = visit_page_with <<-HTML
+      <input name="question:title"/>
+      <input name="question:body"/>
+    HTML
+
+    flow.field("question:title").fill("Joe")
+    flow.fill "question:body", with: "Sally"
+    flow.field("question:title").append(" (he/him)")
+    flow.append "question:body", with: " (she/her)"
+
+    flow.field("question:title").value.should eq "Joe (he/him)"
+    flow.field("question:body").value.should eq "Sally (she/her)"
+  end
+
   it "can get the value of an input" do
     flow = visit_page_with <<-HTML
       <input name="question:title" value="hello"/>

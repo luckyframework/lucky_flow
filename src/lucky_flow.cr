@@ -84,6 +84,10 @@ class LuckyFlow
     field(name_attr).fill(value)
   end
 
+  def append(name_attr : String, with value : String)
+    field(name_attr).append(value)
+  end
+
   # Fill a form created by Lucky that uses an Avram::Form
   #
   # Note that Lucky and Avram are required to use this method
