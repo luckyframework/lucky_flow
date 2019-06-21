@@ -110,7 +110,7 @@ class LuckyFlow
   #   body: "Just wondering what day it is"
   # ```
   def fill_form(
-    form : Avram::Operation.class | Avram::VirtualOperation.class,
+    form : Avram::SaveOperation.class | Avram::VirtualOperation.class,
     **fields_and_values
   )
     fields_and_values.each do |name, value|
