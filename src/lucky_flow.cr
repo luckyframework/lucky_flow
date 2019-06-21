@@ -100,7 +100,7 @@ class LuckyFlow
     field(name_attr).append(value)
   end
 
-  # Fill a form created by Lucky that uses an Avram::Form
+  # Fill a form created by Lucky that uses an Avram::SaveOperation
   #
   # Note that Lucky and Avram are required to use this method
   #
@@ -110,7 +110,7 @@ class LuckyFlow
   #   body: "Just wondering what day it is"
   # ```
   def fill_form(
-    form : Avram::Form.class | Avram::VirtualForm.class,
+    form : Avram::Operation.class | Avram::VirtualOperation.class,
     **fields_and_values
   )
     fields_and_values.each do |name, value|
