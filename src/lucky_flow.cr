@@ -114,7 +114,7 @@ class LuckyFlow
     **fields_and_values
   )
     fields_and_values.each do |name, value|
-      fill "#{form.form_name}:#{name}", with: value
+      fill "#{form.param_key}:#{name}", with: value
     end
   end
 
