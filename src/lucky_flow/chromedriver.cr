@@ -16,7 +16,7 @@ class LuckyFlow::Chromedriver
   private def start_chromedriver : Process
     driver_path = LuckyFlow.settings.chromedriver_path ||
                   Process.find_executable("chromedriver") ||
-                  "#{__DIR__}/../../vendor/chromedriver-74-#{os}"
+                  "#{__DIR__}/../../vendor/chromedriver-75-#{os}"
     Process.new(
       driver_path.as(String),
       ["--port=4444", "--url-base=/wd/hub"],
