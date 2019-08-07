@@ -1,10 +1,10 @@
 name: lucky_flow
-version: 0.4.1
+version: 0.5.0
 
 authors:
   - Paul Smith <paulcsmith0218@gmail.com>
 
-crystal: 0.29.0
+crystal: 0.30.0
 
 license: MIT
 
