@@ -33,6 +33,7 @@ LuckyFlow.configure do
   settings.retry_delay = 10.milliseconds
   settings.stop_retrying_after = 1.second
   settings.screenshot_directory = "./tmp/screenshots"
+  settings.browser_binary = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 end
 
 # Put this at the bottom of the file.

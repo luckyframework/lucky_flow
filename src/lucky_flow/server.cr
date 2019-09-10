@@ -43,7 +43,7 @@ class LuckyFlow::Server
 
   private def start_session
     driver = Selenium::Webdriver.new
-    Selenium::Session.new(driver, CAPABILITIES)
+    Selenium::Session.new(driver, capabilities)
   rescue e : Errno
     retry_start_session(e)
   end
@@ -64,6 +64,23 @@ class LuckyFlow::Server
 
   private def screenshot_directory
     LuckyFlow.settings.screenshot_directory
+  end
+
+  private def browser_binary
+    LuckyFlow.settings.browser_binary
+  end
+
+  private def capabilities
+    if browser_binary.nil?
+      CAPABILITIES
+    else
+      CAPABILITIES.merge({
+        chromeOptions: {
+          args:   CAPABILITIES[:chromeOptions][:args],
+          binary: browser_binary,
+        },
+      })
+    end
   end
 
   private def start_chromedriver
