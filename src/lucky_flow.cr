@@ -16,6 +16,7 @@ class LuckyFlow
     setting retry_delay : Time::Span = 10.milliseconds
     setting stop_retrying_after : Time::Span = 1.second
     setting chromedriver_path : String? = nil
+    setting browser_binary : String? = nil
   end
 
   def visit(path : String)
