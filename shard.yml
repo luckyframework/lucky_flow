@@ -1,17 +1,17 @@
 name: lucky_flow
-version: 0.5.0
+version: 0.6.0-rc2
 
 authors:
   - Paul Smith <paulcsmith0218@gmail.com>
 
-crystal: 0.30.0
+crystal: 0.31.0
 
 license: MIT
 
 dependencies:
   selenium:
     github: ysbaddaden/selenium-webdriver-crystal
-    commit: a6d0e63ab7ddc6a20923bf4157bc6247c1fa2acc
+    branch: master
   habitat:
     github: luckyframework/habitat
     version: ~> 0.4

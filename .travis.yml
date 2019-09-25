@@ -2,6 +2,6 @@ language: minimal
 services:
   - docker
 before_install:
-  - bin/setup
+  - script/setup
 script:
-  - bin/test
+  - script/test

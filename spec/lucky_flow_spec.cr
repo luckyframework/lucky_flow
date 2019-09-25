@@ -131,7 +131,7 @@ describe LuckyFlow do
   it "can open screenshots" do
     flow = LuckyFlow.new
     fake_process = FakeProcess
-    time = Time.now
+    time = Time.utc
 
     flow.open_screenshot(fake_process, time)
 
@@ -142,7 +142,7 @@ describe LuckyFlow do
   it "can open fullsize screenshots" do
     flow = LuckyFlow.new
     fake_process = FakeProcess
-    time = Time.now
+    time = Time.utc
 
     flow.open_screenshot(fake_process, time, fullsize: true)
 
