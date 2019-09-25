@@ -22,7 +22,6 @@ end
 
 at_exit do
   LuckyFlow.shutdown
-  server.close
 end
 
 def visit_page_with(html) : LuckyFlow

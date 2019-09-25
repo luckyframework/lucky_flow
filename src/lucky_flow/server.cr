@@ -49,7 +49,7 @@ class LuckyFlow::Server
   end
 
   private def retry_start_session(e)
-    if Time.now <= @retry_limit.not_nil!
+    if Time.utc <= @retry_limit.not_nil!
       sleep(0.1)
       start_session
     else
