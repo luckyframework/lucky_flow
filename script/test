@@ -6,7 +6,7 @@ set -o pipefail
 
 COMPOSE="docker-compose run app"
 
-printf "\nrunning specs with 'crystal spec --no-debug'\n\n"
-$COMPOSE crystal spec --no-debug
+printf "\nrunning specs with 'crystal spec'\n\n"
+$COMPOSE crystal spec
 printf "\nformatting code with 'crystal tool format src spec'\n\n"
 $COMPOSE crystal tool format src spec
