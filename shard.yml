@@ -4,14 +4,14 @@ version: 0.6.0-rc2
 authors:
   - Paul Smith <paulcsmith0218@gmail.com>
 
-crystal: 0.31.0
+crystal: 0.31.1
 
 license: MIT
 
 dependencies:
   selenium:
     github: ysbaddaden/selenium-webdriver-crystal
-    branch: master
+    commit: bda2fd406c1a118251c5a2883f1e1f3af242116e
   habitat:
     github: luckyframework/habitat
-    version: ~> 0.4
+    version: ~> 0.4.0
