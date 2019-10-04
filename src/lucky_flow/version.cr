@@ -1,3 +1,3 @@
 class LuckyFlow
-  VERSION = "0.6.0-preview"
+  VERSION = "0.6.0"
 end
