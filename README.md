@@ -59,7 +59,7 @@ View guide at: https://luckyframework.org/guides/browser-tests/
 1.  Install docker and docker-compose: https://docs.docker.com/compose/install/
 1.  Run `bin/setup`
 1.  Make your changes
-1.  Run `./bin/test` to run the specs, build shards, and check formatting
+1.  Run `bin/test` to run the specs, build shards, and check formatting
 1.  Commit your changes (git commit -am 'Add some feature')
 1.  Push to the branch (git push origin my-new-feature)
 1.  Create a new Pull Request
