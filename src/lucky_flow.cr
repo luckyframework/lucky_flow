@@ -38,7 +38,7 @@ class LuckyFlow
     session.url = url
   end
 
-  def open_screenshot(process = Process, time = Time.now, fullsize = false) : Void
+  def open_screenshot(process = Process, time = Time.utc, fullsize = false) : Void
     filename = generate_screenshot_filename(time)
     take_screenshot(filename, fullsize)
     process.new(command: "#{open_command(process)} #{filename}", shell: true)
@@ -52,7 +52,7 @@ class LuckyFlow
     end
   end
 
-  private def generate_screenshot_filename(time : Time = Time.now)
+  private def generate_screenshot_filename(time : Time = Time.utc)
     "#{settings.screenshot_directory}/#{time.to_unix}.png"
   end
 
