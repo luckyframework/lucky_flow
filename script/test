@@ -8,5 +8,5 @@ COMPOSE="docker-compose run app"
 
 printf "\nrunning specs with 'crystal spec'\n\n"
 $COMPOSE crystal spec
-printf "\nformatting code with 'crystal tool format src spec'\n\n"
-$COMPOSE crystal tool format src spec
+printf "\nformatting code with 'crystal tool format --check'\n\n"
+$COMPOSE crystal tool format --check
