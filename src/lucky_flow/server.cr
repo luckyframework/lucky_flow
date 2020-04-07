@@ -44,7 +44,13 @@ class LuckyFlow::Server
   private def start_session
     driver = Selenium::Webdriver.new
     Selenium::Session.new(driver, capabilities)
-  rescue e : Errno
+
+  # If less than 0.34.0
+  {% if compare_versions(Crystal::VERSION, "0.34.0") == -1 %}
+    rescue e : Errno
+  {% else %}
+    rescue e : IO::Error
+  {% end %}
     retry_start_session(e)
   end
 
