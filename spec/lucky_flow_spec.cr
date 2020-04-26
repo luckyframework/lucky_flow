@@ -128,6 +128,29 @@ describe LuckyFlow do
     flow.el("h1", text: "Target").should be_on_page
   end
 
+  it "can find an element within another element" do
+    TestServer.route "/target", "<h1>Target</h1>"
+    flow = visit_page_with <<-HTML
+      <ul>
+        <li flow-id="item-0">
+          <p flow-id="text">Item 0</p>
+          <a flow-id='target' href='/error'>Click Me</a>
+        </li>
+        <li flow-id="item-1">
+          <p flow-id="text">Item 1</p>
+          <a flow-id='target' href='/target'>Click Me</a>
+        </li>
+      </ul>
+    HTML
+  
+    flow.within("@item-1") do |item_flow|
+      item_flow.el("@text", text: "Item 1").should be_on_page
+      item_flow.click("@target")
+    end
+
+    flow.el("h1", text: "Target").should be_on_page
+  end
+
   it "can open screenshots" do
     flow = LuckyFlow.new
     fake_process = FakeProcess

@@ -3,9 +3,13 @@ require "levenshtein"
 # Find element on a page with a retry
 class LuckyFlow::FindElement
   property tries : Int32 = 0
-  private getter session, selector, inner_text
+  private getter session, selector, inner_text, parent
 
-  def initialize(@session : Selenium::Session, @selector : String, text @inner_text : String? = nil)
+  def initialize(
+    @session : Selenium::Session,
+    @selector : String,
+    text @inner_text : String? = nil,
+    @parent : Element? = nil)
   end
 
   def self.run(*args, **named_args)
@@ -47,7 +51,7 @@ class LuckyFlow::FindElement
   end
 
   private def matching_elements : Array(Selenium::WebElement)
-    session.find_elements(:css, selector).select do |element|
+    session.find_elements(:css, selector, parent_element).select do |element|
       text_to_check_for = inner_text
       if text_to_check_for
         element.text.includes?(text_to_check_for)
@@ -62,5 +66,9 @@ class LuckyFlow::FindElement
       selector: selector,
       inner_text: inner_text
     )
+  end
+
+  private def parent_element : Selenium::WebElement?
+    parent.try &.element
   end
 end

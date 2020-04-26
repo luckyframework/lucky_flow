@@ -19,6 +19,11 @@ class LuckyFlow
     setting browser_binary : String? = nil
   end
 
+  private getter parent
+
+  def initialize(@parent : Element? = nil)
+  end
+
   def visit(path : String)
     session.url = "#{settings.base_uri}#{path}"
   end
@@ -120,15 +125,19 @@ class LuckyFlow
   end
 
   def el(css_selector : String, text : String)
-    Element.new(css_selector, text)
+    Element.new(css_selector, text, parent)
   end
 
   def el(css_selector : String)
-    Element.new(css_selector)
+    Element.new(css_selector, parent: parent)
   end
 
   def field(name_attr : String)
-    Element.new("[name='#{name_attr}']")
+    Element.new("[name='#{name_attr}']", parent: parent)
+  end
+
+  def within(css_selector : String)
+    yield(self.class.new(parent: Element.new(css_selector, parent: parent)))
   end
 
   def session
