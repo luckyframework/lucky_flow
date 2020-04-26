@@ -142,7 +142,7 @@ describe LuckyFlow do
         </li>
       </ul>
     HTML
-  
+
     flow.within("@item-1") do |item_flow|
       item_flow.el("@text", text: "Item 1").should be_on_page
       item_flow.click("@target")

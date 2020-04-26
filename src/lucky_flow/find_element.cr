@@ -9,7 +9,8 @@ class LuckyFlow::FindElement
     @session : Selenium::Session,
     @selector : String,
     text @inner_text : String? = nil,
-    @parent : Element? = nil)
+    @parent : Element? = nil
+  )
   end
 
   def self.run(*args, **named_args)
