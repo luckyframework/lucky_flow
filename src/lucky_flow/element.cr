@@ -7,9 +7,9 @@ class LuckyFlow::Element
   def initialize(@raw_selector : String, text @inner_text : String? = nil)
   end
 
-  @_element : Selenium::WebElement?
+  @_element : Selenium::Element?
 
-  private def element : Selenium::WebElement
+  private def element : Selenium::Element
     @_element ||= FindElement.run(session, selector, inner_text)
   end
 

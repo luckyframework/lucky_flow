@@ -20,7 +20,7 @@ class LuckyFlow
   end
 
   def visit(path : String)
-    session.url = "#{settings.base_uri}#{path}"
+    session.navigate_to("#{settings.base_uri}#{path}")
   end
 
   def visit(action : Lucky::Action.class, as user : User? = nil)
@@ -46,9 +46,9 @@ class LuckyFlow
 
   def take_screenshot(filename : String = generate_screenshot_filename, fullsize : Bool = true)
     if fullsize
-      with_fullsized_page { session.save_screenshot(filename) }
+      with_fullsized_page { session.screenshot(filename) }
     else
-      session.save_screenshot(filename)
+      session.screenshot(filename)
     end
   end
 
@@ -57,18 +57,17 @@ class LuckyFlow
   end
 
   def expand_page_to_fullsize
-    width = session.execute("return Math.max(document.body.scrollWidth, document.body.offsetWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth);").as_i
-    height = session.execute("return Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);").as_i
-    window = session.window
-    window.resize_to(width + 100, height + 100)
+    width = session.document_manager.execute_script("return Math.max(document.body.scrollWidth, document.body.offsetWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth);").to_i64
+    height = session.document_manager.execute_script("return Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);").to_i64
+    session.window_manager.resize_window(width: width + 100, height: height + 100)
   end
 
   def with_fullsized_page(&block)
-    original_size = session.window.rect
+    original_size = session.window_manager.window_rect
     expand_page_to_fullsize
     yield
   ensure
-    session.window.rect = original_size
+    session.window_manager.set_window_rect(original_size)
   end
 
   private def open_command(process) : String

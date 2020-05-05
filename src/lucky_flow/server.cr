@@ -3,23 +3,8 @@ class LuckyFlow::Server
   # This is used so that only one server instance is started
   INSTANCE = new
 
-  CAPABILITIES = {
-    browserName:              "chrome",
-    platform:                 "ANY",
-    javascriptEnabled:        true,
-    takesScreenshot:          true,
-    handlesAlerts:            true,
-    databaseEnabled:          true,
-    locationContextEnabled:   true,
-    applicationCacheEnabled:  true,
-    browserConnectionEnabled: true,
-    cssSelectorsEnabled:      true,
-    webStorageEnabled:        true,
-    rotatable:                true,
-    acceptSslCerts:           true,
-    nativeEvents:             true,
-    chromeOptions:            {args: ["no-sandbox", "headless", "disable-gpu"]},
-  }
+  CAPABILITIES = Selenium::Chrome::Capabilities.new
+  CAPABILITIES.args(["no-sandbox", "headless", "disable-gpu"])
 
   @retry_limit : Time?
   @session : Selenium::Session?
@@ -44,15 +29,15 @@ class LuckyFlow::Server
   # If less than 0.34.0
   {% if compare_versions(Crystal::VERSION, "0.34.0") == -1 %}
     private def start_session
-      driver = Selenium::Webdriver.new
-      Selenium::Session.new(driver, capabilities)
+      driver = Selenium::Driver.for(:chrome)
+      driver.create_session(CAPABILITIES)
     rescue e : Errno
       retry_start_session(e)
     end
   {% else %}
     private def start_session
-      driver = Selenium::Webdriver.new
-      Selenium::Session.new(driver, capabilities)
+      driver = Selenium::Driver.for(:chrome)
+      driver.create_session(CAPABILITIES)
     rescue e : IO::Error
       retry_start_session(e)
     end
@@ -98,11 +83,11 @@ class LuckyFlow::Server
   end
 
   def reset
-    @session.try &.cookies.clear
+    @session.try &.cookie_manager.delete_all_cookies
   end
 
   def shutdown
-    @session.try(&.stop)
+    @session.try &.delete
     @chromedriver.try(&.stop)
   end
 end

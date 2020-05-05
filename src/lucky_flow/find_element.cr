@@ -46,7 +46,7 @@ class LuckyFlow::FindElement
     LuckyFlow.settings
   end
 
-  private def matching_elements : Array(Selenium::WebElement)
+  private def matching_elements : Array(Selenium::Element)
     session.find_elements(:css, selector).select do |element|
       text_to_check_for = inner_text
       if text_to_check_for
@@ -55,6 +55,8 @@ class LuckyFlow::FindElement
         true
       end
     end
+  rescue Selenium::Error
+    [] of Selenium::Element
   end
 
   private def raise_element_not_found_error

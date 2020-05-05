@@ -152,13 +152,13 @@ describe LuckyFlow do
 
   it "can reset the session" do
     flow = LuckyFlow.new
-    flow.session.cookies.set("hello", "world")
-    flow.session.cookies.get("hello").value.should eq "world"
+    flow.session.cookie_manager.add_cookie("hello", "world")
+    flow.session.cookie_manager.get_cookie("hello").value.should eq "world"
 
     LuckyFlow.reset
 
-    expect_raises KeyError do
-      flow.session.cookies.get("hello").value
+    expect_raises Selenium::Error do
+      flow.session.cookie_manager.get_cookie("hello").value
     end
   end
 end

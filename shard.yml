@@ -10,8 +10,8 @@ license: MIT
 
 dependencies:
   selenium:
-    github: ysbaddaden/selenium-webdriver-crystal
-    commit: bda2fd406c1a118251c5a2883f1e1f3af242116e
+    github: matthewmcgarvey/selenium.cr
+    version: ~> 0.4.0
   habitat:
     github: luckyframework/habitat
     version: ~> 0.4.0
