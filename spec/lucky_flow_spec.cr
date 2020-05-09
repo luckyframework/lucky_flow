@@ -162,7 +162,9 @@ describe LuckyFlow do
   end
 
   it "can reset the session" do
-    flow = LuckyFlow.new
+    flow = visit_page_with <<-HTML
+      <h1>Title</h1>
+    HTML
     flow.session.cookie_manager.add_cookie("hello", "world")
     flow.session.cookie_manager.get_cookie("hello").value.should eq "world"
 
