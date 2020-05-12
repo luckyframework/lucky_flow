@@ -5,17 +5,17 @@ class LuckyFlow::Chromedriver
   private property process : Process
   getter log_io = IO::Memory.new
 
-  private def initialize
+  private def initialize(@driver_path : String)
     @process = start_chromedriver
   end
 
-  def self.start
-    new
+  def self.start(driver_path)
+    new(driver_path)
   end
 
   private def start_chromedriver : Process
     Process.new(
-      LuckyFlow.settings.chromedriver_path,
+      @driver_path,
       ["--port=4444", "--url-base=/wd/hub"],
       output: log_io,
       error: STDERR,

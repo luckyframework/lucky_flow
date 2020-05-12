@@ -82,7 +82,7 @@ class LuckyFlow::Server
   end
 
   private def start_chromedriver
-    @chromedriver ||= LuckyFlow::Chromedriver.start
+    @chromedriver ||= LuckyFlow::Chromedriver.start(LuckyFlow.settings.chromedriver_path)
   end
 
   def reset
