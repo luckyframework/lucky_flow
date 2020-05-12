@@ -9,6 +9,7 @@ class LuckyFlow::Server
   @retry_limit : Time?
   @session : Selenium::Session?
   @chromedriver : LuckyFlow::Chromedriver?
+  @driver : Selenium::Driver?
 
   # Use LuckyFlow::Server::INSTANCE instead
   private def initialize
@@ -16,37 +17,39 @@ class LuckyFlow::Server
 
   # Start a new selenium session with Chromedriver
   def session : Selenium::Session
-    @session ||= create_session
+    @session ||= create_session(driver)
   end
 
-  private def create_session : Selenium::Session
+  private def driver : Selenium::Driver
+    @driver ||= Selenium::Driver.for(:chrome, base_url: "http://localhost:4444/wd/hub")
+  end
+
+  private def create_session(driver) : Selenium::Session
     @retry_limit = 2.seconds.from_now
     prepare_screenshot_directory
     start_chromedriver
-    start_session
+    start_session(driver)
   end
 
   # If less than 0.34.0
   {% if compare_versions(Crystal::VERSION, "0.34.0") == -1 %}
-    private def start_session
-      driver = Selenium::Driver.for(:chrome, base_url: "http://localhost:4444/wd/hub")
+    private def start_session(driver)
       driver.create_session(CAPABILITIES)
     rescue e : Errno
-      retry_start_session(e)
+      retry_start_session(e, driver)
     end
   {% else %}
-    private def start_session
-      driver = Selenium::Driver.for(:chrome, base_url: "http://localhost:4444/wd/hub")
+    private def start_session(driver)
       driver.create_session(CAPABILITIES)
     rescue e : IO::Error
-      retry_start_session(e)
+      retry_start_session(e, driver)
     end
   {% end %}
 
-  private def retry_start_session(e)
+  private def retry_start_session(e, driver)
     if Time.utc <= @retry_limit.not_nil!
       sleep(0.1)
-      start_session
+      start_session(driver)
     else
       raise e
     end
