@@ -147,7 +147,7 @@ class LuckyFlow
   end
 
   def self.default_driver_path
-    Process.find_executable("chromedriver") || "#{__DIR__}/../../vendor/chromedriver-80-#{os}"
+    Process.find_executable("chromedriver") || "#{__DIR__}/../vendor/chromedriver-80-#{os}"
   end
 
   private def self.os
