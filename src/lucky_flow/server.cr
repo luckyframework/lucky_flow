@@ -16,7 +16,7 @@ class LuckyFlow::Server
 
   # Start a new selenium session with Chromedriver
   def session : Selenium::Session
-    @session ||= create_session(driver)
+    @session ||= create_session
   end
 
   private def driver : Selenium::Driver
@@ -26,31 +26,31 @@ class LuckyFlow::Server
     end
   end
 
-  private def create_session(driver) : Selenium::Session
+  private def create_session : Selenium::Session
     @retry_limit = 2.seconds.from_now
     prepare_screenshot_directory
-    start_session(driver)
+    start_session
   end
 
   # If less than 0.34.0
   {% if compare_versions(Crystal::VERSION, "0.34.0") == -1 %}
-    private def start_session(driver)
+    private def start_session
       driver.create_session(CAPABILITIES)
     rescue e : Errno
-      retry_start_session(e, driver)
+      retry_start_session(e)
     end
   {% else %}
-    private def start_session(driver)
+    private def start_session
       driver.create_session(CAPABILITIES)
     rescue e : IO::Error
-      retry_start_session(e, driver)
+      retry_start_session(e)
     end
   {% end %}
 
-  private def retry_start_session(e, driver)
+  private def retry_start_session(e)
     if Time.utc <= @retry_limit.not_nil!
       sleep(0.1)
-      start_session(driver)
+      start_session
     else
       raise e
     end
