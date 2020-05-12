@@ -8,7 +8,6 @@ class LuckyFlow::Server
 
   @retry_limit : Time?
   @session : Selenium::Session?
-  @chromedriver : LuckyFlow::Chromedriver?
   @driver : Selenium::Driver?
 
   # Use LuckyFlow::Server::INSTANCE instead
@@ -21,13 +20,15 @@ class LuckyFlow::Server
   end
 
   private def driver : Selenium::Driver
-    @driver ||= Selenium::Driver.for(:chrome, base_url: "http://localhost:4444/wd/hub")
+    @driver ||= begin
+      service = Selenium::Service.chrome(driver_path: LuckyFlow.settings.chromedriver_path)
+      Selenium::Driver.for(:chrome, service: service)
+    end
   end
 
   private def create_session(driver) : Selenium::Session
     @retry_limit = 2.seconds.from_now
     prepare_screenshot_directory
-    start_chromedriver
     start_session(driver)
   end
 
@@ -81,16 +82,12 @@ class LuckyFlow::Server
     end
   end
 
-  private def start_chromedriver
-    @chromedriver ||= LuckyFlow::Chromedriver.start(LuckyFlow.settings.chromedriver_path)
-  end
-
   def reset
     @session.try &.cookie_manager.delete_all_cookies
   end
 
   def shutdown
     @session.try &.delete
-    @chromedriver.try(&.stop)
+    @driver.try &.stop
   end
 end
