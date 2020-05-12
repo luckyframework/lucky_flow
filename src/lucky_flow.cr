@@ -15,7 +15,7 @@ class LuckyFlow
     setting base_uri : String
     setting retry_delay : Time::Span = 10.milliseconds
     setting stop_retrying_after : Time::Span = 1.second
-    setting chromedriver_path : String? = nil
+    setting chromedriver_path : String = LuckyFlow.default_driver_path
     setting browser_binary : String? = nil
   end
 
@@ -144,5 +144,19 @@ class LuckyFlow
 
   def self.reset
     SERVER.reset
+  end
+
+  def self.default_driver_path
+    Process.find_executable("chromedriver") || "#{__DIR__}/../../vendor/chromedriver-80-#{os}"
+  end
+
+  private def self.os
+    {% if flag?(:linux) %}
+      "linux64"
+    {% elsif flag?(:darwin) %}
+      "mac64"
+    {% else %}
+      raise "This OS is not supported yet."
+    {% end %}
   end
 end
