@@ -29,14 +29,14 @@ class LuckyFlow::Server
   # If less than 0.34.0
   {% if compare_versions(Crystal::VERSION, "0.34.0") == -1 %}
     private def start_session
-      driver = Selenium::Driver.for(:chrome)
+      driver = Selenium::Driver.for(:chrome, base_url: "http://localhost:4444/wd/hub")
       driver.create_session(CAPABILITIES)
     rescue e : Errno
       retry_start_session(e)
     end
   {% else %}
     private def start_session
-      driver = Selenium::Driver.for(:chrome)
+      driver = Selenium::Driver.for(:chrome, base_url: "http://localhost:4444/wd/hub")
       driver.create_session(CAPABILITIES)
     rescue e : IO::Error
       retry_start_session(e)
