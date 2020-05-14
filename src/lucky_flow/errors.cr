@@ -15,4 +15,22 @@ class LuckyFlow
       super message
     end
   end
+
+  class DriverInstallationError < Error
+    def initialize(error : Exception)
+      message = <<-ERROR
+      Something went wrong while installing Chromedriver:
+
+        #{error}
+
+      If you'd like to manually install Chromedriver yourself, make sure to tell LuckyFlow where it is located:
+
+        LuckyFlow.configure do |settings|
+          settings.chromedriver_path = "/path/to/chromedriver"
+        end
+      ERROR
+
+      super message
+    end
+  end
 end

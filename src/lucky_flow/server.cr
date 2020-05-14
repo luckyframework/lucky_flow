@@ -21,7 +21,7 @@ class LuckyFlow::Server
 
   private def driver : Selenium::Driver
     @driver ||= begin
-      service = Selenium::Service.chrome(driver_path: LuckyFlow.settings.chromedriver_path)
+      service = Selenium::Service.chrome(driver_path: driver_path)
       Selenium::Driver.for(:chrome, service: service)
     end
   end
@@ -89,5 +89,11 @@ class LuckyFlow::Server
   def shutdown
     @session.try &.delete
     @driver.try &.stop
+  end
+
+  private def driver_path
+    LuckyFlow.settings.chromedriver_path || Webdrivers::Chromedriver.install
+  rescue err
+    raise DriverInstallationError.new(err)
   end
 end
