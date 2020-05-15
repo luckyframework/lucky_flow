@@ -13,11 +13,14 @@ class LuckyFlow::FindElement
   end
 
   def run
-    while has_retries_left?
+    loop do
       matching_elements = find_matching_elements
       return matching_elements.first if matching_elements.first?
+
+      break unless has_retries_left?
       sleep retry_delay_in_ms
     end
+
     raise_element_not_found_error
   end
 
@@ -26,8 +29,7 @@ class LuckyFlow::FindElement
   end
 
   private def max_tries : Int32
-    max_tries = (settings.stop_retrying_after / settings.retry_delay).to_i
-    max_tries > 0 ? max_tries : 1
+    (settings.stop_retrying_after / settings.retry_delay).to_i
   end
 
   private def retry_delay_in_ms : Float
