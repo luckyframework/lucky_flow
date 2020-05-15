@@ -10,6 +10,17 @@ describe LuckyFlow do
     flow.el("@heading", text: "Home").should be_on_page
   end
 
+  it "can visit URL with backdoor" do
+    TestServer.route "/home?backdoor_user_id=abc123", "<span flow-id='heading'>Home</span>"
+    user = User.new(id: "abc123")
+    route_helper = Lucky::RouteHelper.new("http://localhost:3002/home")
+    flow = LuckyFlow.new
+
+    flow.visit(route_helper, as: user)
+
+    flow.el("@heading", text: "Home").should be_on_page
+  end
+
   it "can find element's text" do
     flow = visit_page_with "<span flow-id='heading'>Home</span>"
 
