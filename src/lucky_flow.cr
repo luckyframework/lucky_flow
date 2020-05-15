@@ -35,7 +35,7 @@ class LuckyFlow
     elsif uri.query.nil? && user
       url += "?backdoor_user_id=#{user.id}"
     end
-    session.url = url
+    session.navigate_to(url)
   end
 
   def open_screenshot(process = Process, time = Time.utc, fullsize = false) : Void
