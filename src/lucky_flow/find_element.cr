@@ -13,25 +13,19 @@ class LuckyFlow::FindElement
   end
 
   def run
-    matching_elements.first? || retry
-  end
+    loop do
+      matching_elements = find_matching_elements
+      return matching_elements.first if matching_elements.first?
 
-  private def retry
-    self.tries += 1
-    if has_retries_left?
-      retry_after_delay
-    else
-      raise_element_not_found_error
+      break unless has_retries_left?
+      sleep retry_delay_in_ms
     end
+
+    raise_element_not_found_error
   end
 
   private def has_retries_left?
     tries < max_tries
-  end
-
-  private def retry_after_delay
-    sleep retry_delay_in_ms
-    run
   end
 
   private def max_tries : Int32
@@ -46,7 +40,8 @@ class LuckyFlow::FindElement
     LuckyFlow.settings
   end
 
-  private def matching_elements : Array(Selenium::Element)
+  private def find_matching_elements : Array(Selenium::Element)
+    self.tries += 1
     session.find_elements(:css, selector).select do |element|
       text_to_check_for = inner_text
       if text_to_check_for
