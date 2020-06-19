@@ -23,6 +23,8 @@ jobs:
       image: crystallang/crystal:0.35.0
     steps:
     - uses: actions/checkout@v2
+    - name: Install shards
+      run: shards install
     - name: Cache Crystal
       uses: actions/cache@v1
       with:
