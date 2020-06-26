@@ -17,4 +17,4 @@ dependencies:
     version: ~> 0.3.0
   habitat:
     github: luckyframework/habitat
-    branch: jaw/v0.5.0
+    version: ~> 0.4.4
