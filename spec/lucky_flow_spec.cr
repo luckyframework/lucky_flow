@@ -9,6 +9,7 @@ describe LuckyFlow do
 
     flow.el("@heading", text: "Home").should be_on_page
     flow.el("@heading").should have_text("Home")
+    flow.should have_current_path("/home")
   end
 
   it "can visit URL with backdoor" do

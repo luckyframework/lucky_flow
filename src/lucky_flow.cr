@@ -131,6 +131,11 @@ class LuckyFlow
     Element.new("[name='#{name_attr}']")
   end
 
+  def current_path
+    url = session.current_url
+    URI.parse(url).path
+  end
+
   def session
     self.class.session
   end
