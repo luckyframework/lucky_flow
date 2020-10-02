@@ -25,7 +25,7 @@ Configure LuckyFlow in `spec/spec_helper.cr`:
 ```crystal
 require "lucky_flow"
 
-LuckyFlow.configure do
+LuckyFlow.configure do |settings|
   # This is required
   settings.base_uri = "http://localhost:<port>"
 
