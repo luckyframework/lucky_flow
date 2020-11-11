@@ -3,7 +3,7 @@ struct LuckyFlow::Expectations::HaveTextExpectation
   end
 
   def match(element)
-    element.text == @expected_value
+    element.text.includes? @expected_value
   end
 
   def failure_message(element)
