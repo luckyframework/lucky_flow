@@ -22,6 +22,21 @@ module LuckyFlow::Expectations
 
         expectation.match(element).should be_false
       end
+
+      it "returns true if element contains text" do
+        element = LuckyFlow::Element.new(raw_selector: "@container")
+
+        visit_page_with <<-HTML
+          <div flow-id="container">
+            <h1>Hello, World!</h1>
+            <span>Welcome to the subheading</span>
+          </div>
+        HTML
+
+        expectation = HaveTextExpectation.new(expected_value: "Hello, World!")
+
+        expectation.match(element).should be_true
+      end
     end
 
     describe "#failure_message" do
