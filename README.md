@@ -1,5 +1,7 @@
 # LuckyFlow
 
+[![API Documentation Website](https://img.shields.io/website?down_color=red&down_message=Offline&label=API%20Documentation&up_message=Online&url=https%3A%2F%2Fluckyframework.github.io%2Flucky_flow%2F)](https://luckyframework.github.io/lucky_flow)
+
 LuckyFlow is a library for testing user flows in the browser. It is similar to
 Ruby's Capybara.
 
