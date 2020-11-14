@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.34.0">
+<meta name="crystal_docs.project_version" content="0.7.0">
+<meta name="crystal_docs.project_name" content="lucky_flow">
+
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/doc.js"></script>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+
+  <meta id="repository-name" content="lucky_flow">
+  <title>LuckyFlow - lucky_flow 0.7.0</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "";
+  </script>
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="index.html">
+          lucky_flow
+        </a>
+      </h1>
+
+      <span class="project-version">
+        0.7.0
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results" class="hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="lucky_flow/LuckyFlow" data-name="luckyflow">
+      <a href="LuckyFlow.html">LuckyFlow</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/DriverInstallationError" data-name="luckyflow::driverinstallationerror">
+      <a href="LuckyFlow/DriverInstallationError.html">DriverInstallationError</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Element" data-name="luckyflow::element">
+      <a href="LuckyFlow/Element.html">Element</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/ElementNotFoundError" data-name="luckyflow::elementnotfounderror">
+      <a href="LuckyFlow/ElementNotFoundError.html">ElementNotFoundError</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Error" data-name="luckyflow::error">
+      <a href="LuckyFlow/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/ErrorMessageWhenNotFound" data-name="luckyflow::errormessagewhennotfound">
+      <a href="LuckyFlow/ErrorMessageWhenNotFound.html">ErrorMessageWhenNotFound</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Expectations" data-name="luckyflow::expectations">
+      <a href="LuckyFlow/Expectations.html">Expectations</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/BeOnPageExpectation" data-name="luckyflow::expectations::beonpageexpectation">
+      <a href="LuckyFlow/Expectations/BeOnPageExpectation.html">BeOnPageExpectation</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveCurrentPathExpectation" data-name="luckyflow::expectations::havecurrentpathexpectation">
+      <a href="LuckyFlow/Expectations/HaveCurrentPathExpectation.html">HaveCurrentPathExpectation</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveTextExpectation" data-name="luckyflow::expectations::havetextexpectation">
+      <a href="LuckyFlow/Expectations/HaveTextExpectation.html">HaveTextExpectation</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/FindElement" data-name="luckyflow::findelement">
+      <a href="LuckyFlow/FindElement.html">FindElement</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/HabitatSettings" data-name="luckyflow::habitatsettings">
+      <a href="LuckyFlow/HabitatSettings.html">HabitatSettings</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selector" data-name="luckyflow::selector">
+      <a href="LuckyFlow/Selector.html">Selector</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Server" data-name="luckyflow::server">
+      <a href="LuckyFlow/Server.html">Server</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> LuckyFlow
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="LuckyFlow.html">LuckyFlow</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="included-modules" class="anchor" href="#included-modules">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Included Modules
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type">Habitat::SettingsHelpers</li>
+    
+      <li class="other-type">Habitat::TempConfig</li>
+    
+      <li class="other-type"><a href="LuckyFlow/Expectations.html">LuckyFlow::Expectations</a></li>
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="HABITAT_SETTINGS">
+        <strong>HABITAT_SETTINGS</strong> = <code>[{decl: screenshot_directory : <span class="t">String</span> <span class="o">=</span> <span class="s">&quot;./tmp/screenshots&quot;</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: base_uri : <span class="t">String</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: retry_delay : <span class="t">Time</span><span class="t">::</span><span class="t">Span</span> <span class="o">=</span> <span class="n">10</span>.milliseconds, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: stop_retrying_after : <span class="t">Time</span><span class="t">::</span><span class="t">Span</span> <span class="o">=</span> <span class="n">1</span>.second, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: chromedriver_path : <span class="t">String</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: browser_binary : <span class="t">String</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span> <span class="o">=</span> <span class="n">nil</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}] <span class="k">of</span> <span class="t">Nil</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="SERVER">
+        <strong>SERVER</strong> = <code><span class="t">LuckyFlow</span><span class="t">::</span><span class="t">Server</span><span class="t">::</span><span class="t">INSTANCE</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.7.0&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#configure(&)-class-method" class="signature"><strong>.configure</strong>(&)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reset-class-method" class="signature"><strong>.reset</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#session-class-method" class="signature"><strong>.session</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settings-class-method" class="signature"><strong>.settings</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shutdown-class-method" class="signature"><strong>.shutdown</strong></a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#append(name_attr:String,withvalue:String)-instance-method" class="signature"><strong>#append</strong>(name_attr : String, with value : String)</a>
+        
+          <div class="summary"><p>Add text to the end of a field</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#click(css_selector:String)-instance-method" class="signature"><strong>#click</strong>(css_selector : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#current_path-instance-method" class="signature"><strong>#current_path</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#el(css_selector:String)-instance-method" class="signature"><strong>#el</strong>(css_selector : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#el(css_selector:String,text:String)-instance-method" class="signature"><strong>#el</strong>(css_selector : String, text : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#expand_page_to_fullsize-instance-method" class="signature"><strong>#expand_page_to_fullsize</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#field(name_attr:String)-instance-method" class="signature"><strong>#field</strong>(name_attr : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fill(name_attr:String,withvalue:String)-instance-method" class="signature"><strong>#fill</strong>(name_attr : String, with value : String)</a>
+        
+          <div class="summary"><p>Set the text of a form field, clearing any existing text</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fill_form(form:Avram::SaveOperation.class%7CAvram::Operation.class,**fields_and_values)-instance-method" class="signature"><strong>#fill_form</strong>(form : <span class="t">Avram</span><span class="t">::</span><span class="t">SaveOperation</span>.<span class="k">class</span> | <span class="t">Avram</span><span class="t">::</span><span class="t">Operation</span>.<span class="k">class</span>, **fields_and_values)</a>
+        
+          <div class="summary"><p>Fill a form created by Lucky that uses an Avram::SaveOperation</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#open_screenshot(process=Process,time=Time.utc,fullsize=false):Void-instance-method" class="signature"><strong>#open_screenshot</strong>(process = <span class="t">Process</span>, time = <span class="t">Time</span>.utc, fullsize = <span class="n">false</span>) : Void</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#session-instance-method" class="signature"><strong>#session</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#settings-instance-method" class="signature"><strong>#settings</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#take_screenshot(filename:String=generate_screenshot_filename,fullsize:Bool=true)-instance-method" class="signature"><strong>#take_screenshot</strong>(filename : String = generate_screenshot_filename, fullsize : Bool = <span class="n">true</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#visit(route_helper:Lucky::RouteHelper,asuser:User?=nil)-instance-method" class="signature"><strong>#visit</strong>(route_helper : Lucky::RouteHelper, as user : User? = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#visit(action:Lucky::Action.class,asuser:User?=nil)-instance-method" class="signature"><strong>#visit</strong>(action : <span class="t">Lucky</span><span class="t">::</span><span class="t">Action</span>.<span class="k">class</span>, as user : User? = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#visit(path:String)-instance-method" class="signature"><strong>#visit</strong>(path : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#with_fullsized_page(&)-instance-method" class="signature"><strong>#with_fullsized_page</strong>(&)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="configure(&)-class-method">
+      <div class="signature">
+        
+        def self.<strong>configure</strong>(&)
+
+        <a class="method-permalink" href="#configure(&)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reset-class-method">
+      <div class="signature">
+        
+        def self.<strong>reset</strong>
+
+        <a class="method-permalink" href="#reset-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="session-class-method">
+      <div class="signature">
+        
+        def self.<strong>session</strong>
+
+        <a class="method-permalink" href="#session-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settings-class-method">
+      <div class="signature">
+        
+        def self.<strong>settings</strong>
+
+        <a class="method-permalink" href="#settings-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shutdown-class-method">
+      <div class="signature">
+        
+        def self.<strong>shutdown</strong>
+
+        <a class="method-permalink" href="#shutdown-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="append(name_attr:String,withvalue:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>append</strong>(name_attr : String, with value : String)
+
+        <a class="method-permalink" href="#append(name_attr:String,withvalue:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Add text to the end of a field</p>
+
+<pre><code class="language-crystal">fill(<span class="s">&quot;comment:body&quot;</span>, <span class="k">with</span>: <span class="s">&quot;Lucky is:&quot;</span>)
+
+append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; So much fun!&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="click(css_selector:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>click</strong>(css_selector : String)
+
+        <a class="method-permalink" href="#click(css_selector:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="current_path-instance-method">
+      <div class="signature">
+        
+        def <strong>current_path</strong>
+
+        <a class="method-permalink" href="#current_path-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="el(css_selector:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>el</strong>(css_selector : String)
+
+        <a class="method-permalink" href="#el(css_selector:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="el(css_selector:String,text:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>el</strong>(css_selector : String, text : String)
+
+        <a class="method-permalink" href="#el(css_selector:String,text:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="expand_page_to_fullsize-instance-method">
+      <div class="signature">
+        
+        def <strong>expand_page_to_fullsize</strong>
+
+        <a class="method-permalink" href="#expand_page_to_fullsize-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="field(name_attr:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>field</strong>(name_attr : String)
+
+        <a class="method-permalink" href="#field(name_attr:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fill(name_attr:String,withvalue:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>fill</strong>(name_attr : String, with value : String)
+
+        <a class="method-permalink" href="#fill(name_attr:String,withvalue:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Set the text of a form field, clearing any existing text</p>
+
+<pre><code class="language-crystal">fill(<span class="s">&quot;comment:body&quot;</span>, <span class="k">with</span>: <span class="s">&quot;Lucky is great!&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fill_form(form:Avram::SaveOperation.class|Avram::Operation.class,**fields_and_values)-instance-method">
+      <div class="signature">
+        
+        def <strong>fill_form</strong>(form : <span class="t">Avram</span><span class="t">::</span><span class="t">SaveOperation</span>.<span class="k">class</span> | <span class="t">Avram</span><span class="t">::</span><span class="t">Operation</span>.<span class="k">class</span>, **fields_and_values)
+
+        <a class="method-permalink" href="#fill_form(form:Avram::SaveOperation.class%7CAvram::Operation.class,**fields_and_values)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Fill a form created by Lucky that uses an Avram::SaveOperation</p>
+
+<p>Note that Lucky and Avram are required to use this method</p>
+
+<pre><code>fill_form <span class="t">QuestionForm</span>,
+  title: <span class="s">&quot;Hello there!&quot;</span>,
+  body: <span class="s">&quot;Just wondering what day it is&quot;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="open_screenshot(process=Process,time=Time.utc,fullsize=false):Void-instance-method">
+      <div class="signature">
+        
+        def <strong>open_screenshot</strong>(process = <span class="t">Process</span>, time = <span class="t">Time</span>.utc, fullsize = <span class="n">false</span>) : Void
+
+        <a class="method-permalink" href="#open_screenshot(process=Process,time=Time.utc,fullsize=false):Void-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="session-instance-method">
+      <div class="signature">
+        
+        def <strong>session</strong>
+
+        <a class="method-permalink" href="#session-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="settings-instance-method">
+      <div class="signature">
+        
+        def <strong>settings</strong>
+
+        <a class="method-permalink" href="#settings-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="take_screenshot(filename:String=generate_screenshot_filename,fullsize:Bool=true)-instance-method">
+      <div class="signature">
+        
+        def <strong>take_screenshot</strong>(filename : String = generate_screenshot_filename, fullsize : Bool = <span class="n">true</span>)
+
+        <a class="method-permalink" href="#take_screenshot(filename:String=generate_screenshot_filename,fullsize:Bool=true)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="visit(route_helper:Lucky::RouteHelper,asuser:User?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>visit</strong>(route_helper : Lucky::RouteHelper, as user : User? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#visit(route_helper:Lucky::RouteHelper,asuser:User?=nil)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="visit(action:Lucky::Action.class,asuser:User?=nil)-instance-method">
+      <div class="signature">
+        
+        def <strong>visit</strong>(action : <span class="t">Lucky</span><span class="t">::</span><span class="t">Action</span>.<span class="k">class</span>, as user : User? = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#visit(action:Lucky::Action.class,asuser:User?=nil)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="visit(path:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>visit</strong>(path : String)
+
+        <a class="method-permalink" href="#visit(path:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="with_fullsized_page(&)-instance-method">
+      <div class="signature">
+        
+        def <strong>with_fullsized_page</strong>(&)
+
+        <a class="method-permalink" href="#with_fullsized_page(&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
