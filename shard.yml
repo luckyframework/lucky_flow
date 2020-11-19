@@ -18,3 +18,7 @@ dependencies:
   habitat:
     github: luckyframework/habitat
     version: ~> 0.4.4
+development_dependencies:
+  ameba:
+    github: crystal-ameba/ameba
+    version: ~> 0.13.2

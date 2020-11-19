@@ -17,6 +17,8 @@ jobs:
         run: shards install
       - name: Format
         run: crystal tool format --check
+      - name: Lint
+        run: bin/ameba
   specs:
     runs-on: ubuntu-latest
     container:
