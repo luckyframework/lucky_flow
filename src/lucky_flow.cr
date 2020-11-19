@@ -136,6 +136,14 @@ class LuckyFlow
     URI.parse(url).path
   end
 
+  def accept_alert
+    session.alert_manager.accept_alert
+  end
+
+  def dismiss_alert
+    session.alert_manager.dismiss_alert
+  end
+
   def session
     self.class.session
   end
