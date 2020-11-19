@@ -176,6 +176,26 @@ describe LuckyFlow do
       flow.session.cookie_manager.get_cookie("hello").value
     end
   end
+
+  it "can accept and dismiss alerts" do
+    flow = visit_page_with <<-HTML
+      <button onclick="createAlert()" flow-id="button" data-count="0">Click Me - 0</button>
+      <script>
+      function createAlert() {
+        alert("Are you sure?");
+        const button = document.querySelector("[flow-id='button']");
+        button.innerText = 'Click Me - ' + (++button.dataset.count);
+      }
+      </script>
+    HTML
+
+    flow.click("@button")
+    flow.accept_alert
+    flow.el("@button", text: "Click Me - 1").should be_on_page
+    flow.click("@button")
+    flow.dismiss_alert
+    flow.el("@button", text: "Click Me - 2").should be_on_page
+  end
 end
 
 private class FakeProcess
