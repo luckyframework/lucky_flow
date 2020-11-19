@@ -87,7 +87,11 @@ class LuckyFlow
   # fill("comment:body", with: "Lucky is great!")
   # ```
   def fill(name_attr : String, with value : String)
-    field(name_attr).fill(value)
+    fill(field(name_attr), with: value)
+  end
+
+  def fill(element : Element, with value : String)
+    element.fill(value)
   end
 
   # Add text to the end of a field
@@ -99,6 +103,19 @@ class LuckyFlow
   # ```
   def append(name_attr : String, with value : String)
     field(name_attr).append(value)
+  end
+
+  # Select an option from a select element
+  #
+  # ```crystal
+  # select("post:category", value: "rant")
+  # ```
+  def select(name_attr : String, value : String)
+    self.select(field(name_attr), value: value)
+  end
+
+  def select(element : Element, value : String)
+    element.select_option(value)
   end
 
   # Fill a form created by Lucky that uses an Avram::SaveOperation
@@ -115,7 +132,12 @@ class LuckyFlow
     **fields_and_values
   )
     fields_and_values.each do |name, value|
-      fill "#{form.param_key}:#{name}", with: value
+      element = field("#{form.param_key}:#{name}")
+      if element.tag_name == "select"
+        self.select(element, value)
+      else
+        self.fill(element, with: value)
+      end
     end
   end
 

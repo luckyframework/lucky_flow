@@ -1,7 +1,7 @@
 class LuckyFlow::Element
   private getter raw_selector
   getter inner_text
-  delegate text, click, send_keys, displayed?, attribute, property, to: element
+  delegate text, click, send_keys, displayed?, attribute, property, tag_name, to: element
   delegate session, to: LuckyFlow
 
   def initialize(@raw_selector : String, text @inner_text : String? = nil)
@@ -48,5 +48,9 @@ class LuckyFlow::Element
   # Remove the text from a form field
   def clear
     element.clear
+  end
+
+  def select_option(value : String)
+    element.find_child_element(:css, "option[value='#{value}']").click
   end
 end
