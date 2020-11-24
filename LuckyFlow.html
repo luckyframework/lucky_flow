@@ -330,6 +330,11 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#fill(element:Element,withvalue:String)-instance-method" class="signature"><strong>#fill</strong>(element : Element, with value : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#fill_form(form:Avram::SaveOperation.class%7CAvram::Operation.class,**fields_and_values)-instance-method" class="signature"><strong>#fill_form</strong>(form : <span class="t">Avram</span><span class="t">::</span><span class="t">SaveOperation</span>.<span class="k">class</span> | <span class="t">Avram</span><span class="t">::</span><span class="t">Operation</span>.<span class="k">class</span>, **fields_and_values)</a>
         
           <div class="summary"><p>Fill a form created by Lucky that uses an Avram::SaveOperation</p></div>
@@ -338,6 +343,18 @@
     
       <li class="entry-summary">
         <a href="#open_screenshot(process=Process,time=Time.utc,fullsize=false):Void-instance-method" class="signature"><strong>#open_screenshot</strong>(process = <span class="t">Process</span>, time = <span class="t">Time</span>.utc, fullsize = <span class="n">false</span>) : Void</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select(name_attr:String,value:String)-instance-method" class="signature"><strong>#select</strong>(name_attr : String, value : String)</a>
+        
+          <div class="summary"><p>Select an option from a select element</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select(element:Element,value:String)-instance-method" class="signature"><strong>#select</strong>(element : Element, value : String)</a>
         
       </li>
     
@@ -686,6 +703,20 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       </div>
     </div>
   
+    <div class="entry-detail" id="fill(element:Element,withvalue:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>fill</strong>(element : <a href="LuckyFlow/Element.html">Element</a>, with value : String)
+
+        <a class="method-permalink" href="#fill(element:Element,withvalue:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="fill_form(form:Avram::SaveOperation.class|Avram::Operation.class,**fields_and_values)-instance-method">
       <div class="signature">
         
@@ -717,6 +748,41 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
         def <strong>open_screenshot</strong>(process = <span class="t">Process</span>, time = <span class="t">Time</span>.utc, fullsize = <span class="n">false</span>) : Void
 
         <a class="method-permalink" href="#open_screenshot(process=Process,time=Time.utc,fullsize=false):Void-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select(name_attr:String,value:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(name_attr : String, value : String)
+
+        <a class="method-permalink" href="#select(name_attr:String,value:String)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Select an option from a select element</p>
+
+<pre><code class="language-crystal"><span class="k">select</span>(<span class="s">&quot;post:category&quot;</span>, value: <span class="s">&quot;rant&quot;</span>)</code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select(element:Element,value:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(element : <a href="LuckyFlow/Element.html">Element</a>, value : String)
+
+        <a class="method-permalink" href="#select(element:Element,value:String)-instance-method">#</a>
       </div>
       
       <br/>
