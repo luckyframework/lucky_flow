@@ -51,6 +51,7 @@ class LuckyFlow::Element
   end
 
   def select_option(value : String)
-    element.find_child_element(:css, "option[value='#{value}']").click
+    select_el = Selenium::Helpers::Select.from_element(element)
+    select_el.select_by_value(value)
   end
 end

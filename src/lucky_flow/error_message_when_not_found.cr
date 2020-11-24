@@ -49,7 +49,10 @@ class LuckyFlow::ErrorMessageWhenNotFound
   end
 
   private def all_flow_ids : Array(String)
-    session.find_elements(:css, "[flow-id]").map(&.attribute("flow-id")).uniq
+    session.find_elements(:css, "[flow-id]")
+      .map(&.attribute("flow-id"))
+      .compact
+      .uniq
   end
 
   private def only_looking_for_flow_id? : Bool
