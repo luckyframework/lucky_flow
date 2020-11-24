@@ -196,6 +196,21 @@ describe LuckyFlow do
     flow.dismiss_alert
     flow.el("@button", text: "Click Me - 2").should be_on_page
   end
+
+  it "can choose option in select input" do
+    flow = visit_page_with <<-HTML
+      <select name="cars" id="cars">
+        <option value="ford">Ford</option>
+        <option value="honda">Honda</option>
+        <option value="tesla">Tesla</option>
+      </select>
+    HTML
+
+    flow.select("cars", value: "honda")
+    flow.el("#cars").value.should eq "honda"
+    flow.select("cars", value: "ford")
+    flow.el("#cars").value.should eq "ford"
+  end
 end
 
 private class FakeProcess
