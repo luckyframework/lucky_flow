@@ -116,6 +116,16 @@
       
     </li>
   
+  <li class=" " data-id="lucky_flow/LuckyFlow/InvalidMultiSelectError" data-name="luckyflow::invalidmultiselecterror">
+      <a href="LuckyFlow/InvalidMultiSelectError.html">InvalidMultiSelectError</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/InvalidOperationError" data-name="luckyflow::invalidoperationerror">
+      <a href="LuckyFlow/InvalidOperationError.html">InvalidOperationError</a>
+      
+    </li>
+  
   <li class=" " data-id="lucky_flow/LuckyFlow/Selector" data-name="luckyflow::selector">
       <a href="LuckyFlow/Selector.html">Selector</a>
       
@@ -347,7 +357,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#select(name_attr:String,value:String)-instance-method" class="signature"><strong>#select</strong>(name_attr : String, value : String)</a>
+        <a href="#select(name_attr:String,value:Array(String)%7CString)-instance-method" class="signature"><strong>#select</strong>(name_attr : String, value : Array(String) | String)</a>
         
           <div class="summary"><p>Select an option from a select element</p></div>
         
@@ -355,6 +365,11 @@
     
       <li class="entry-summary">
         <a href="#select(element:Element,value:String)-instance-method" class="signature"><strong>#select</strong>(element : Element, value : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select(element:Element,value:Array(String))-instance-method" class="signature"><strong>#select</strong>(element : Element, value : Array(String))</a>
         
       </li>
     
@@ -756,12 +771,12 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       </div>
     </div>
   
-    <div class="entry-detail" id="select(name_attr:String,value:String)-instance-method">
+    <div class="entry-detail" id="select(name_attr:String,value:Array(String)|String)-instance-method">
       <div class="signature">
         
-        def <strong>select</strong>(name_attr : String, value : String)
+        def <strong>select</strong>(name_attr : String, value : Array(String) | String)
 
-        <a class="method-permalink" href="#select(name_attr:String,value:String)-instance-method">#</a>
+        <a class="method-permalink" href="#select(name_attr:String,value:Array(String)%7CString)-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -769,6 +784,11 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
           <p>Select an option from a select element</p>
 
 <pre><code class="language-crystal"><span class="k">select</span>(<span class="s">&quot;post:category&quot;</span>, value: <span class="s">&quot;rant&quot;</span>)</code></pre>
+
+<p>If given an Array(String), the select is assumed to have the 'multiple' attribute
+and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlow::InvalidMultiSelectError</a></code> if it doesn't.</p>
+
+<pre><code class="language-crystal"><span class="k">select</span>(<span class="s">&quot;post:tags&quot;</span>, value: [<span class="s">&quot;rant&quot;</span>, <span class="s">&quot;technology&quot;</span>])</code></pre>
         </div>
       
       <br/>
@@ -783,6 +803,20 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
         def <strong>select</strong>(element : <a href="LuckyFlow/Element.html">Element</a>, value : String)
 
         <a class="method-permalink" href="#select(element:Element,value:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select(element:Element,value:Array(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(element : <a href="LuckyFlow/Element.html">Element</a>, value : Array(String))
+
+        <a class="method-permalink" href="#select(element:Element,value:Array(String))-instance-method">#</a>
       </div>
       
       <br/>
