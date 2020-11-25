@@ -33,4 +33,13 @@ class LuckyFlow
       super message
     end
   end
+
+  class InvalidOperationError < Error
+  end
+
+  class InvalidMultiSelectError < InvalidOperationError
+    def initialize
+      super "Unable to select multiple options when select element does not have 'multiple' attribute"
+    end
+  end
 end

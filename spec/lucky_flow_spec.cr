@@ -211,6 +211,38 @@ describe LuckyFlow do
     flow.select("cars", value: "ford")
     flow.el("#cars").value.should eq "ford"
   end
+
+  it "can choose options in multi select input" do
+    flow = visit_page_with <<-HTML
+      <select name="cars" id="cars" multiple>
+        <option value="ford">Ford</option>
+        <option value="honda">Honda</option>
+        <option value="tesla">Tesla</option>
+        <option value="toyota">Toyota</option>
+      </select>
+    HTML
+
+    flow.select("cars", value: ["honda", "toyota"])
+    flow.el("option[value='ford']").selected?.should be_false
+    flow.el("option[value='honda']").selected?.should be_true
+    flow.el("option[value='tesla']").selected?.should be_false
+    flow.el("option[value='toyota']").selected?.should be_true
+  end
+
+  it "raises error if attempting to select multiple options when not multi select" do
+    flow = visit_page_with <<-HTML
+      <select name="cars" id="cars">
+        <option value="ford">Ford</option>
+        <option value="honda">Honda</option>
+        <option value="tesla">Tesla</option>
+        <option value="toyota">Toyota</option>
+      </select>
+    HTML
+
+    expect_raises(LuckyFlow::InvalidOperationError) do
+      flow.select("cars", value: ["honda", "toyota"])
+    end
+  end
 end
 
 private class FakeProcess

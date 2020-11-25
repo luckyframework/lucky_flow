@@ -1,7 +1,7 @@
 class LuckyFlow::Element
   private getter raw_selector
   getter inner_text
-  delegate text, click, send_keys, displayed?, attribute, property, tag_name, to: element
+  delegate text, click, send_keys, displayed?, selected?, attribute, property, tag_name, to: element
   delegate session, to: LuckyFlow
 
   def initialize(@raw_selector : String, text @inner_text : String? = nil)
@@ -53,5 +53,12 @@ class LuckyFlow::Element
   def select_option(value : String)
     select_el = Selenium::Helpers::Select.from_element(element)
     select_el.select_by_value(value)
+  end
+
+  def select_options(values : Array(String))
+    select_el = Selenium::Helpers::Select.from_element(element)
+    raise LuckyFlow::InvalidMultiSelectError.new unless select_el.multiple?
+
+    values.each { |value| select_el.select_by_value(value) }
   end
 end

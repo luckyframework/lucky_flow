@@ -110,12 +110,24 @@ class LuckyFlow
   # ```crystal
   # select("post:category", value: "rant")
   # ```
-  def select(name_attr : String, value : String)
+  #
+  # If given an Array(String), the select is assumed to have the 'multiple' attribute
+  # and will raise a `LuckyFlow::InvalidMultiSelectError` if it doesn't.
+  #
+  # ```crystal
+  # select("post:tags", value: ["rant", "technology"])
+  # ```
+  #
+  def select(name_attr : String, value : Array(String) | String)
     self.select(field(name_attr), value: value)
   end
 
   def select(element : Element, value : String)
     element.select_option(value)
+  end
+
+  def select(element : Element, value : Array(String))
+    element.select_options(value)
   end
 
   # Fill a form created by Lucky that uses an Avram::SaveOperation
