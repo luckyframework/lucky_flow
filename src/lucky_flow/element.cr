@@ -61,4 +61,8 @@ class LuckyFlow::Element
 
     values.each { |value| select_el.select_by_value(value) }
   end
+
+  def hover
+    session.move_to(element)
+  end
 end
