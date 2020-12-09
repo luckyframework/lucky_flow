@@ -243,6 +243,25 @@ describe LuckyFlow do
       flow.select("cars", value: ["honda", "toyota"])
     end
   end
+
+  it "can hover over an element" do
+    flow = visit_page_with <<-HTML
+      <style>
+        #hidden {
+          display: none;
+        }
+        #hoverable:hover + #hidden {
+          display: block;
+        }
+      </style>
+      <p id="hoverable">Hello, world!</p>
+      <p id="hidden">Now you see me!</p>
+    HTML
+
+    flow.el("#hidden").displayed?.should be_false
+    flow.el("#hoverable").hover
+    flow.el("#hidden").displayed?.should be_true
+  end
 end
 
 private class FakeProcess
