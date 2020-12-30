@@ -19,14 +19,14 @@ class LuckyFlow
   class DriverInstallationError < Error
     def initialize(error : Exception)
       message = <<-ERROR
-      Something went wrong while installing Chromedriver:
+      Something went wrong while installing the web driver:
 
         #{error}
 
-      If you'd like to manually install Chromedriver yourself, make sure to tell LuckyFlow where it is located:
+      If you'd like to manually install the web driver yourself, make sure to tell LuckyFlow where it is located:
 
         LuckyFlow.configure do |settings|
-          settings.chromedriver_path = "/path/to/chromedriver"
+          settings.driver_path = "/path/to/webdriver"
         end
       ERROR
 
