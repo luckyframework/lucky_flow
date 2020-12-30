@@ -6,7 +6,7 @@ abstract class LuckyFlow::Drivers::Chrome < LuckyFlow::Driver
   end
 
   def stop
-    driver.stop
+    @driver.try(&.stop)
   end
 
   protected def capabilities
