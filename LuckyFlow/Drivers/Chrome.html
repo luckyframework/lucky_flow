@@ -18,7 +18,7 @@
 </svg>
 
   <meta id="repository-name" content="lucky_flow">
-  <title>LuckyFlow::Expectations::HaveTextExpectation - lucky_flow 0.7.1</title>
+  <title>LuckyFlow::Drivers::Chrome - lucky_flow 0.7.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -66,12 +66,12 @@
       
     </li>
   
-  <li class="parent " data-id="lucky_flow/LuckyFlow/Drivers" data-name="luckyflow::drivers">
+  <li class="parent open current" data-id="lucky_flow/LuckyFlow/Drivers" data-name="luckyflow::drivers">
       <a href="../../LuckyFlow/Drivers.html">Drivers</a>
       
         <ul>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Drivers/Chrome" data-name="luckyflow::drivers::chrome">
+  <li class=" current" data-id="lucky_flow/LuckyFlow/Drivers/Chrome" data-name="luckyflow::drivers::chrome">
       <a href="../../LuckyFlow/Drivers/Chrome.html">Chrome</a>
       
     </li>
@@ -106,7 +106,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="lucky_flow/LuckyFlow/Expectations" data-name="luckyflow::expectations">
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Expectations" data-name="luckyflow::expectations">
       <a href="../../LuckyFlow/Expectations.html">Expectations</a>
       
         <ul>
@@ -121,7 +121,7 @@
       
     </li>
   
-  <li class=" current" data-id="lucky_flow/LuckyFlow/Expectations/HaveTextExpectation" data-name="luckyflow::expectations::havetextexpectation">
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveTextExpectation" data-name="luckyflow::expectations::havetextexpectation">
       <a href="../../LuckyFlow/Expectations/HaveTextExpectation.html">HaveTextExpectation</a>
       
     </li>
@@ -175,12 +175,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> LuckyFlow::Expectations::HaveTextExpectation
+  <span class="kind">abstract class</span> LuckyFlow::Drivers::Chrome
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../LuckyFlow/Expectations/HaveTextExpectation.html">LuckyFlow::Expectations::HaveTextExpectation</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../LuckyFlow/Drivers/Chrome.html">LuckyFlow::Drivers::Chrome</a></li><li class="superclass"><a href="../../LuckyFlow/Driver.html">LuckyFlow::Driver</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -192,6 +192,20 @@
 
 
 
+
+  <h2>
+    <a id="direct-known-subclasses" class="anchor" href="#direct-known-subclasses">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Direct Known Subclasses
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../../LuckyFlow/Drivers/HeadlessChrome.html">LuckyFlow::Drivers::HeadlessChrome</a></li>
+    
+  </ul>
 
 
 
@@ -212,23 +226,6 @@
 
 
 
-  <h2>
-    <a id="constructors" class="anchor" href="#constructors">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructors
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#new(expected_value:String)-class-method" class="signature"><strong>.new</strong>(expected_value : String)</a>
-        
-      </li>
-    
-  </ul>
-
 
 
 
@@ -244,17 +241,12 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#failure_message(element)-instance-method" class="signature"><strong>#failure_message</strong>(element)</a>
+        <a href="#start_session:Selenium::Session-instance-method" class="signature"><strong>#start_session</strong> : Selenium::Session</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#match(element)-instance-method" class="signature"><strong>#match</strong>(element)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#negative_failure_message(element)-instance-method" class="signature"><strong>#negative_failure_message</strong>(element)</a>
+        <a href="#stop-instance-method" class="signature"><strong>#stop</strong></a>
         
       </li>
     
@@ -267,6 +259,15 @@
 <div class="methods-inherited">
   
     
+
+  <h3>Instance methods inherited from class <code><a href="../../LuckyFlow/Driver.html">LuckyFlow::Driver</a></code></h3>
+  
+  
+    <a href="../../LuckyFlow/Driver.html#start_session:Selenium::Session-instance-method" class="tooltip">
+      <span>start_session : Selenium::Session</span>
+    start_session</a>
+    
+  
 
 
     
@@ -299,30 +300,6 @@
 </div>
 
 
-  <h2>
-    <a id="constructor-detail" class="anchor" href="#constructor-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructor Detail
-  </h2>
-  
-    <div class="entry-detail" id="new(expected_value:String)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(expected_value : String)
-
-        <a class="method-permalink" href="#new(expected_value:String)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-
 
 
 
@@ -336,12 +313,12 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="failure_message(element)-instance-method">
+    <div class="entry-detail" id="start_session:Selenium::Session-instance-method">
       <div class="signature">
         
-        def <strong>failure_message</strong>(element)
+        def <strong>start_session</strong> : Selenium::Session
 
-        <a class="method-permalink" href="#failure_message(element)-instance-method">#</a>
+        <a class="method-permalink" href="#start_session:Selenium::Session-instance-method">#</a>
       </div>
       
       <br/>
@@ -350,26 +327,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="match(element)-instance-method">
+    <div class="entry-detail" id="stop-instance-method">
       <div class="signature">
         
-        def <strong>match</strong>(element)
+        def <strong>stop</strong>
 
-        <a class="method-permalink" href="#match(element)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="negative_failure_message(element)-instance-method">
-      <div class="signature">
-        
-        def <strong>negative_failure_message</strong>(element)
-
-        <a class="method-permalink" href="#negative_failure_message(element)-instance-method">#</a>
+        <a class="method-permalink" href="#stop-instance-method">#</a>
       </div>
       
       <br/>

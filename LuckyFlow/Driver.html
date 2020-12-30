@@ -18,7 +18,7 @@
 </svg>
 
   <meta id="repository-name" content="lucky_flow">
-  <title>LuckyFlow::ElementNotFoundError - lucky_flow 0.7.1</title>
+  <title>LuckyFlow::Driver - lucky_flow 0.7.1</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -56,7 +56,7 @@
       
         <ul>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Driver" data-name="luckyflow::driver">
+  <li class=" current" data-id="lucky_flow/LuckyFlow/Driver" data-name="luckyflow::driver">
       <a href="../LuckyFlow/Driver.html">Driver</a>
       
     </li>
@@ -91,7 +91,7 @@
       
     </li>
   
-  <li class=" current" data-id="lucky_flow/LuckyFlow/ElementNotFoundError" data-name="luckyflow::elementnotfounderror">
+  <li class=" " data-id="lucky_flow/LuckyFlow/ElementNotFoundError" data-name="luckyflow::elementnotfounderror">
       <a href="../LuckyFlow/ElementNotFoundError.html">ElementNotFoundError</a>
       
     </li>
@@ -175,12 +175,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> LuckyFlow::ElementNotFoundError
+  <span class="kind">abstract class</span> LuckyFlow::Driver
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LuckyFlow/ElementNotFoundError.html">LuckyFlow::ElementNotFoundError</a></li><li class="superclass"><a href="../LuckyFlow/Error.html">LuckyFlow::Error</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LuckyFlow/Driver.html">LuckyFlow::Driver</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -192,6 +192,20 @@
 
 
 
+
+  <h2>
+    <a id="direct-known-subclasses" class="anchor" href="#direct-known-subclasses">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Direct Known Subclasses
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../LuckyFlow/Drivers/Chrome.html">LuckyFlow::Drivers::Chrome</a></li>
+    
+  </ul>
 
 
 
@@ -212,26 +226,26 @@
 
 
 
+
+
+
+
   <h2>
-    <a id="constructors" class="anchor" href="#constructors">
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Constructors
+    Instance Method Summary
   </h2>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(selector:String,inner_text:String?)-class-method" class="signature"><strong>.new</strong>(selector : String, inner_text : String?)</a>
+        <a href="#start_session:Selenium::Session-instance-method" class="signature"><strong>#start_session</strong> : Selenium::Session</a>
         
       </li>
     
   </ul>
-
-
-
-
 
 
 
@@ -259,44 +273,28 @@
 
 
   
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
 </div>
 
 
+
+
+
+
   <h2>
-    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Constructor Detail
+    Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="new(selector:String,inner_text:String?)-class-method">
+    <div class="entry-detail" id="start_session:Selenium::Session-instance-method">
       <div class="signature">
-        
-        def self.<strong>new</strong>(selector : String, inner_text : String?)
+        abstract 
+        def <strong>start_session</strong> : Selenium::Session
 
-        <a class="method-permalink" href="#new(selector:String,inner_text:String?)-class-method">#</a>
+        <a class="method-permalink" href="#start_session:Selenium::Session-instance-method">#</a>
       </div>
       
       <br/>
@@ -305,10 +303,6 @@
       </div>
     </div>
   
-
-
-
-
 
 
 
