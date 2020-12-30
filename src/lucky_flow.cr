@@ -21,6 +21,10 @@ class LuckyFlow
     setting driver : LuckyFlow::Driver.class = LuckyFlow::Drivers::HeadlessChrome
   end
 
+  def HabitatSettings.chromedriver_path=(_chromedriver_path)
+    {% raise "'chromedriver_path' has been renamed to 'driver_path'" %}
+  end
+
   def visit(path : String)
     session.navigate_to("#{settings.base_uri}#{path}")
   end
