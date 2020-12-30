@@ -4,7 +4,7 @@ class LuckyFlow::Server
   INSTANCE = new
 
   @session : Selenium::Session?
-  private getter driver : LuckyFlow::Driver = LuckyFlow::Drivers::HeadlessChrome.new
+  private getter driver : LuckyFlow::Driver = LuckyFlow.settings.driver.new
 
   # Use LuckyFlow::Server::INSTANCE instead
   private def initialize

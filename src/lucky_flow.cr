@@ -16,8 +16,9 @@ class LuckyFlow
     setting base_uri : String
     setting retry_delay : Time::Span = 10.milliseconds
     setting stop_retrying_after : Time::Span = 1.second
-    setting chromedriver_path : String?
+    setting driver_path : String?
     setting browser_binary : String? = nil
+    setting driver : LuckyFlow::Driver.class = LuckyFlow::Drivers::HeadlessChrome
   end
 
   def visit(path : String)

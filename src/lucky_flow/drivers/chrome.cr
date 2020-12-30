@@ -23,7 +23,7 @@ abstract class LuckyFlow::Drivers::Chrome < LuckyFlow::Driver
   end
 
   private def driver_path
-    LuckyFlow.settings.chromedriver_path || Webdrivers::Chromedriver.install
+    LuckyFlow.settings.driver_path || Webdrivers::Chromedriver.install
   rescue err
     raise DriverInstallationError.new(err)
   end
