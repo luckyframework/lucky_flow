@@ -1,8 +1,5 @@
 class LuckyFlow::Drivers::HeadlessChrome < LuckyFlow::Drivers::Chrome
-  protected def capabilities
-    capabilities = super
-    capabilities.args(["no-sandbox", "headless", "disable-gpu"])
-
-    capabilities
+  protected def args : Array(String)
+    ["no-sandbox", "headless", "disable-gpu"]
   end
 end
