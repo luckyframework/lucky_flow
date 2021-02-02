@@ -183,6 +183,11 @@ class LuckyFlow
     session.alert_manager.dismiss_alert
   end
 
+  def pause
+    puts "\nPausing to debug... (press enter to continue)"
+    STDIN.gets
+  end
+
   def session
     self.class.session
   end
