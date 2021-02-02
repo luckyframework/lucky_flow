@@ -1,4 +1,4 @@
-abstract class LuckyFlow::Drivers::Chrome < LuckyFlow::Driver
+class LuckyFlow::Drivers::Chrome < LuckyFlow::Driver
   def start_session : Selenium::Session
     capabilities = Selenium::Chrome::Capabilities.new
     capabilities.chrome_options.args = args
