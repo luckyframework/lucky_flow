@@ -4,7 +4,7 @@ class LuckyFlow::Server
   INSTANCE = new
 
   @session : Selenium::Session?
-  private getter driver : LuckyFlow::Driver = LuckyFlow.settings.driver.new
+  @driver : LuckyFlow::Driver?
 
   # Use LuckyFlow::Server::INSTANCE instead
   private def initialize
@@ -33,6 +33,12 @@ class LuckyFlow::Server
 
   def shutdown
     @session.try &.delete
-    @driver.stop
+    @driver.try &.stop
+  end
+
+  private def driver
+    @driver ||= begin
+      LuckyFlow.settings.driver.new
+    end
   end
 end
