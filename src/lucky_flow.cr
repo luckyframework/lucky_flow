@@ -88,7 +88,7 @@ class LuckyFlow
 
   # Set the text of a form field, clearing any existing text
   #
-  # ```crystal
+  # ```
   # fill("comment:body", with: "Lucky is great!")
   # ```
   def fill(name_attr : String, with value : String)
@@ -101,7 +101,7 @@ class LuckyFlow
 
   # Add text to the end of a field
   #
-  # ```crystal
+  # ```
   # fill("comment:body", with: "Lucky is:")
   #
   # append("comment:body", " So much fun!")
@@ -112,14 +112,14 @@ class LuckyFlow
 
   # Select an option from a select element
   #
-  # ```crystal
+  # ```
   # select("post:category", value: "rant")
   # ```
   #
   # If given an Array(String), the select is assumed to have the 'multiple' attribute
   # and will raise a `LuckyFlow::InvalidMultiSelectError` if it doesn't.
   #
-  # ```crystal
+  # ```
   # select("post:tags", value: ["rant", "technology"])
   # ```
   #

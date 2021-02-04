@@ -19,7 +19,7 @@ class LuckyFlow::Element
 
   # Set the text of a form field
   #
-  # ```crystal
+  # ```
   # field = el("input[name='comment']")
   #
   # field.fill("Lucky is great!")
@@ -31,7 +31,7 @@ class LuckyFlow::Element
 
   # Add text to the end of a field
   #
-  # ```crystal
+  # ```
   # field = el("input[name='comment']")
   # field.fill("Lucky is:")
   #
