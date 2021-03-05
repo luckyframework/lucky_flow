@@ -19,9 +19,7 @@ class LuckyFlow
   class DriverInstallationError < Error
     def initialize(error : Exception)
       message = <<-ERROR
-      Something went wrong while installing the web driver:
-
-        #{error}
+      Something went wrong while installing the web driver
 
       If you'd like to manually install the web driver yourself, make sure to tell LuckyFlow where it is located:
 
@@ -30,7 +28,7 @@ class LuckyFlow
         end
       ERROR
 
-      super message
+      super message, cause: error
     end
   end
 
