@@ -45,12 +45,12 @@ jobs:
         run: |
           apt-get update
           apt-get -yqq install chromium-chromedriver
-      - name: Install shards
-        run: shards install
       - name: Cache Crystal
         uses: actions/cache@v1
         with:
           path: ~/.cache/crystal
           key: ${{ runner.os }}-crystal
+      - name: Install shards
+        run: shards install
       - name: Run tests
         run: crystal spec
