@@ -18,7 +18,7 @@ jobs:
           - false
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental }}
-    container: crystallang/crystal:${{ matrix.crystal_version }}-alpine
+    container: crystallang/crystal:${{ matrix.crystal_version }}
     steps:
       - uses: actions/checkout@v1
       - name: Install shards
@@ -38,13 +38,13 @@ jobs:
           - false
     runs-on: ubuntu-latest
     continue-on-error: ${{ matrix.experimental }}
-    container: crystallang/crystal:${{ matrix.crystal_version }}-alpine
+    container: crystallang/crystal:${{ matrix.crystal_version }}
     steps:
       - uses: actions/checkout@v2
       - name: Install Chromedriver
         run: |
-          apk update
-          apk add -q chromium-chromedriver
+          apt-get update
+          apt-get -yqq install chromium-chromedriver
       - name: Cache Crystal
         uses: actions/cache@v1
         with:
