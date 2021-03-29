@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 0.35.1">
+<meta name="generator" content="Crystal Docs 0.36.1">
 <meta name="crystal_docs.project_version" content="0.7.2">
 <meta name="crystal_docs.project_name" content="lucky_flow">
 
@@ -207,6 +207,11 @@
     Defined in:
   </h2>
   
+    
+      lucky_flow.cr
+    
+    <br/>
+  
 
 
 
@@ -225,7 +230,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#base_uri-class-method" class="signature"><strong>.base_uri</strong></a>
+        <a href="#base_uri:String-class-method" class="signature"><strong>.base_uri</strong> : String</a>
         
       </li>
     
@@ -237,10 +242,12 @@
       <li class="entry-summary">
         <a href="#base_uri?-class-method" class="signature"><strong>.base_uri?</strong></a>
         
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use base_uri in your apps to ensure the propper type is checked.</p></div>
+        
       </li>
     
       <li class="entry-summary">
-        <a href="#browser_binary-class-method" class="signature"><strong>.browser_binary</strong></a>
+        <a href="#browser_binary:String?-class-method" class="signature"><strong>.browser_binary</strong> : String?</a>
         
       </li>
     
@@ -252,6 +259,8 @@
       <li class="entry-summary">
         <a href="#browser_binary?-class-method" class="signature"><strong>.browser_binary?</strong></a>
         
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use browser_binary in your apps to ensure the propper type is checked.</p></div>
+        
       </li>
     
       <li class="entry-summary">
@@ -260,7 +269,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#driver-class-method" class="signature"><strong>.driver</strong></a>
+        <a href="#driver:LuckyFlow::Driver.class-class-method" class="signature"><strong>.driver</strong> : <span class="t">LuckyFlow</span><span class="t">::</span><span class="t">Driver</span>.<span class="k">class</span></a>
         
       </li>
     
@@ -272,10 +281,12 @@
       <li class="entry-summary">
         <a href="#driver?-class-method" class="signature"><strong>.driver?</strong></a>
         
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use driver in your apps to ensure the propper type is checked.</p></div>
+        
       </li>
     
       <li class="entry-summary">
-        <a href="#driver_path-class-method" class="signature"><strong>.driver_path</strong></a>
+        <a href="#driver_path:String?-class-method" class="signature"><strong>.driver_path</strong> : String?</a>
         
       </li>
     
@@ -287,10 +298,12 @@
       <li class="entry-summary">
         <a href="#driver_path?-class-method" class="signature"><strong>.driver_path?</strong></a>
         
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use driver_path in your apps to ensure the propper type is checked.</p></div>
+        
       </li>
     
       <li class="entry-summary">
-        <a href="#retry_delay-class-method" class="signature"><strong>.retry_delay</strong></a>
+        <a href="#retry_delay:Time::Span-class-method" class="signature"><strong>.retry_delay</strong> : Time::Span</a>
         
       </li>
     
@@ -302,10 +315,12 @@
       <li class="entry-summary">
         <a href="#retry_delay?-class-method" class="signature"><strong>.retry_delay?</strong></a>
         
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use retry_delay in your apps to ensure the propper type is checked.</p></div>
+        
       </li>
     
       <li class="entry-summary">
-        <a href="#screenshot_directory-class-method" class="signature"><strong>.screenshot_directory</strong></a>
+        <a href="#screenshot_directory:String-class-method" class="signature"><strong>.screenshot_directory</strong> : String</a>
         
       </li>
     
@@ -317,10 +332,12 @@
       <li class="entry-summary">
         <a href="#screenshot_directory?-class-method" class="signature"><strong>.screenshot_directory?</strong></a>
         
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use screenshot_directory in your apps to ensure the propper type is checked.</p></div>
+        
       </li>
     
       <li class="entry-summary">
-        <a href="#stop_retrying_after-class-method" class="signature"><strong>.stop_retrying_after</strong></a>
+        <a href="#stop_retrying_after:Time::Span-class-method" class="signature"><strong>.stop_retrying_after</strong> : Time::Span</a>
         
       </li>
     
@@ -331,6 +348,8 @@
     
       <li class="entry-summary">
         <a href="#stop_retrying_after?-class-method" class="signature"><strong>.stop_retrying_after?</strong></a>
+        
+          <div class="summary"><p>Used for checking missing settings on non-nilable types It's advised to use stop_retrying_after in your apps to ensure the propper type is checked.</p></div>
         
       </li>
     
@@ -385,12 +404,12 @@
     Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="base_uri-class-method">
+    <div class="entry-detail" id="base_uri:String-class-method">
       <div class="signature">
         
-        def self.<strong>base_uri</strong>
+        def self.<strong>base_uri</strong> : String
 
-        <a class="method-permalink" href="#base_uri-class-method">#</a>
+        <a class="method-permalink" href="#base_uri:String-class-method">#</a>
       </div>
       
       <br/>
@@ -421,18 +440,25 @@
         <a class="method-permalink" href="#base_uri?-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use base_uri in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
       <br/>
       <div>
         
       </div>
     </div>
   
-    <div class="entry-detail" id="browser_binary-class-method">
+    <div class="entry-detail" id="browser_binary:String?-class-method">
       <div class="signature">
         
-        def self.<strong>browser_binary</strong>
+        def self.<strong>browser_binary</strong> : String?
 
-        <a class="method-permalink" href="#browser_binary-class-method">#</a>
+        <a class="method-permalink" href="#browser_binary:String?-class-method">#</a>
       </div>
       
       <br/>
@@ -463,6 +489,13 @@
         <a class="method-permalink" href="#browser_binary?-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use browser_binary in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
       <br/>
       <div>
         
@@ -483,12 +516,12 @@
       </div>
     </div>
   
-    <div class="entry-detail" id="driver-class-method">
+    <div class="entry-detail" id="driver:LuckyFlow::Driver.class-class-method">
       <div class="signature">
         
-        def self.<strong>driver</strong>
+        def self.<strong>driver</strong> : <span class="t">LuckyFlow</span><span class="t">::</span><span class="t">Driver</span>.<span class="k">class</span>
 
-        <a class="method-permalink" href="#driver-class-method">#</a>
+        <a class="method-permalink" href="#driver:LuckyFlow::Driver.class-class-method">#</a>
       </div>
       
       <br/>
@@ -519,18 +552,25 @@
         <a class="method-permalink" href="#driver?-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use driver in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
       <br/>
       <div>
         
       </div>
     </div>
   
-    <div class="entry-detail" id="driver_path-class-method">
+    <div class="entry-detail" id="driver_path:String?-class-method">
       <div class="signature">
         
-        def self.<strong>driver_path</strong>
+        def self.<strong>driver_path</strong> : String?
 
-        <a class="method-permalink" href="#driver_path-class-method">#</a>
+        <a class="method-permalink" href="#driver_path:String?-class-method">#</a>
       </div>
       
       <br/>
@@ -561,18 +601,25 @@
         <a class="method-permalink" href="#driver_path?-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use driver_path in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
       <br/>
       <div>
         
       </div>
     </div>
   
-    <div class="entry-detail" id="retry_delay-class-method">
+    <div class="entry-detail" id="retry_delay:Time::Span-class-method">
       <div class="signature">
         
-        def self.<strong>retry_delay</strong>
+        def self.<strong>retry_delay</strong> : Time::Span
 
-        <a class="method-permalink" href="#retry_delay-class-method">#</a>
+        <a class="method-permalink" href="#retry_delay:Time::Span-class-method">#</a>
       </div>
       
       <br/>
@@ -603,18 +650,25 @@
         <a class="method-permalink" href="#retry_delay?-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use retry_delay in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
       <br/>
       <div>
         
       </div>
     </div>
   
-    <div class="entry-detail" id="screenshot_directory-class-method">
+    <div class="entry-detail" id="screenshot_directory:String-class-method">
       <div class="signature">
         
-        def self.<strong>screenshot_directory</strong>
+        def self.<strong>screenshot_directory</strong> : String
 
-        <a class="method-permalink" href="#screenshot_directory-class-method">#</a>
+        <a class="method-permalink" href="#screenshot_directory:String-class-method">#</a>
       </div>
       
       <br/>
@@ -645,18 +699,25 @@
         <a class="method-permalink" href="#screenshot_directory?-class-method">#</a>
       </div>
       
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use screenshot_directory in your apps to ensure
+the propper type is checked.</p>
+        </div>
+      
       <br/>
       <div>
         
       </div>
     </div>
   
-    <div class="entry-detail" id="stop_retrying_after-class-method">
+    <div class="entry-detail" id="stop_retrying_after:Time::Span-class-method">
       <div class="signature">
         
-        def self.<strong>stop_retrying_after</strong>
+        def self.<strong>stop_retrying_after</strong> : Time::Span
 
-        <a class="method-permalink" href="#stop_retrying_after-class-method">#</a>
+        <a class="method-permalink" href="#stop_retrying_after:Time::Span-class-method">#</a>
       </div>
       
       <br/>
@@ -686,6 +747,13 @@
 
         <a class="method-permalink" href="#stop_retrying_after?-class-method">#</a>
       </div>
+      
+        <div class="doc">
+          
+          <p>Used for checking missing settings on non-nilable types
+It's advised to use stop_retrying_after in your apps to ensure
+the propper type is checked.</p>
+        </div>
       
       <br/>
       <div>
