@@ -4,21 +4,21 @@ version: 0.7.2
 authors:
   - Paul Smith <paulcsmith0218@gmail.com>
 
-crystal: 0.36.1
+crystal: ">= 0.36.1, < 2.0.0"
 
 license: MIT
 
 dependencies:
   selenium:
     github: matthewmcgarvey/selenium.cr
-    version: ~> 0.9.0
+    version: ~> 0.9.1
   webdrivers:
     github: matthewmcgarvey/webdrivers.cr
-    version: ~> 0.3.0
+    version: ~> 0.4.0
   habitat:
     github: luckyframework/habitat
-    version: ~> 0.4.4
+    version: ~> 0.4.7
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba
-    version: ~> 0.13
+    version: ~> 0.13.4
