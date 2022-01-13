@@ -6,11 +6,16 @@ class LuckyFlow::Registry
     @@registry[name.to_s] = block
   end
 
-  def self.available : Array(String)
-    @@registry.keys
+  def self.available : Set(String)
+    Set.new(@@registry.keys)
   end
 
   def self.get_driver(name : String) : LuckyFlow::Driver
     @@running_registry[name] ||= @@registry[name].call
+  end
+
+  def self.shutdown_all
+    @@running_registry.values.each(&.shutdown)
+    @@running_registry.clear
   end
 end

@@ -6,6 +6,7 @@ class LuckyFlow; end
 
 require "./lucky_flow/**"
 require "file_utils"
+require "./ext/spec/item"
 
 class LuckyFlow
   include LuckyFlow::Expectations
@@ -23,7 +24,7 @@ class LuckyFlow
   end
 
   def self.driver : LuckyFlow::Driver
-    @@driver.not_nil!
+    @@driver || LuckyFlow::Registry.get_driver(self.default_driver)
   end
 
   def visit(path : String)
@@ -198,10 +199,11 @@ class LuckyFlow
   end
 
   def self.shutdown : Nil
-    driver.shutdown
+    LuckyFlow::Registry.shutdown_all
   end
 
   def self.reset : Nil
     driver.reset
+    self.driver = nil
   end
 end

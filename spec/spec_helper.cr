@@ -8,8 +8,10 @@ include LuckyFlow::Expectations
 server = TestServer.new(3002)
 
 Spec.around_each do |spec|
-  LuckyFlow.driver = LuckyFlow::Registry.get_driver(LuckyFlow.default_driver)
   TestServer.reset
+  if driver_name = (spec.example.all_tags & LuckyFlow::Registry.available).first?
+    LuckyFlow.driver = LuckyFlow::Registry.get_driver(driver_name)
+  end
 
   spec.run
 
