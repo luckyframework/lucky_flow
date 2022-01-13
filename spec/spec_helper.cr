@@ -5,17 +5,12 @@ require "./support/**"
 
 include LuckyFlow::Expectations
 
+LuckyFlow::Spec.setup
+
 server = TestServer.new(3002)
 
-Spec.around_each do |spec|
+Spec.before_each do
   TestServer.reset
-  if driver_name = (spec.example.all_tags & LuckyFlow::Registry.available).first?
-    LuckyFlow.driver(driver_name)
-  end
-
-  spec.run
-
-  LuckyFlow.use_default_driver
 end
 
 LuckyFlow.configure do |settings|
@@ -26,7 +21,6 @@ end
 Habitat.raise_if_missing_settings!
 
 Spec.after_suite do
-  LuckyFlow.shutdown
   server.close
 end
 
