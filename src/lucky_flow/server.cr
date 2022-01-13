@@ -1,21 +1,14 @@
 # Handles starting and stopping server sessions
 class LuckyFlow::Server
-  # This is used so that only one server instance is started
-  INSTANCE = new
-
-  @session : Selenium::Session?
-  @driver : LuckyFlow::Driver?
-
-  # Use LuckyFlow::Server::INSTANCE instead
-  private def initialize
+  getter session : Selenium::Session do
+    prepare_screenshot_directory
+    driver.start_session
   end
 
-  # Start a new selenium session
-  def session : Selenium::Session
-    @session ||= begin
-      prepare_screenshot_directory
-      driver.start_session
-    end
+  private getter driver : LuckyFlow::Driver
+
+  # Use LuckyFlow::Server::INSTANCE instead
+  def initialize(@driver)
   end
 
   private def prepare_screenshot_directory
@@ -27,18 +20,12 @@ class LuckyFlow::Server
     LuckyFlow.settings.screenshot_directory
   end
 
-  def reset
+  def reset : Nil
     @session.try &.cookie_manager.delete_all_cookies
   end
 
-  def shutdown
+  def shutdown : Nil
     @session.try &.delete
     @driver.try &.stop
-  end
-
-  private def driver
-    @driver ||= begin
-      LuckyFlow.settings.driver.new
-    end
   end
 end

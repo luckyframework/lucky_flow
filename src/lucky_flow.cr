@@ -9,7 +9,10 @@ require "file_utils"
 
 class LuckyFlow
   include LuckyFlow::Expectations
-  SERVER = LuckyFlow::Server::INSTANCE
+
+  class_getter server : LuckyFlow::Server do
+    LuckyFlow::Server.new(driver: LuckyFlow.settings.driver.new)
+  end
 
   Habitat.create do
     setting screenshot_directory : String = "./tmp/screenshots"
@@ -188,19 +191,19 @@ class LuckyFlow
     STDIN.gets
   end
 
-  def session
+  def session : Selenium::Session
     self.class.session
   end
 
-  def self.session
-    SERVER.session
+  def self.session : Selenium::Session
+    server.session
   end
 
-  def self.shutdown
-    SERVER.shutdown
+  def self.shutdown : Nil
+    server.shutdown
   end
 
-  def self.reset
-    SERVER.reset
+  def self.reset : Nil
+    server.reset
   end
 end
