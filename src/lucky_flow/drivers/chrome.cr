@@ -6,17 +6,6 @@ class LuckyFlow::Drivers::Chrome < LuckyFlow::Driver
 
   @capabilities : Selenium::Chrome::Capabilities
 
-  def self.new
-    new do |config|
-      config.chrome_options.args = args
-      config.chrome_options.binary = LuckyFlow.settings.browser_binary
-    end
-  end
-
-  def self.args : Array(String)
-    [] of String
-  end
-
   def initialize(&block)
     @capabilities = Selenium::Chrome::Capabilities.new
     yield @capabilities
@@ -36,5 +25,15 @@ class LuckyFlow::Drivers::Chrome < LuckyFlow::Driver
     LuckyFlow.settings.driver_path || Webdrivers::Chromedriver.install
   rescue err
     raise DriverInstallationError.new(err)
+  end
+end
+
+LuckyFlow::Registry.register :chrome do
+  LuckyFlow::Drivers::Chrome.new { }
+end
+
+LuckyFlow::Registry.register :headless_chrome do
+  LuckyFlow::Drivers::Chrome.new do |config|
+    config.chrome_options.args = ["no-sandbox", "headless", "disable-gpu"]
   end
 end

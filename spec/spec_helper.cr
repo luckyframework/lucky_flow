@@ -7,14 +7,21 @@ include LuckyFlow::Expectations
 
 server = TestServer.new(3002)
 
-Spec.before_each do
+Spec.around_each do |spec|
+  LuckyFlow.driver = LuckyFlow::Registry.get_driver(LuckyFlow.default_driver)
   TestServer.reset
+
+  spec.run
+
+  LuckyFlow.reset
 end
 
 LuckyFlow.configure do |settings|
   settings.base_uri = "http://localhost:3002"
   settings.stop_retrying_after = 40.milliseconds
 end
+
+Habitat.raise_if_missing_settings!
 
 Spec.after_suite do
   LuckyFlow.shutdown

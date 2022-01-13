@@ -10,9 +10,9 @@ require "file_utils"
 class LuckyFlow
   include LuckyFlow::Expectations
 
-  class_getter server : LuckyFlow::Server do
-    LuckyFlow::Server.new(driver: LuckyFlow.settings.driver.new)
-  end
+  class_setter driver : LuckyFlow::Driver?
+
+  class_property default_driver : String = "headless_chrome"
 
   Habitat.create do
     setting screenshot_directory : String = "./tmp/screenshots"
@@ -20,12 +20,10 @@ class LuckyFlow
     setting retry_delay : Time::Span = 10.milliseconds
     setting stop_retrying_after : Time::Span = 1.second
     setting driver_path : String?
-    setting browser_binary : String? = nil
-    setting driver : LuckyFlow::Driver.class = LuckyFlow::Drivers::HeadlessChrome
   end
 
-  def HabitatSettings.chromedriver_path=(_chromedriver_path)
-    {% raise "'chromedriver_path' has been renamed to 'driver_path'" %}
+  def self.driver : LuckyFlow::Driver
+    @@driver.not_nil!
   end
 
   def visit(path : String)
@@ -196,14 +194,14 @@ class LuckyFlow
   end
 
   def self.session : Selenium::Session
-    server.session
+    driver.session
   end
 
   def self.shutdown : Nil
-    server.shutdown
+    driver.shutdown
   end
 
   def self.reset : Nil
-    server.reset
+    driver.reset
   end
 end
