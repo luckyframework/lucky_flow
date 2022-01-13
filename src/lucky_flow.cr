@@ -74,9 +74,9 @@ class LuckyFlow
 
   def take_screenshot(filename : String = generate_screenshot_filename, fullsize : Bool = true)
     if fullsize
-      with_fullsized_page { session.screenshot(filename) }
+      with_fullsized_page { driver.screenshot(filename) }
     else
-      session.screenshot(filename)
+      driver.screenshot(filename)
     end
   end
 
@@ -212,5 +212,9 @@ class LuckyFlow
 
   def session : Selenium::Session
     self.class.session
+  end
+
+  def driver : LuckyFlow::Driver
+    self.class.driver
   end
 end

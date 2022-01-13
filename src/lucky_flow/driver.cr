@@ -1,10 +1,7 @@
 abstract class LuckyFlow::Driver
   @retry_limit : Time = 2.seconds.from_now
 
-  getter session : Selenium::Session do
-    prepare_screenshot_directory
-    start_session
-  end
+  getter session : Selenium::Session { start_session }
 
   abstract def start_session : Selenium::Session
   abstract def stop
@@ -18,6 +15,11 @@ abstract class LuckyFlow::Driver
     stop
   end
 
+  def screenshot(path : String)
+    FileUtils.mkdir_p(File.dirname(path))
+    session.screenshot(path)
+  end
+
   protected def retry_start_session(e)
     if Time.utc <= @retry_limit
       sleep(0.1)
@@ -25,14 +27,5 @@ abstract class LuckyFlow::Driver
     else
       raise e
     end
-  end
-
-  private def prepare_screenshot_directory
-    FileUtils.rm_rf(screenshot_directory)
-    FileUtils.mkdir_p(screenshot_directory)
-  end
-
-  private def screenshot_directory
-    LuckyFlow.settings.screenshot_directory
   end
 end
