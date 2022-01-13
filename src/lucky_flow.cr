@@ -11,7 +11,7 @@ require "./ext/spec/item"
 class LuckyFlow
   include LuckyFlow::Expectations
 
-  class_setter driver : LuckyFlow::Driver?
+  @@driver : LuckyFlow::Driver?
 
   class_property default_driver : String = "headless_chrome"
 
@@ -25,6 +25,26 @@ class LuckyFlow
 
   def self.driver : LuckyFlow::Driver
     @@driver || LuckyFlow::Registry.get_driver(self.default_driver)
+  end
+
+  def self.driver(name : String) : LuckyFlow::Driver
+    @@driver = LuckyFlow::Registry.get_driver(self.default_driver)
+  end
+
+  def self.session : Selenium::Session
+    driver.session
+  end
+
+  def self.shutdown : Nil
+    LuckyFlow::Registry.shutdown_all
+  end
+
+  def self.use_default_driver
+    @@driver = nil
+  end
+
+  def self.reset : Nil
+    driver.reset
   end
 
   def visit(path : String)
@@ -192,18 +212,5 @@ class LuckyFlow
 
   def session : Selenium::Session
     self.class.session
-  end
-
-  def self.session : Selenium::Session
-    driver.session
-  end
-
-  def self.shutdown : Nil
-    LuckyFlow::Registry.shutdown_all
-  end
-
-  def self.reset : Nil
-    driver.reset
-    self.driver = nil
   end
 end

@@ -10,12 +10,12 @@ server = TestServer.new(3002)
 Spec.around_each do |spec|
   TestServer.reset
   if driver_name = (spec.example.all_tags & LuckyFlow::Registry.available).first?
-    LuckyFlow.driver = LuckyFlow::Registry.get_driver(driver_name)
+    LuckyFlow.driver(driver_name)
   end
 
   spec.run
 
-  LuckyFlow.reset
+  LuckyFlow.use_default_driver
 end
 
 LuckyFlow.configure do |settings|
