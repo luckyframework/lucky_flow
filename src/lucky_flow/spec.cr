@@ -1,7 +1,7 @@
 module LuckyFlow::Spec
   macro setup
     Spec.around_each do |spec|
-      if driver_name = (spec.example.all_tags & LuckyFlow::Registry.available).first?
+      if driver_name = (spec.example._lucky_flow_all_tags & LuckyFlow::Registry.available).first?
         LuckyFlow.driver(driver_name)
       end
 
