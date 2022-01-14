@@ -6,10 +6,14 @@ class LuckyFlow; end
 
 require "./lucky_flow/**"
 require "file_utils"
+require "./ext/spec/item"
 
 class LuckyFlow
   include LuckyFlow::Expectations
-  SERVER = LuckyFlow::Server::INSTANCE
+
+  @@driver : LuckyFlow::Driver?
+
+  class_property default_driver : String = "headless_chrome"
 
   Habitat.create do
     setting screenshot_directory : String = "./tmp/screenshots"
@@ -17,12 +21,30 @@ class LuckyFlow
     setting retry_delay : Time::Span = 10.milliseconds
     setting stop_retrying_after : Time::Span = 1.second
     setting driver_path : String?
-    setting browser_binary : String? = nil
-    setting driver : LuckyFlow::Driver.class = LuckyFlow::Drivers::HeadlessChrome
   end
 
-  def HabitatSettings.chromedriver_path=(_chromedriver_path)
-    {% raise "'chromedriver_path' has been renamed to 'driver_path'" %}
+  def self.driver : LuckyFlow::Driver
+    @@driver ||= LuckyFlow::Registry.get_driver(self.default_driver)
+  end
+
+  def self.driver(name : String) : LuckyFlow::Driver
+    @@driver = LuckyFlow::Registry.get_driver(self.default_driver)
+  end
+
+  def self.session : Selenium::Session
+    driver.session
+  end
+
+  def self.shutdown : Nil
+    LuckyFlow::Registry.shutdown_all
+  end
+
+  def self.use_default_driver
+    @@driver = nil
+  end
+
+  def self.reset : Nil
+    @@driver.try(&.reset)
   end
 
   def visit(path : String)
@@ -52,9 +74,9 @@ class LuckyFlow
 
   def take_screenshot(filename : String = generate_screenshot_filename, fullsize : Bool = true)
     if fullsize
-      with_fullsized_page { session.screenshot(filename) }
+      with_fullsized_page { driver.screenshot(filename) }
     else
-      session.screenshot(filename)
+      driver.screenshot(filename)
     end
   end
 
@@ -188,19 +210,11 @@ class LuckyFlow
     STDIN.gets
   end
 
-  def session
+  def session : Selenium::Session
     self.class.session
   end
 
-  def self.session
-    SERVER.session
-  end
-
-  def self.shutdown
-    SERVER.shutdown
-  end
-
-  def self.reset
-    SERVER.reset
+  def driver : LuckyFlow::Driver
+    self.class.driver
   end
 end

@@ -5,6 +5,8 @@ require "./support/**"
 
 include LuckyFlow::Expectations
 
+LuckyFlow::Spec.setup
+
 server = TestServer.new(3002)
 
 Spec.before_each do
@@ -16,8 +18,9 @@ LuckyFlow.configure do |settings|
   settings.stop_retrying_after = 40.milliseconds
 end
 
+Habitat.raise_if_missing_settings!
+
 Spec.after_suite do
-  LuckyFlow.shutdown
   server.close
 end
 
