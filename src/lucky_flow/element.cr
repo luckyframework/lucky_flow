@@ -1,16 +1,16 @@
 class LuckyFlow::Element
-  private getter raw_selector
-  getter inner_text
+  private getter raw_selector : String
+  getter inner_text : String?
+  getter driver : LuckyFlow::Driver
   delegate text, click, send_keys, displayed?, selected?, attribute, property, tag_name, to: element
-  delegate session, to: LuckyFlow
 
-  def initialize(@raw_selector : String, text @inner_text : String? = nil)
+  def initialize(@driver, @raw_selector, text @inner_text = nil)
   end
 
   @_element : Selenium::Element?
 
   private def element : Selenium::Element
-    @_element ||= FindElement.run(session, selector, inner_text)
+    @_element ||= FindElement.run(driver, selector, inner_text)
   end
 
   def value
@@ -62,7 +62,14 @@ class LuckyFlow::Element
     values.each { |value| select_el.select_by_value(value) }
   end
 
+  def midpoint : NamedTuple(x: Int32, y: Int32)?
+    midpoint = element.rect.try(&.midpoint)
+    return if midpoint.nil?
+
+    {x: midpoint.x, y: midpoint.y}
+  end
+
   def hover
-    session.move_to(element)
+    driver.hover(self)
   end
 end

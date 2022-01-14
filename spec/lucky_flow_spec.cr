@@ -167,13 +167,13 @@ describe LuckyFlow do
     flow = visit_page_with <<-HTML
       <h1>Title</h1>
     HTML
-    flow.session.cookie_manager.add_cookie("hello", "world")
-    flow.session.cookie_manager.get_cookie("hello").value.should eq "world"
+    flow.driver.add_cookie("hello", "world")
+    flow.driver.get_cookie("hello").should eq "world"
 
     LuckyFlow.reset
 
     expect_raises Selenium::Error do
-      flow.session.cookie_manager.get_cookie("hello").value
+      flow.driver.get_cookie("hello")
     end
   end
 

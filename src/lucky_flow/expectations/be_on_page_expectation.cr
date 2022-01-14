@@ -7,6 +7,7 @@ struct LuckyFlow::Expectations::BeOnPageExpectation
 
   def failure_message(element)
     LuckyFlow::ErrorMessageWhenNotFound.build(
+      element.driver,
       element.selector,
       element.inner_text
     )
@@ -14,6 +15,7 @@ struct LuckyFlow::Expectations::BeOnPageExpectation
 
   def negative_failure_message(element)
     LuckyFlow::ErrorMessageWhenNotFound.build(
+      element.driver,
       element.selector,
       element.inner_text,
       negate: true

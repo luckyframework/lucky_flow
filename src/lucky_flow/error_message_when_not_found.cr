@@ -6,6 +6,7 @@ class LuckyFlow::ErrorMessageWhenNotFound
   end
 
   def initialize(
+    @driver : LuckyFlow::Driver,
     @selector : String,
     @inner_text : String?,
     @negate : Bool = false
@@ -49,7 +50,7 @@ class LuckyFlow::ErrorMessageWhenNotFound
   end
 
   private def all_flow_ids : Array(String)
-    session.find_elements(:css, "[flow-id]")
+    @driver.find_css("[flow-id]")
       .compact_map(&.attribute("flow-id"))
       .uniq!
   end
@@ -60,9 +61,5 @@ class LuckyFlow::ErrorMessageWhenNotFound
 
   private def not_using_any_other_selector? : Bool
     selector.includes?(" ")
-  end
-
-  private def session
-    LuckyFlow.session
   end
 end

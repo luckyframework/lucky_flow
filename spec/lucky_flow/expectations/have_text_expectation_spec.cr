@@ -4,7 +4,7 @@ module LuckyFlow::Expectations
   describe HaveTextExpectation do
     describe "#match" do
       it "returns true if element has text" do
-        element = LuckyFlow::Element.new(raw_selector: "@heading")
+        element = LuckyFlow::Element.new(LuckyFlow.driver, raw_selector: "@heading")
 
         visit_page_with "<span flow-id='heading'>Hello, World!</span>"
 
@@ -14,7 +14,7 @@ module LuckyFlow::Expectations
       end
 
       it "returns false if element does not have text" do
-        element = LuckyFlow::Element.new(raw_selector: "@heading")
+        element = LuckyFlow::Element.new(LuckyFlow.driver, raw_selector: "@heading")
 
         visit_page_with "<span flow-id='heading'>Hello, World!</span>"
 
@@ -24,7 +24,7 @@ module LuckyFlow::Expectations
       end
 
       it "returns true if element contains text" do
-        element = LuckyFlow::Element.new(raw_selector: "@container")
+        element = LuckyFlow::Element.new(LuckyFlow.driver, raw_selector: "@container")
 
         visit_page_with <<-HTML
           <div flow-id="container">
@@ -41,7 +41,7 @@ module LuckyFlow::Expectations
 
     describe "#failure_message" do
       it "returns actual text found on element" do
-        element = LuckyFlow::Element.new(raw_selector: "@heading")
+        element = LuckyFlow::Element.new(LuckyFlow.driver, raw_selector: "@heading")
 
         visit_page_with "<span flow-id='heading'>Hello, World!</span>"
 
@@ -55,7 +55,7 @@ module LuckyFlow::Expectations
 
     describe "#negative_failure_message" do
       it "returns actual text found on element" do
-        element = LuckyFlow::Element.new(raw_selector: "@heading")
+        element = LuckyFlow::Element.new(LuckyFlow.driver, raw_selector: "@heading")
 
         visit_page_with "<span flow-id='heading'>Hello, World!</span>"
 
