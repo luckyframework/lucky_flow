@@ -76,11 +76,6 @@
       
     </li>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Drivers/HeadlessChrome" data-name="luckyflow::drivers::headlesschrome">
-      <a href="../LuckyFlow/Drivers/HeadlessChrome.html">HeadlessChrome</a>
-      
-    </li>
-  
 </ul>
 
       
@@ -151,13 +146,33 @@
       
     </li>
   
+  <li class=" " data-id="lucky_flow/LuckyFlow/Registry" data-name="luckyflow::registry">
+      <a href="../LuckyFlow/Registry.html">Registry</a>
+      
+    </li>
+  
   <li class=" " data-id="lucky_flow/LuckyFlow/Selector" data-name="luckyflow::selector">
       <a href="../LuckyFlow/Selector.html">Selector</a>
       
     </li>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Server" data-name="luckyflow::server">
-      <a href="../LuckyFlow/Server.html">Server</a>
+  <li class=" " data-id="lucky_flow/LuckyFlow/Spec" data-name="luckyflow::spec">
+      <a href="../LuckyFlow/Spec.html">Spec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="lucky_flow/Spec" data-name="spec">
+      <a href="../Spec.html">Spec</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_flow/Spec/Item" data-name="spec::item">
+      <a href="../Spec/Item.html">Item</a>
       
     </li>
   
@@ -222,7 +237,7 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow/driver.cr#L1" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/driver.cr#L1" target="_blank">
         lucky_flow/driver.cr
       </a>
     
@@ -248,7 +263,32 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
+        <a href="#reset:Nil-instance-method" class="signature"><strong>#reset</strong> : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#screenshot(path:String)-instance-method" class="signature"><strong>#screenshot</strong>(path : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#session:Selenium::Session-instance-method" class="signature"><strong>#session</strong> : Selenium::Session</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shutdown:Nil-instance-method" class="signature"><strong>#shutdown</strong> : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#start_session:Selenium::Session-instance-method" class="signature"><strong>#start_session</strong> : Selenium::Session</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#stop-instance-method" class="signature"><strong>#stop</strong></a>
         
       </li>
     
@@ -296,6 +336,70 @@
     Instance Method Detail
   </h2>
   
+    <div class="entry-detail" id="reset:Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>reset</strong> : Nil
+
+        <a class="method-permalink" href="#reset:Nil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/driver.cr#L9" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="screenshot(path:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>screenshot</strong>(path : String)
+
+        <a class="method-permalink" href="#screenshot(path:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/driver.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="session:Selenium::Session-instance-method">
+      <div class="signature">
+        
+        def <strong>session</strong> : Selenium::Session
+
+        <a class="method-permalink" href="#session:Selenium::Session-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/driver.cr#L4" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shutdown:Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>shutdown</strong> : Nil
+
+        <a class="method-permalink" href="#shutdown:Nil-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/driver.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
     <div class="entry-detail" id="start_session:Selenium::Session-instance-method">
       <div class="signature">
         abstract 
@@ -307,7 +411,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow/driver.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/driver.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="stop-instance-method">
+      <div class="signature">
+        abstract 
+        def <strong>stop</strong>
+
+        <a class="method-permalink" href="#stop-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/driver.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>

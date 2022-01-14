@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="lucky_flow">
-  <title>LuckyFlow::Server - lucky_flow master</title>
+  <title>Spec::Item - lucky_flow master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -51,7 +51,7 @@
   <div class="types-list">
     <ul>
   
-  <li class="parent open current" data-id="lucky_flow/LuckyFlow" data-name="luckyflow">
+  <li class="parent " data-id="lucky_flow/LuckyFlow" data-name="luckyflow">
       <a href="../LuckyFlow.html">LuckyFlow</a>
       
         <ul>
@@ -73,11 +73,6 @@
   
   <li class=" " data-id="lucky_flow/LuckyFlow/Drivers/Chrome" data-name="luckyflow::drivers::chrome">
       <a href="../LuckyFlow/Drivers/Chrome.html">Chrome</a>
-      
-    </li>
-  
-  <li class=" " data-id="lucky_flow/LuckyFlow/Drivers/HeadlessChrome" data-name="luckyflow::drivers::headlesschrome">
-      <a href="../LuckyFlow/Drivers/HeadlessChrome.html">HeadlessChrome</a>
       
     </li>
   
@@ -151,13 +146,33 @@
       
     </li>
   
+  <li class=" " data-id="lucky_flow/LuckyFlow/Registry" data-name="luckyflow::registry">
+      <a href="../LuckyFlow/Registry.html">Registry</a>
+      
+    </li>
+  
   <li class=" " data-id="lucky_flow/LuckyFlow/Selector" data-name="luckyflow::selector">
       <a href="../LuckyFlow/Selector.html">Selector</a>
       
     </li>
   
-  <li class=" current" data-id="lucky_flow/LuckyFlow/Server" data-name="luckyflow::server">
-      <a href="../LuckyFlow/Server.html">Server</a>
+  <li class=" " data-id="lucky_flow/LuckyFlow/Spec" data-name="luckyflow::spec">
+      <a href="../LuckyFlow/Spec.html">Spec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent open current" data-id="lucky_flow/Spec" data-name="spec">
+      <a href="../Spec.html">Spec</a>
+      
+        <ul>
+  
+  <li class=" current" data-id="lucky_flow/Spec/Item" data-name="spec::item">
+      <a href="../Spec/Item.html">Item</a>
       
     </li>
   
@@ -175,26 +190,13 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> LuckyFlow::Server
+  <span class="kind">module</span> Spec::Item
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LuckyFlow/Server.html">LuckyFlow::Server</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
-
-
-  <h2>
-    <a id="overview" class="anchor" href="#overview">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Overview
-  </h2>
-
-  <p>Handles starting and stopping server sessions</p>
 
 
 
@@ -219,8 +221,8 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow/server.cr#L2" target="_blank">
-        lucky_flow/server.cr
+      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/ext/spec/item.cr#L2" target="_blank">
+        ext/spec/item.cr
       </a>
     
     <br/>
@@ -228,63 +230,11 @@
 
 
 
-  
-    <h2>
-      <a id="constant-summary" class="anchor" href="#constant-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-      Constant Summary
-    </h2>
-  
-  <dl>
-    
-      <dt class="entry-const" id="INSTANCE">
-        <strong>INSTANCE</strong> = <code><span class="k">new</span></code>
-      </dt>
-      
-      <dd class="entry-const-doc">
-        <p>This is used so that only one server instance is started</p>
-      </dd>
-      
-    
-  </dl>
 
 
 
 
 
-
-
-  <h2>
-    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Instance Method Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#reset-instance-method" class="signature"><strong>#reset</strong></a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#session:Selenium::Session-instance-method" class="signature"><strong>#session</strong> : Selenium::Session</a>
-        
-          <div class="summary"><p>Start a new selenium session</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#shutdown-instance-method" class="signature"><strong>#shutdown</strong></a>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -292,95 +242,12 @@
 
 <div class="methods-inherited">
   
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
 </div>
 
 
 
 
 
-
-  <h2>
-    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Instance Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="reset-instance-method">
-      <div class="signature">
-        
-        def <strong>reset</strong>
-
-        <a class="method-permalink" href="#reset-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow/server.cr#L30" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="session:Selenium::Session-instance-method">
-      <div class="signature">
-        
-        def <strong>session</strong> : Selenium::Session
-
-        <a class="method-permalink" href="#session:Selenium::Session-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Start a new selenium session</p>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow/server.cr#L14" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="shutdown-instance-method">
-      <div class="signature">
-        
-        def <strong>shutdown</strong>
-
-        <a class="method-permalink" href="#shutdown-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow/server.cr#L34" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 

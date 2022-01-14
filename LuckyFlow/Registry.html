@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="lucky_flow">
-  <title>LuckyFlow::InvalidMultiSelectError - lucky_flow master</title>
+  <title>LuckyFlow::Registry - lucky_flow master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -136,7 +136,7 @@
       
     </li>
   
-  <li class=" current" data-id="lucky_flow/LuckyFlow/InvalidMultiSelectError" data-name="luckyflow::invalidmultiselecterror">
+  <li class=" " data-id="lucky_flow/LuckyFlow/InvalidMultiSelectError" data-name="luckyflow::invalidmultiselecterror">
       <a href="../LuckyFlow/InvalidMultiSelectError.html">InvalidMultiSelectError</a>
       
     </li>
@@ -146,7 +146,7 @@
       
     </li>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Registry" data-name="luckyflow::registry">
+  <li class=" current" data-id="lucky_flow/LuckyFlow/Registry" data-name="luckyflow::registry">
       <a href="../LuckyFlow/Registry.html">Registry</a>
       
     </li>
@@ -190,12 +190,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> LuckyFlow::InvalidMultiSelectError
+  <span class="kind">class</span> LuckyFlow::Registry
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LuckyFlow/InvalidMultiSelectError.html">LuckyFlow::InvalidMultiSelectError</a></li><li class="superclass"><a href="../LuckyFlow/InvalidOperationError.html">LuckyFlow::InvalidOperationError</a></li><li class="superclass"><a href="../LuckyFlow/Error.html">LuckyFlow::Error</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LuckyFlow/Registry.html">LuckyFlow::Registry</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -223,8 +223,8 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/errors.cr#L38" target="_blank">
-        lucky_flow/errors.cr
+      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/registry.cr#L1" target="_blank">
+        lucky_flow/registry.cr
       </a>
     
     <br/>
@@ -234,24 +234,39 @@
 
 
 
+
+
   <h2>
-    <a id="constructors" class="anchor" href="#constructors">
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Constructors
+    Class Method Summary
   </h2>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
+        <a href="#available:Set(String)-class-method" class="signature"><strong>.available</strong> : Set(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_driver(name:String):LuckyFlow::Driver-class-method" class="signature"><strong>.get_driver</strong>(name : String) : LuckyFlow::Driver</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#register(name:String%7CSymbol,&block:-%3ELuckyFlow::Driver)-class-method" class="signature"><strong>.register</strong>(name : String | Symbol, &block :  -> LuckyFlow::Driver)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#shutdown_all-class-method" class="signature"><strong>.shutdown_all</strong></a>
         
       </li>
     
   </ul>
-
-
 
 
 
@@ -281,66 +296,84 @@
 
 
   
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
-    
-
-
-    
-
-
-    
-
-
-  
 </div>
 
 
+
+
   <h2>
-    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
   </svg>
 </a>
-    Constructor Detail
+    Class Method Detail
   </h2>
   
-    <div class="entry-detail" id="new-class-method">
+    <div class="entry-detail" id="available:Set(String)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>
+        def self.<strong>available</strong> : Set(String)
 
-        <a class="method-permalink" href="#new-class-method">#</a>
+        <a class="method-permalink" href="#available:Set(String)-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/errors.cr#L39" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/registry.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
   
+    <div class="entry-detail" id="get_driver(name:String):LuckyFlow::Driver-class-method">
+      <div class="signature">
+        
+        def self.<strong>get_driver</strong>(name : String) : <a href="../LuckyFlow/Driver.html">LuckyFlow::Driver</a>
 
+        <a class="method-permalink" href="#get_driver(name:String):LuckyFlow::Driver-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/registry.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="register(name:String|Symbol,&block:->LuckyFlow::Driver)-class-method">
+      <div class="signature">
+        
+        def self.<strong>register</strong>(name : String | Symbol, &block :  -> <a href="../LuckyFlow/Driver.html">LuckyFlow::Driver</a>)
 
+        <a class="method-permalink" href="#register(name:String%7CSymbol,&block:-%3ELuckyFlow::Driver)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/registry.cr#L5" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="shutdown_all-class-method">
+      <div class="signature">
+        
+        def self.<strong>shutdown_all</strong>
+
+        <a class="method-permalink" href="#shutdown_all-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/registry.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 

@@ -76,11 +76,6 @@
       
     </li>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Drivers/HeadlessChrome" data-name="luckyflow::drivers::headlesschrome">
-      <a href="LuckyFlow/Drivers/HeadlessChrome.html">HeadlessChrome</a>
-      
-    </li>
-  
 </ul>
 
       
@@ -151,13 +146,33 @@
       
     </li>
   
+  <li class=" " data-id="lucky_flow/LuckyFlow/Registry" data-name="luckyflow::registry">
+      <a href="LuckyFlow/Registry.html">Registry</a>
+      
+    </li>
+  
   <li class=" " data-id="lucky_flow/LuckyFlow/Selector" data-name="luckyflow::selector">
       <a href="LuckyFlow/Selector.html">Selector</a>
       
     </li>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Server" data-name="luckyflow::server">
-      <a href="LuckyFlow/Server.html">Server</a>
+  <li class=" " data-id="lucky_flow/LuckyFlow/Spec" data-name="luckyflow::spec">
+      <a href="LuckyFlow/Spec.html">Spec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="lucky_flow/Spec" data-name="spec">
+      <a href="Spec.html">Spec</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_flow/Spec/Item" data-name="spec::item">
+      <a href="Spec/Item.html">Item</a>
       
     </li>
   
@@ -226,35 +241,35 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L5" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L5" target="_blank">
         lucky_flow.cr:5
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L10" target="_blank">
-        lucky_flow.cr:10
+      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L11" target="_blank">
+        lucky_flow.cr:11
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow/errors.cr#L1" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/errors.cr#L1" target="_blank">
         lucky_flow/errors.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow/expectations.cr#L3" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/expectations.cr#L3" target="_blank">
         lucky_flow/expectations.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow/version.cr#L1" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/version.cr#L1" target="_blank">
         lucky_flow/version.cr
       </a>
     
@@ -276,12 +291,7 @@
   <dl>
     
       <dt class="entry-const" id="HABITAT_SETTINGS">
-        <strong>HABITAT_SETTINGS</strong> = <code>[{decl: screenshot_directory : <span class="t">String</span> <span class="o">=</span> <span class="s">&quot;./tmp/screenshots&quot;</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: base_uri : <span class="t">String</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: retry_delay : <span class="t">Time</span><span class="t">::</span><span class="t">Span</span> <span class="o">=</span> <span class="n">10</span>.milliseconds, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: stop_retrying_after : <span class="t">Time</span><span class="t">::</span><span class="t">Span</span> <span class="o">=</span> <span class="n">1</span>.second, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: driver_path : <span class="t">String</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: browser_binary : <span class="t">String</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span> <span class="o">=</span> <span class="n">nil</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: driver : <span class="t">LuckyFlow</span><span class="t">::</span><span class="t">Driver</span>.<span class="k">class</span> <span class="o">=</span> <span class="t">LuckyFlow</span><span class="t">::</span><span class="t">Drivers</span><span class="t">::</span><span class="t">HeadlessChrome</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}] <span class="k">of</span> <span class="t">Nil</span></code>
-      </dt>
-      
-    
-      <dt class="entry-const" id="SERVER">
-        <strong>SERVER</strong> = <code><span class="t">LuckyFlow</span><span class="t">::</span><span class="t">Server</span><span class="t">::</span><span class="t">INSTANCE</span></code>
+        <strong>HABITAT_SETTINGS</strong> = <code>[{decl: screenshot_directory : <span class="t">String</span> <span class="o">=</span> <span class="s">&quot;./tmp/screenshots&quot;</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: base_uri : <span class="t">String</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: retry_delay : <span class="t">Time</span><span class="t">::</span><span class="t">Span</span> <span class="o">=</span> <span class="n">10</span>.milliseconds, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: stop_retrying_after : <span class="t">Time</span><span class="t">::</span><span class="t">Span</span> <span class="o">=</span> <span class="n">1</span>.second, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}, {decl: driver_path : <span class="t">String</span> <span class="o">|</span> <span class="t">::</span><span class="t">Nil</span>, example: <span class="n">nil</span>, validation: <span class="n">nil</span>}] <span class="k">of</span> <span class="t">Nil</span></code>
       </dt>
       
     
@@ -312,12 +322,32 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#reset-class-method" class="signature"><strong>.reset</strong></a>
+        <a href="#default_driver:String-class-method" class="signature"><strong>.default_driver</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#session-class-method" class="signature"><strong>.session</strong></a>
+        <a href="#default_driver=(default_driver:String)-class-method" class="signature"><strong>.default_driver=</strong>(default_driver : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#driver(name:String):LuckyFlow::Driver-class-method" class="signature"><strong>.driver</strong>(name : String) : LuckyFlow::Driver</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#driver:LuckyFlow::Driver-class-method" class="signature"><strong>.driver</strong> : LuckyFlow::Driver</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reset:Nil-class-method" class="signature"><strong>.reset</strong> : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#session:Selenium::Session-class-method" class="signature"><strong>.session</strong> : Selenium::Session</a>
         
       </li>
     
@@ -327,7 +357,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#shutdown-class-method" class="signature"><strong>.shutdown</strong></a>
+        <a href="#shutdown:Nil-class-method" class="signature"><strong>.shutdown</strong> : Nil</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#use_default_driver-class-method" class="signature"><strong>.use_default_driver</strong></a>
         
       </li>
     
@@ -369,6 +404,11 @@
     
       <li class="entry-summary">
         <a href="#dismiss_alert-instance-method" class="signature"><strong>#dismiss_alert</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#driver:LuckyFlow::Driver-instance-method" class="signature"><strong>#driver</strong> : LuckyFlow::Driver</a>
         
       </li>
     
@@ -422,12 +462,12 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#select(element:Element,value:String)-instance-method" class="signature"><strong>#select</strong>(element : Element, value : String)</a>
+        <a href="#select(element:Element,value:Array(String))-instance-method" class="signature"><strong>#select</strong>(element : Element, value : Array(String))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#select(element:Element,value:Array(String))-instance-method" class="signature"><strong>#select</strong>(element : Element, value : Array(String))</a>
+        <a href="#select(element:Element,value:String)-instance-method" class="signature"><strong>#select</strong>(element : Element, value : String)</a>
         
       </li>
     
@@ -439,7 +479,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#session-instance-method" class="signature"><strong>#session</strong></a>
+        <a href="#session:Selenium::Session-instance-method" class="signature"><strong>#session</strong> : Selenium::Session</a>
         
       </li>
     
@@ -556,39 +596,103 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="reset-class-method">
+    <div class="entry-detail" id="default_driver:String-class-method">
       <div class="signature">
         
-        def self.<strong>reset</strong>
+        def self.<strong>default_driver</strong> : String
 
-        <a class="method-permalink" href="#reset-class-method">#</a>
+        <a class="method-permalink" href="#default_driver:String-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L203" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="session-class-method">
+    <div class="entry-detail" id="default_driver=(default_driver:String)-class-method">
       <div class="signature">
         
-        def self.<strong>session</strong>
+        def self.<strong>default_driver=</strong>(default_driver : String)
 
-        <a class="method-permalink" href="#session-class-method">#</a>
+        <a class="method-permalink" href="#default_driver=(default_driver:String)-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L195" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="driver(name:String):LuckyFlow::Driver-class-method">
+      <div class="signature">
+        
+        def self.<strong>driver</strong>(name : String) : <a href="LuckyFlow/Driver.html">LuckyFlow::Driver</a>
+
+        <a class="method-permalink" href="#driver(name:String):LuckyFlow::Driver-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="driver:LuckyFlow::Driver-class-method">
+      <div class="signature">
+        
+        def self.<strong>driver</strong> : <a href="LuckyFlow/Driver.html">LuckyFlow::Driver</a>
+
+        <a class="method-permalink" href="#driver:LuckyFlow::Driver-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reset:Nil-class-method">
+      <div class="signature">
+        
+        def self.<strong>reset</strong> : Nil
+
+        <a class="method-permalink" href="#reset:Nil-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L46" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="session:Selenium::Session-class-method">
+      <div class="signature">
+        
+        def self.<strong>session</strong> : Selenium::Session
+
+        <a class="method-permalink" href="#session:Selenium::Session-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -604,23 +708,39 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="shutdown-class-method">
+    <div class="entry-detail" id="shutdown:Nil-class-method">
       <div class="signature">
         
-        def self.<strong>shutdown</strong>
+        def self.<strong>shutdown</strong> : Nil
 
-        <a class="method-permalink" href="#shutdown-class-method">#</a>
+        <a class="method-permalink" href="#shutdown:Nil-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L199" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="use_default_driver-class-method">
+      <div class="signature">
+        
+        def self.<strong>use_default_driver</strong>
+
+        <a class="method-permalink" href="#use_default_driver-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -648,7 +768,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L178" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L200" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -673,7 +793,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L109" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L131" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -689,7 +809,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L85" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L107" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -705,7 +825,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L173" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L195" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -721,7 +841,23 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L182" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L204" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="driver:LuckyFlow::Driver-instance-method">
+      <div class="signature">
+        
+        def <strong>driver</strong> : <a href="LuckyFlow/Driver.html">LuckyFlow::Driver</a>
+
+        <a class="method-permalink" href="#driver:LuckyFlow::Driver-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L217" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -737,7 +873,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L165" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L187" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -753,7 +889,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L161" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L183" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -769,7 +905,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L87" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -785,7 +921,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L169" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L191" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -808,7 +944,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L94" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L116" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -824,7 +960,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L98" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L120" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -851,7 +987,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L147" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L169" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -867,7 +1003,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L47" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L69" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -883,23 +1019,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L186" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="select(element:Element,value:String)-instance-method">
-      <div class="signature">
-        
-        def <strong>select</strong>(element : <a href="LuckyFlow/Element.html">Element</a>, value : String)
-
-        <a class="method-permalink" href="#select(element:Element,value:String)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L208" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -915,7 +1035,23 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L134" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L156" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select(element:Element,value:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>select</strong>(element : <a href="LuckyFlow/Element.html">Element</a>, value : String)
+
+        <a class="method-permalink" href="#select(element:Element,value:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L152" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -943,23 +1079,23 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L126" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L148" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="session-instance-method">
+    <div class="entry-detail" id="session:Selenium::Session-instance-method">
       <div class="signature">
         
-        def <strong>session</strong>
+        def <strong>session</strong> : Selenium::Session
 
-        <a class="method-permalink" href="#session-instance-method">#</a>
+        <a class="method-permalink" href="#session:Selenium::Session-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L191" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L213" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -975,7 +1111,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -991,7 +1127,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L75" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1007,7 +1143,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1023,7 +1159,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1039,7 +1175,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L28" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L50" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1055,7 +1191,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/7f43cb734c6dc346597985728baa33138a10435a/src/lucky_flow.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
