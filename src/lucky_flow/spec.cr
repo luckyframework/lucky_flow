@@ -7,6 +7,7 @@ module LuckyFlow::Spec
 
       spec.run
 
+      LuckyFlow.reset
       LuckyFlow.use_default_driver
     end
 

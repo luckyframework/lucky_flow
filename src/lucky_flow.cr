@@ -24,7 +24,7 @@ class LuckyFlow
   end
 
   def self.driver : LuckyFlow::Driver
-    @@driver || LuckyFlow::Registry.get_driver(self.default_driver)
+    @@driver ||= LuckyFlow::Registry.get_driver(self.default_driver)
   end
 
   def self.driver(name : String) : LuckyFlow::Driver
@@ -44,7 +44,7 @@ class LuckyFlow
   end
 
   def self.reset : Nil
-    driver.reset
+    @@driver.try(&.reset)
   end
 
   def visit(path : String)
