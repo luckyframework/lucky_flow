@@ -1,6 +1,8 @@
 require "selenium"
 require "habitat"
 require "webdrivers"
+require "webless"
+require "html5"
 
 class LuckyFlow; end
 

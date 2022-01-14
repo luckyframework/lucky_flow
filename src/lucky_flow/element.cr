@@ -70,4 +70,9 @@ abstract class LuckyFlow::Element
   def hover
     driver.hover(self)
   end
+
+  macro unsupported
+    method_name = \{{ @def.name.stringify }}
+    raise NotSupportedByElementError.new("#{self.class}##{ method_name }")
+  end
 end
