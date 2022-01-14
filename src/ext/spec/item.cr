@@ -1,5 +1,6 @@
 module Spec
   module Item
+    # :nodoc:
     def _lucky_flow_all_tags : Set(String)
       all_tags = tags || Set(String).new
       temp = parent
