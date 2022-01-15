@@ -4,7 +4,7 @@ require "webdrivers"
 
 class LuckyFlow; end
 
-require "./lucky_flow/*"
+require "./lucky_flow/**"
 require "file_utils"
 require "./ext/spec/item"
 

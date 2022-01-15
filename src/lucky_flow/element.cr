@@ -7,9 +7,9 @@ class LuckyFlow::Element
   def initialize(@driver, @raw_selector, text @inner_text = nil)
   end
 
-  @_element : Selenium::Element?
+  @_element : ::Selenium::Element?
 
-  private def element : Selenium::Element
+  private def element : ::Selenium::Element
     @_element ||= FindElement.run(driver, selector, inner_text)
   end
 
@@ -51,12 +51,12 @@ class LuckyFlow::Element
   end
 
   def select_option(value : String)
-    select_el = Selenium::Helpers::Select.from_element(element)
+    select_el = ::Selenium::Helpers::Select.from_element(element)
     select_el.select_by_value(value)
   end
 
   def select_options(values : Array(String))
-    select_el = Selenium::Helpers::Select.from_element(element)
+    select_el = ::Selenium::Helpers::Select.from_element(element)
     raise LuckyFlow::InvalidMultiSelectError.new unless select_el.multiple?
 
     values.each { |value| select_el.select_by_value(value) }

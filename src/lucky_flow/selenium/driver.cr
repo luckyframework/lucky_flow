@@ -1,4 +1,4 @@
-abstract class LuckyFlow::Drivers::Selenium < LuckyFlow::Driver
+abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
   @retry_limit : Time = 2.seconds.from_now
   @driver : ::Selenium::Driver?
   @capabilities : ::Selenium::Capabilities

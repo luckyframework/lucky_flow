@@ -40,7 +40,7 @@ class LuckyFlow::FindElement
     LuckyFlow.settings
   end
 
-  private def find_matching_elements : Array(Selenium::Element)
+  private def find_matching_elements : Array(::Selenium::Element)
     self.tries += 1
     driver.find_css(selector).select do |element|
       text_to_check_for = inner_text
@@ -50,8 +50,8 @@ class LuckyFlow::FindElement
         true
       end
     end
-  rescue Selenium::Error
-    [] of Selenium::Element
+  rescue ::Selenium::Error
+    [] of ::Selenium::Element
   end
 
   private def raise_element_not_found_error
