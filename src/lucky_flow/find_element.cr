@@ -1,5 +1,3 @@
-require "levenshtein"
-
 # Find element on a page with a retry
 class LuckyFlow::FindElement
   property tries : Int32 = 0
