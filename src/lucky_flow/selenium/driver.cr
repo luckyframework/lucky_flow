@@ -1,4 +1,4 @@
-abstract class LuckyFlow::Drivers::Selenium < LuckyFlow::Driver
+abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
   @retry_limit : Time = 2.seconds.from_now
   @driver : ::Selenium::Driver?
   @capabilities : ::Selenium::Capabilities
@@ -44,8 +44,9 @@ abstract class LuckyFlow::Drivers::Selenium < LuckyFlow::Driver
     end
   end
 
-  def find_css(query : String) : Array(::Selenium::Element)
+  def find_css(query : String) : Array(LuckyFlow::Element)
     session.find_elements(:css, query)
+      .map { |el| LuckyFlow::Selenium::Element.new(self, query, el).as(LuckyFlow::Element) }
   end
 
   def current_url : String

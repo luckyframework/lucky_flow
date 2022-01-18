@@ -10,11 +10,8 @@ abstract class LuckyFlow::Driver
   abstract def accept_alert
   abstract def dismiss_alert
   abstract def hover(element : LuckyFlow::Element)
-  abstract def find_css(query : String) : Array(::Selenium::Element)
+  abstract def find_css(query : String) : Array(LuckyFlow::Element)
   abstract def current_url : String
   abstract def add_cookie(key : String, value : String)
   abstract def get_cookie(key : String) : String?
 end
-
-require "./drivers/selenium"
-require "./drivers/chrome"

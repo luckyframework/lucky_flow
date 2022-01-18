@@ -1,3 +1,5 @@
+require "levenshtein"
+
 class LuckyFlow::ErrorMessageWhenNotFound
   private getter selector, negate
 

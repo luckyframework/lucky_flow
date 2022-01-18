@@ -2,8 +2,8 @@ require "./expectations/**"
 
 class LuckyFlow
   module Expectations
-    private def be_on_page
-      BeOnPageExpectation.new
+    private def have_element_displayed(css_selector : String, text : String? = nil)
+      BeOnPageExpectation.new(css_selector, text)
     end
 
     private def have_text(expected_text)

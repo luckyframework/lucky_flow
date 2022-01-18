@@ -4,7 +4,7 @@ require "webdrivers"
 
 class LuckyFlow; end
 
-require "./lucky_flow/*"
+require "./lucky_flow/**"
 require "file_utils"
 require "./ext/spec/item"
 
@@ -174,16 +174,20 @@ class LuckyFlow
     end
   end
 
-  def el(css_selector : String, text : String)
-    Element.new(driver, css_selector, text)
+  def el(css_selector : String, text : String) : LuckyFlow::Element
+    query = parsed_query(css_selector)
+    driver.find_css(query).find do |element|
+      element.text.includes?(text)
+    end || raise ElementNotFoundError.new(driver, query, text)
   end
 
-  def el(css_selector : String)
-    Element.new(driver, css_selector)
+  def el(css_selector : String) : LuckyFlow::Element
+    query = parsed_query(css_selector)
+    driver.find_css(query).first? || raise ElementNotFoundError.new(driver, query, nil)
   end
 
-  def field(name_attr : String)
-    Element.new(driver, "[name='#{name_attr}']")
+  def field(name_attr : String) : LuckyFlow::Element
+    el("[name='#{name_attr}']")
   end
 
   def current_path
@@ -206,5 +210,9 @@ class LuckyFlow
 
   def driver : LuckyFlow::Driver
     self.class.driver
+  end
+
+  private def parsed_query(query : String) : String
+    Selector.new(query).parse
   end
 end
