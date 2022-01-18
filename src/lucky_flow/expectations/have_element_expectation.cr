@@ -1,7 +1,7 @@
-struct LuckyFlow::Expectations::BeOnPageExpectation
+struct LuckyFlow::Expectations::HaveElementExpectation
   @css_selector : String
 
-  def initialize(css_selector : String, @text : String?)
+  def initialize(css_selector : String, @text : String?, @visible : Bool)
     @css_selector = Selector.new(css_selector).parse
   end
 
@@ -12,7 +12,11 @@ struct LuckyFlow::Expectations::BeOnPageExpectation
                 flow.el(@css_selector)
               end
 
-    element.displayed?
+    if @visible
+      element.displayed?
+    else
+      true
+    end
   rescue LuckyFlow::ElementNotFoundError
     false
   end

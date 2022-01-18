@@ -7,7 +7,7 @@ describe LuckyFlow do
 
     flow.visit("/home")
 
-    flow.should have_element_displayed("@heading", text: "Home")
+    flow.should have_element("@heading", text: "Home")
     flow.el("@heading").should have_text("Home")
     flow.should have_current_path("/home")
   end
@@ -20,7 +20,7 @@ describe LuckyFlow do
 
     flow.visit(route_helper, as: user)
 
-    flow.should have_element_displayed("@heading", text: "Home")
+    flow.should have_element("@heading", text: "Home")
   end
 
   it "can find element's text" do
@@ -65,14 +65,14 @@ describe LuckyFlow do
 
   it "can find a flow id" do
     flow = visit_page_with "<h1 flow-id='test-me'>Hello</h1>"
-    flow.should have_element_displayed("@test-me", text: "Hello")
-    flow.should_not have_element_displayed("@test-me", text: "Not here")
+    flow.should have_element("@test-me", text: "Hello")
+    flow.should_not have_element("@test-me", text: "Not here")
   end
 
   it "can find a generic CSS selector" do
     flow = visit_page_with "<h1 class='jumbotron'>Hello</h1>"
-    flow.should have_element_displayed(".jumbotron", text: "Hello")
-    flow.should_not have_element_displayed(".jumbotron", text: "Not here")
+    flow.should have_element(".jumbotron", text: "Hello")
+    flow.should_not have_element(".jumbotron", text: "Not here")
   end
 
   it "can fill in text" do
@@ -134,11 +134,11 @@ describe LuckyFlow do
       <h1>Home</h1>
       <a flow-id='target' href='/target'>Click Me</a>
     HTML
-    flow.should have_element_displayed("h1", text: "Home")
+    flow.should have_element("h1", text: "Home")
 
     flow.click("@target")
 
-    flow.should have_element_displayed("h1", text: "Target")
+    flow.should have_element("h1", text: "Target")
   end
 
   it "can open screenshots" do
@@ -191,10 +191,10 @@ describe LuckyFlow do
 
     flow.click("@button")
     flow.accept_alert
-    flow.should have_element_displayed("@button", text: "Click Me - 1")
+    flow.should have_element("@button", text: "Click Me - 1")
     flow.click("@button")
     flow.dismiss_alert
-    flow.should have_element_displayed("@button", text: "Click Me - 2")
+    flow.should have_element("@button", text: "Click Me - 2")
   end
 
   it "can choose option in select input" do

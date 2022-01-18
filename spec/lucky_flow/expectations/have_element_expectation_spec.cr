@@ -1,11 +1,11 @@
 require "../../spec_helper"
 
 module LuckyFlow::Expectations
-  describe BeOnPageExpectation do
+  describe HaveElementExpectation do
     it "gives a suggestion when a similar flow id is found" do
       visit_page_with "<span flow-id='heading'></span>"
 
-      BeOnPageExpectation.new("@headning", text: nil)
+      HaveElementExpectation.new("@headning", text: nil, visible: true)
         .failure_message(LuckyFlow.new)
         .should contain("Did you mean")
     end
@@ -13,7 +13,7 @@ module LuckyFlow::Expectations
     it "does not give a suggestion when an element should not be found" do
       visit_page_with "<span flow-id='heading'></span>"
 
-      BeOnPageExpectation.new("@heading", text: nil)
+      HaveElementExpectation.new("@heading", text: nil, visible: true)
         .negative_failure_message(LuckyFlow.new)
         .should_not contain("Did you mean")
     end
