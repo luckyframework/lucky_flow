@@ -7,7 +7,7 @@ describe LuckyFlow do
 
     flow.visit("/home")
 
-    flow.el("@heading", text: "Home").should be_on_page
+    flow.should have_element("@heading", text: "Home")
     flow.el("@heading").should have_text("Home")
     flow.should have_current_path("/home")
   end
@@ -20,7 +20,7 @@ describe LuckyFlow do
 
     flow.visit(route_helper, as: user)
 
-    flow.el("@heading", text: "Home").should be_on_page
+    flow.should have_element("@heading", text: "Home")
   end
 
   it "can find element's text" do
@@ -65,14 +65,14 @@ describe LuckyFlow do
 
   it "can find a flow id" do
     flow = visit_page_with "<h1 flow-id='test-me'>Hello</h1>"
-    flow.el("@test-me", text: "Hello").should be_on_page
-    flow.el("@test-me", text: "Not here").should_not be_on_page
+    flow.should have_element("@test-me", text: "Hello")
+    flow.should_not have_element("@test-me", text: "Not here")
   end
 
   it "can find a generic CSS selector" do
     flow = visit_page_with "<h1 class='jumbotron'>Hello</h1>"
-    flow.el(".jumbotron", text: "Hello").should be_on_page
-    flow.el(".jumbotron", text: "Not here").should_not be_on_page
+    flow.should have_element(".jumbotron", text: "Hello")
+    flow.should_not have_element(".jumbotron", text: "Not here")
   end
 
   it "can fill in text" do
@@ -134,11 +134,11 @@ describe LuckyFlow do
       <h1>Home</h1>
       <a flow-id='target' href='/target'>Click Me</a>
     HTML
-    flow.el("h1", text: "Home").should be_on_page
+    flow.should have_element("h1", text: "Home")
 
     flow.click("@target")
 
-    flow.el("h1", text: "Target").should be_on_page
+    flow.should have_element("h1", text: "Target")
   end
 
   it "can open screenshots" do
@@ -167,13 +167,13 @@ describe LuckyFlow do
     flow = visit_page_with <<-HTML
       <h1>Title</h1>
     HTML
-    flow.session.cookie_manager.add_cookie("hello", "world")
-    flow.session.cookie_manager.get_cookie("hello").value.should eq "world"
+    flow.driver.add_cookie("hello", "world")
+    flow.driver.get_cookie("hello").should eq "world"
 
     LuckyFlow.reset
 
     expect_raises Selenium::Error do
-      flow.session.cookie_manager.get_cookie("hello").value
+      flow.driver.get_cookie("hello")
     end
   end
 
@@ -191,10 +191,10 @@ describe LuckyFlow do
 
     flow.click("@button")
     flow.accept_alert
-    flow.el("@button", text: "Click Me - 1").should be_on_page
+    flow.should have_element("@button", text: "Click Me - 1")
     flow.click("@button")
     flow.dismiss_alert
-    flow.el("@button", text: "Click Me - 2").should be_on_page
+    flow.should have_element("@button", text: "Click Me - 2")
   end
 
   it "can choose option in select input" do

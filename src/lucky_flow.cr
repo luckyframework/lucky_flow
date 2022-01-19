@@ -31,10 +31,6 @@ class LuckyFlow
     @@driver = LuckyFlow::Registry.get_driver(self.default_driver)
   end
 
-  def self.session : Selenium::Session
-    driver.session
-  end
-
   def self.shutdown : Nil
     LuckyFlow::Registry.shutdown_all
   end
@@ -48,7 +44,7 @@ class LuckyFlow
   end
 
   def visit(path : String)
-    session.navigate_to("#{settings.base_uri}#{path}")
+    driver.visit("#{settings.base_uri}#{path}")
   end
 
   def visit(action : Lucky::Action.class, as user : User? = nil)
@@ -63,7 +59,7 @@ class LuckyFlow
     elsif uri.query.nil? && user
       url += "?backdoor_user_id=#{user.id}"
     end
-    session.navigate_to(url)
+    driver.visit(url)
   end
 
   def open_screenshot(process = Process, time = Time.utc, fullsize = false) : Void
@@ -85,17 +81,15 @@ class LuckyFlow
   end
 
   def expand_page_to_fullsize
-    width = session.document_manager.execute_script("return Math.max(document.body.scrollWidth, document.body.offsetWidth, document.documentElement.clientWidth, document.documentElement.scrollWidth, document.documentElement.offsetWidth);").to_i64
-    height = session.document_manager.execute_script("return Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight);").to_i64
-    session.window_manager.resize_window(width: width + 100, height: height + 100)
+    driver.maximize_window
   end
 
   def with_fullsized_page(&block)
-    original_size = session.window_manager.window_rect
+    original_size = driver.window_size
     expand_page_to_fullsize
     yield
   ensure
-    session.window_manager.set_window_rect(original_size)
+    driver.resize_window(**original_size) if original_size
   end
 
   private def open_command(process) : String
@@ -180,29 +174,33 @@ class LuckyFlow
     end
   end
 
-  def el(css_selector : String, text : String)
-    Element.new(css_selector, text)
+  def el(css_selector : String, text : String) : LuckyFlow::Element
+    query = parsed_query(css_selector)
+    driver.find_css(query).find do |element|
+      element.text.includes?(text)
+    end || raise ElementNotFoundError.new(driver, query, text)
   end
 
-  def el(css_selector : String)
-    Element.new(css_selector)
+  def el(css_selector : String) : LuckyFlow::Element
+    query = parsed_query(css_selector)
+    driver.find_css(query).first? || raise ElementNotFoundError.new(driver, query, nil)
   end
 
-  def field(name_attr : String)
-    Element.new("[name='#{name_attr}']")
+  def field(name_attr : String) : LuckyFlow::Element
+    el("[name='#{name_attr}']")
   end
 
   def current_path
-    url = session.current_url
+    url = driver.current_url
     URI.parse(url).path
   end
 
   def accept_alert
-    session.alert_manager.accept_alert
+    driver.accept_alert
   end
 
   def dismiss_alert
-    session.alert_manager.dismiss_alert
+    driver.dismiss_alert
   end
 
   def pause
@@ -210,11 +208,11 @@ class LuckyFlow
     STDIN.gets
   end
 
-  def session : Selenium::Session
-    self.class.session
-  end
-
   def driver : LuckyFlow::Driver
     self.class.driver
+  end
+
+  private def parsed_query(query : String) : String
+    Selector.new(query).parse
   end
 end

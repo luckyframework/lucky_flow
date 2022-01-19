@@ -1,20 +1,37 @@
-class LuckyFlow::Element
-  private getter raw_selector
-  getter inner_text
-  delegate text, click, send_keys, displayed?, selected?, attribute, property, tag_name, to: element
-  delegate session, to: LuckyFlow
+abstract class LuckyFlow::Element
+  getter driver : LuckyFlow::Driver
+  getter raw_selector : String
 
-  def initialize(@raw_selector : String, text @inner_text : String? = nil)
-  end
+  abstract def text : String
+  abstract def click
+  abstract def send_keys(keys : Array(String | Symbol))
+  abstract def displayed? : Bool
+  abstract def selected? : Bool
+  abstract def attribute(name : String) : String?
+  abstract def property(name : String) : String?
+  abstract def tag_name : String
+  abstract def clear
+  abstract def select_option(value : String)
+  abstract def select_options(values : Array(String))
+  abstract def midpoint : {x: Int32, y: Int32}?
 
-  @_element : Selenium::Element?
-
-  private def element : Selenium::Element
-    @_element ||= FindElement.run(session, selector, inner_text)
+  private def initialize(@driver, @raw_selector)
   end
 
   def value
     property("value")
+  end
+
+  def send_keys(key : String)
+    send_keys([key])
+  end
+
+  def attribute(name : Symbol) : String?
+    attribute(name.to_s)
+  end
+
+  def property(name : Symbol) : String?
+    property(name.to_s)
   end
 
   # Set the text of a form field
@@ -45,24 +62,7 @@ class LuckyFlow::Element
     Selector.new(raw_selector).parse
   end
 
-  # Remove the text from a form field
-  def clear
-    element.clear
-  end
-
-  def select_option(value : String)
-    select_el = Selenium::Helpers::Select.from_element(element)
-    select_el.select_by_value(value)
-  end
-
-  def select_options(values : Array(String))
-    select_el = Selenium::Helpers::Select.from_element(element)
-    raise LuckyFlow::InvalidMultiSelectError.new unless select_el.multiple?
-
-    values.each { |value| select_el.select_by_value(value) }
-  end
-
   def hover
-    session.move_to(element)
+    driver.hover(self)
   end
 end

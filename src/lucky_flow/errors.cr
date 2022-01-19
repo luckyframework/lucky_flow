@@ -6,8 +6,9 @@ class LuckyFlow
   end
 
   class ElementNotFoundError < Error
-    def initialize(selector : String, inner_text : String?)
+    def initialize(driver : LuckyFlow::Driver, selector : String, inner_text : String?)
       message = LuckyFlow::ErrorMessageWhenNotFound.build(
+        driver: driver,
         selector: selector,
         inner_text: inner_text
       )

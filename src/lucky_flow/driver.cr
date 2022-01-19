@@ -1,31 +1,17 @@
 abstract class LuckyFlow::Driver
-  @retry_limit : Time = 2.seconds.from_now
-
-  getter session : Selenium::Session { start_session }
-
-  abstract def start_session : Selenium::Session
   abstract def stop
-
-  def reset : Nil
-    @session.try &.cookie_manager.delete_all_cookies
-  end
-
-  def shutdown : Nil
-    @session.try &.delete
-    stop
-  end
-
-  def screenshot(path : String)
-    FileUtils.mkdir_p(File.dirname(path))
-    session.screenshot(path)
-  end
-
-  protected def retry_start_session(e)
-    if Time.utc <= @retry_limit
-      sleep(0.1)
-      start_session
-    else
-      raise e
-    end
-  end
+  abstract def reset
+  abstract def shutdown
+  abstract def screenshot(path : String)
+  abstract def visit(url : String)
+  abstract def window_size : NamedTuple(width: Int64?, height: Int64?)
+  abstract def maximize_window
+  abstract def resize_window(width : Int64?, height : Int64?)
+  abstract def accept_alert
+  abstract def dismiss_alert
+  abstract def hover(element : LuckyFlow::Element)
+  abstract def find_css(query : String) : Array(LuckyFlow::Element)
+  abstract def current_url : String
+  abstract def add_cookie(key : String, value : String)
+  abstract def get_cookie(key : String) : String?
 end
