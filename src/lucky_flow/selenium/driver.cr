@@ -45,8 +45,11 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
   end
 
   def find_css(query : String) : Array(LuckyFlow::Element)
-    session.find_elements(:css, query)
-      .map { |el| LuckyFlow::Selenium::Element.new(self, query, el).as(LuckyFlow::Element) }
+    find_elements(:css, query)
+  end
+
+  def find_xpath(query : String) : Array(LuckyFlow::Element)
+    find_elements(:xpath, query)
   end
 
   def current_url : String
@@ -87,5 +90,10 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
     else
       raise e
     end
+  end
+
+  private def find_elements(strategy : Symbol, query : String) : Array(LuckyFlow::Element)
+    session.find_elements(strategy, query)
+      .map { |el| LuckyFlow::Selenium::Element.new(self, query, el).as(LuckyFlow::Element) }
   end
 end
