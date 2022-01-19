@@ -177,15 +177,11 @@ class LuckyFlow
   end
 
   def el(css_selector : String, text : String) : LuckyFlow::Element
-    query = parsed_query(css_selector)
-    driver.find_css(query).find do |element|
-      element.text.includes?(text)
-    end || raise ElementNotFoundError.new(driver, query, text)
+    LuckyFlow::FindElement.run(driver, css_selector, text)
   end
 
   def el(css_selector : String) : LuckyFlow::Element
-    query = parsed_query(css_selector)
-    driver.find_css(query).first? || raise ElementNotFoundError.new(driver, query, nil)
+    LuckyFlow::FindElement.run(driver, css_selector)
   end
 
   def field(name_attr : String) : LuckyFlow::Element
@@ -212,9 +208,5 @@ class LuckyFlow
 
   def driver : LuckyFlow::Driver
     self.class.driver
-  end
-
-  private def parsed_query(query : String) : String
-    Selector.new(query).parse
   end
 end
