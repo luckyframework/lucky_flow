@@ -66,21 +66,6 @@
       
     </li>
   
-  <li class="parent " data-id="lucky_flow/LuckyFlow/Drivers" data-name="luckyflow::drivers">
-      <a href="../LuckyFlow/Drivers.html">Drivers</a>
-      
-        <ul>
-  
-  <li class=" " data-id="lucky_flow/LuckyFlow/Drivers/Chrome" data-name="luckyflow::drivers::chrome">
-      <a href="../LuckyFlow/Drivers/Chrome.html">Chrome</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
   <li class=" current" data-id="lucky_flow/LuckyFlow/Element" data-name="luckyflow::element">
       <a href="../LuckyFlow/Element.html">Element</a>
       
@@ -106,13 +91,13 @@
       
         <ul>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/BeOnPageExpectation" data-name="luckyflow::expectations::beonpageexpectation">
-      <a href="../LuckyFlow/Expectations/BeOnPageExpectation.html">BeOnPageExpectation</a>
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveCurrentPathExpectation" data-name="luckyflow::expectations::havecurrentpathexpectation">
+      <a href="../LuckyFlow/Expectations/HaveCurrentPathExpectation.html">HaveCurrentPathExpectation</a>
       
     </li>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveCurrentPathExpectation" data-name="luckyflow::expectations::havecurrentpathexpectation">
-      <a href="../LuckyFlow/Expectations/HaveCurrentPathExpectation.html">HaveCurrentPathExpectation</a>
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveElementExpectation" data-name="luckyflow::expectations::haveelementexpectation">
+      <a href="../LuckyFlow/Expectations/HaveElementExpectation.html">HaveElementExpectation</a>
       
     </li>
   
@@ -123,11 +108,6 @@
   
 </ul>
 
-      
-    </li>
-  
-  <li class=" " data-id="lucky_flow/LuckyFlow/FindElement" data-name="luckyflow::findelement">
-      <a href="../LuckyFlow/FindElement.html">FindElement</a>
       
     </li>
   
@@ -153,6 +133,41 @@
   
   <li class=" " data-id="lucky_flow/LuckyFlow/Selector" data-name="luckyflow::selector">
       <a href="../LuckyFlow/Selector.html">Selector</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Selenium" data-name="luckyflow::selenium">
+      <a href="../LuckyFlow/Selenium.html">Selenium</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Selenium/Chrome" data-name="luckyflow::selenium::chrome">
+      <a href="../LuckyFlow/Selenium/Chrome.html">Chrome</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selenium/Chrome/Driver" data-name="luckyflow::selenium::chrome::driver">
+      <a href="../LuckyFlow/Selenium/Chrome/Driver.html">Driver</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selenium/Driver" data-name="luckyflow::selenium::driver">
+      <a href="../LuckyFlow/Selenium/Driver.html">Driver</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selenium/Element" data-name="luckyflow::selenium::element">
+      <a href="../LuckyFlow/Selenium/Element.html">Element</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -190,7 +205,7 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> LuckyFlow::Element
+  <span class="kind">abstract class</span> LuckyFlow::Element
 
 </h1>
 
@@ -208,6 +223,20 @@
 
 
 
+  <h2>
+    <a id="direct-known-subclasses" class="anchor" href="#direct-known-subclasses">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Direct Known Subclasses
+  </h2>
+  <ul class="other-types-list">
+    
+      <li class="other-type"><a href="../LuckyFlow/Selenium/Element.html">LuckyFlow::Selenium::Element</a></li>
+    
+  </ul>
+
 
 
 
@@ -223,7 +252,7 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L1" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L1" target="_blank">
         lucky_flow/element.cr
       </a>
     
@@ -233,23 +262,6 @@
 
 
 
-
-  <h2>
-    <a id="constructors" class="anchor" href="#constructors">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructors
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#new(raw_selector:String,textinner_text:String?=nil)-class-method" class="signature"><strong>.new</strong>(raw_selector : String, text inner_text : String? = <span class="n">nil</span>)</a>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -273,39 +285,32 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#attribute(*args,**options,&)-instance-method" class="signature"><strong>#attribute</strong>(*args, **options, &)</a>
+        <a href="#attribute(name:Symbol):String?-instance-method" class="signature"><strong>#attribute</strong>(name : Symbol) : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#attribute(*args,**options)-instance-method" class="signature"><strong>#attribute</strong>(*args, **options)</a>
+        <a href="#attribute(name:String):String?-instance-method" class="signature"><strong>#attribute</strong>(name : String) : String?</a>
         
       </li>
     
       <li class="entry-summary">
         <a href="#clear-instance-method" class="signature"><strong>#clear</strong></a>
         
-          <div class="summary"><p>Remove the text from a form field</p></div>
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#click-instance-method" class="signature"><strong>#click</strong></a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#click(*args,**options)-instance-method" class="signature"><strong>#click</strong>(*args, **options)</a>
+        <a href="#displayed?:Bool-instance-method" class="signature"><strong>#displayed?</strong> : Bool</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#click(*args,**options,&)-instance-method" class="signature"><strong>#click</strong>(*args, **options, &)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#displayed?(*args,**options)-instance-method" class="signature"><strong>#displayed?</strong>(*args, **options)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#displayed?(*args,**options,&)-instance-method" class="signature"><strong>#displayed?</strong>(*args, **options, &)</a>
+        <a href="#driver:LuckyFlow::Driver-instance-method" class="signature"><strong>#driver</strong> : LuckyFlow::Driver</a>
         
       </li>
     
@@ -322,17 +327,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#inner_text:String?-instance-method" class="signature"><strong>#inner_text</strong> : String?</a>
+        <a href="#midpoint:NamedTuple()?-instance-method" class="signature"><strong>#midpoint</strong> : NamedTuple()?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#property(*args,**options,&)-instance-method" class="signature"><strong>#property</strong>(*args, **options, &)</a>
+        <a href="#property(name:String):String?-instance-method" class="signature"><strong>#property</strong>(name : String) : String?</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#property(*args,**options)-instance-method" class="signature"><strong>#property</strong>(*args, **options)</a>
+        <a href="#property(name:Symbol):String?-instance-method" class="signature"><strong>#property</strong>(name : Symbol) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#raw_selector:String-instance-method" class="signature"><strong>#raw_selector</strong> : String</a>
         
       </li>
     
@@ -347,12 +357,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#selected?(*args,**options,&)-instance-method" class="signature"><strong>#selected?</strong>(*args, **options, &)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#selected?(*args,**options)-instance-method" class="signature"><strong>#selected?</strong>(*args, **options)</a>
+        <a href="#selected?:Bool-instance-method" class="signature"><strong>#selected?</strong> : Bool</a>
         
       </li>
     
@@ -362,42 +367,22 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#send_keys(*args,**options,&)-instance-method" class="signature"><strong>#send_keys</strong>(*args, **options, &)</a>
+        <a href="#send_keys(key:String)-instance-method" class="signature"><strong>#send_keys</strong>(key : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#send_keys(*args,**options)-instance-method" class="signature"><strong>#send_keys</strong>(*args, **options)</a>
+        <a href="#send_keys(keys:Array(String%7CSymbol))-instance-method" class="signature"><strong>#send_keys</strong>(keys : Array(String | Symbol))</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#session(*args,**options)-instance-method" class="signature"><strong>#session</strong>(*args, **options)</a>
+        <a href="#tag_name:String-instance-method" class="signature"><strong>#tag_name</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#session(*args,**options,&)-instance-method" class="signature"><strong>#session</strong>(*args, **options, &)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#tag_name(*args,**options)-instance-method" class="signature"><strong>#tag_name</strong>(*args, **options)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#tag_name(*args,**options,&)-instance-method" class="signature"><strong>#tag_name</strong>(*args, **options, &)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#text(*args,**options,&)-instance-method" class="signature"><strong>#text</strong>(*args, **options, &)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#text(*args,**options)-instance-method" class="signature"><strong>#text</strong>(*args, **options)</a>
+        <a href="#text:String-instance-method" class="signature"><strong>#text</strong> : String</a>
         
       </li>
     
@@ -437,32 +422,6 @@
 </div>
 
 
-  <h2>
-    <a id="constructor-detail" class="anchor" href="#constructor-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructor Detail
-  </h2>
-  
-    <div class="entry-detail" id="new(raw_selector:String,textinner_text:String?=nil)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(raw_selector : String, text inner_text : String? = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#new(raw_selector:String,textinner_text:String?=nil)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L7" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-
 
 
 
@@ -497,124 +456,103 @@ field.append(<span class="s">&quot; So much fun!&quot;</span>)</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L57" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="attribute(*args,**options,&)-instance-method">
+    <div class="entry-detail" id="attribute(name:Symbol):String?-instance-method">
       <div class="signature">
         
-        def <strong>attribute</strong>(*args, **options, &)
+        def <strong>attribute</strong>(name : Symbol) : String?
 
-        <a class="method-permalink" href="#attribute(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#attribute(name:Symbol):String?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L29" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="attribute(*args,**options)-instance-method">
+    <div class="entry-detail" id="attribute(name:String):String?-instance-method">
       <div class="signature">
-        
-        def <strong>attribute</strong>(*args, **options)
+        abstract 
+        def <strong>attribute</strong>(name : String) : String?
 
-        <a class="method-permalink" href="#attribute(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#attribute(name:String):String?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
   
     <div class="entry-detail" id="clear-instance-method">
       <div class="signature">
-        
+        abstract 
         def <strong>clear</strong>
 
         <a class="method-permalink" href="#clear-instance-method">#</a>
       </div>
       
-        <div class="doc">
-          
-          <p>Remove the text from a form field</p>
-        </div>
-      
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L49" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="click(*args,**options)-instance-method">
+    <div class="entry-detail" id="click-instance-method">
       <div class="signature">
-        
-        def <strong>click</strong>(*args, **options)
+        abstract 
+        def <strong>click</strong>
 
-        <a class="method-permalink" href="#click(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#click-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="click(*args,**options,&)-instance-method">
+    <div class="entry-detail" id="displayed?:Bool-instance-method">
       <div class="signature">
-        
-        def <strong>click</strong>(*args, **options, &)
+        abstract 
+        def <strong>displayed?</strong> : Bool
 
-        <a class="method-permalink" href="#click(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#displayed?:Bool-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="displayed?(*args,**options)-instance-method">
+    <div class="entry-detail" id="driver:LuckyFlow::Driver-instance-method">
       <div class="signature">
         
-        def <strong>displayed?</strong>(*args, **options)
+        def <strong>driver</strong> : <a href="../LuckyFlow/Driver.html">LuckyFlow::Driver</a>
 
-        <a class="method-permalink" href="#displayed?(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#driver:LuckyFlow::Driver-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="displayed?(*args,**options,&)-instance-method">
-      <div class="signature">
-        
-        def <strong>displayed?</strong>(*args, **options, &)
-
-        <a class="method-permalink" href="#displayed?(*args,**options,&)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L2" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -639,7 +577,7 @@ field.fill(<span class="s">&quot;Lucky is great!&quot;</span>)</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L27" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -655,62 +593,78 @@ field.fill(<span class="s">&quot;Lucky is great!&quot;</span>)</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L65" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="inner_text:String?-instance-method">
+    <div class="entry-detail" id="midpoint:NamedTuple()?-instance-method">
       <div class="signature">
-        
-        def <strong>inner_text</strong> : String?
+        abstract 
+        def <strong>midpoint</strong> : NamedTuple()?
 
-        <a class="method-permalink" href="#inner_text:String?-instance-method">#</a>
+        <a class="method-permalink" href="#midpoint:NamedTuple()?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L3" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="property(*args,**options,&)-instance-method">
+    <div class="entry-detail" id="property(name:String):String?-instance-method">
       <div class="signature">
-        
-        def <strong>property</strong>(*args, **options, &)
+        abstract 
+        def <strong>property</strong>(name : String) : String?
 
-        <a class="method-permalink" href="#property(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#property(name:String):String?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="property(*args,**options)-instance-method">
+    <div class="entry-detail" id="property(name:Symbol):String?-instance-method">
       <div class="signature">
         
-        def <strong>property</strong>(*args, **options)
+        def <strong>property</strong>(name : Symbol) : String?
 
-        <a class="method-permalink" href="#property(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#property(name:Symbol):String?-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L33" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="raw_selector:String-instance-method">
+      <div class="signature">
+        
+        def <strong>raw_selector</strong> : String
+
+        <a class="method-permalink" href="#raw_selector:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L3" target="_blank">View source</a>]
         
       </div>
     </div>
   
     <div class="entry-detail" id="select_option(value:String)-instance-method">
       <div class="signature">
-        
+        abstract 
         def <strong>select_option</strong>(value : String)
 
         <a class="method-permalink" href="#select_option(value:String)-instance-method">#</a>
@@ -719,14 +673,14 @@ field.fill(<span class="s">&quot;Lucky is great!&quot;</span>)</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
   
     <div class="entry-detail" id="select_options(values:Array(String))-instance-method">
       <div class="signature">
-        
+        abstract 
         def <strong>select_options</strong>(values : Array(String))
 
         <a class="method-permalink" href="#select_options(values:Array(String))-instance-method">#</a>
@@ -735,39 +689,23 @@ field.fill(<span class="s">&quot;Lucky is great!&quot;</span>)</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L58" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="selected?(*args,**options,&)-instance-method">
+    <div class="entry-detail" id="selected?:Bool-instance-method">
       <div class="signature">
-        
-        def <strong>selected?</strong>(*args, **options, &)
+        abstract 
+        def <strong>selected?</strong> : Bool
 
-        <a class="method-permalink" href="#selected?(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#selected?:Bool-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="selected?(*args,**options)-instance-method">
-      <div class="signature">
-        
-        def <strong>selected?</strong>(*args, **options)
-
-        <a class="method-permalink" href="#selected?(*args,**options)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -783,135 +721,71 @@ field.fill(<span class="s">&quot;Lucky is great!&quot;</span>)</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L61" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="send_keys(*args,**options,&)-instance-method">
+    <div class="entry-detail" id="send_keys(key:String)-instance-method">
       <div class="signature">
         
-        def <strong>send_keys</strong>(*args, **options, &)
+        def <strong>send_keys</strong>(key : String)
 
-        <a class="method-permalink" href="#send_keys(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#send_keys(key:String)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L25" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="send_keys(*args,**options)-instance-method">
+    <div class="entry-detail" id="send_keys(keys:Array(String|Symbol))-instance-method">
       <div class="signature">
-        
-        def <strong>send_keys</strong>(*args, **options)
+        abstract 
+        def <strong>send_keys</strong>(keys : Array(String | Symbol))
 
-        <a class="method-permalink" href="#send_keys(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#send_keys(keys:Array(String%7CSymbol))-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="session(*args,**options)-instance-method">
+    <div class="entry-detail" id="tag_name:String-instance-method">
       <div class="signature">
-        
-        def <strong>session</strong>(*args, **options)
+        abstract 
+        def <strong>tag_name</strong> : String
 
-        <a class="method-permalink" href="#session(*args,**options)-instance-method">#</a>
+        <a class="method-permalink" href="#tag_name:String-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="session(*args,**options,&)-instance-method">
+    <div class="entry-detail" id="text:String-instance-method">
       <div class="signature">
-        
-        def <strong>session</strong>(*args, **options, &)
+        abstract 
+        def <strong>text</strong> : String
 
-        <a class="method-permalink" href="#session(*args,**options,&)-instance-method">#</a>
+        <a class="method-permalink" href="#text:String-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L5" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="tag_name(*args,**options)-instance-method">
-      <div class="signature">
-        
-        def <strong>tag_name</strong>(*args, **options)
-
-        <a class="method-permalink" href="#tag_name(*args,**options)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="tag_name(*args,**options,&)-instance-method">
-      <div class="signature">
-        
-        def <strong>tag_name</strong>(*args, **options, &)
-
-        <a class="method-permalink" href="#tag_name(*args,**options,&)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="text(*args,**options,&)-instance-method">
-      <div class="signature">
-        
-        def <strong>text</strong>(*args, **options, &)
-
-        <a class="method-permalink" href="#text(*args,**options,&)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="text(*args,**options)-instance-method">
-      <div class="signature">
-        
-        def <strong>text</strong>(*args, **options)
-
-        <a class="method-permalink" href="#text(*args,**options)-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -927,7 +801,7 @@ field.fill(<span class="s">&quot;Lucky is great!&quot;</span>)</code></pre>
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/element.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/element.cr#L21" target="_blank">View source</a>]
         
       </div>
     </div>

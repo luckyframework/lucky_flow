@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="lucky_flow">
-  <title>LuckyFlow::Drivers::Chrome - lucky_flow master</title>
+  <title>LuckyFlow::Expectations::HaveElementExpectation - lucky_flow master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -66,21 +66,6 @@
       
     </li>
   
-  <li class="parent open current" data-id="lucky_flow/LuckyFlow/Drivers" data-name="luckyflow::drivers">
-      <a href="../../LuckyFlow/Drivers.html">Drivers</a>
-      
-        <ul>
-  
-  <li class=" current" data-id="lucky_flow/LuckyFlow/Drivers/Chrome" data-name="luckyflow::drivers::chrome">
-      <a href="../../LuckyFlow/Drivers/Chrome.html">Chrome</a>
-      
-    </li>
-  
-</ul>
-
-      
-    </li>
-  
   <li class=" " data-id="lucky_flow/LuckyFlow/Element" data-name="luckyflow::element">
       <a href="../../LuckyFlow/Element.html">Element</a>
       
@@ -101,18 +86,18 @@
       
     </li>
   
-  <li class="parent " data-id="lucky_flow/LuckyFlow/Expectations" data-name="luckyflow::expectations">
+  <li class="parent open current" data-id="lucky_flow/LuckyFlow/Expectations" data-name="luckyflow::expectations">
       <a href="../../LuckyFlow/Expectations.html">Expectations</a>
       
         <ul>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/BeOnPageExpectation" data-name="luckyflow::expectations::beonpageexpectation">
-      <a href="../../LuckyFlow/Expectations/BeOnPageExpectation.html">BeOnPageExpectation</a>
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveCurrentPathExpectation" data-name="luckyflow::expectations::havecurrentpathexpectation">
+      <a href="../../LuckyFlow/Expectations/HaveCurrentPathExpectation.html">HaveCurrentPathExpectation</a>
       
     </li>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveCurrentPathExpectation" data-name="luckyflow::expectations::havecurrentpathexpectation">
-      <a href="../../LuckyFlow/Expectations/HaveCurrentPathExpectation.html">HaveCurrentPathExpectation</a>
+  <li class=" current" data-id="lucky_flow/LuckyFlow/Expectations/HaveElementExpectation" data-name="luckyflow::expectations::haveelementexpectation">
+      <a href="../../LuckyFlow/Expectations/HaveElementExpectation.html">HaveElementExpectation</a>
       
     </li>
   
@@ -123,11 +108,6 @@
   
 </ul>
 
-      
-    </li>
-  
-  <li class=" " data-id="lucky_flow/LuckyFlow/FindElement" data-name="luckyflow::findelement">
-      <a href="../../LuckyFlow/FindElement.html">FindElement</a>
       
     </li>
   
@@ -153,6 +133,41 @@
   
   <li class=" " data-id="lucky_flow/LuckyFlow/Selector" data-name="luckyflow::selector">
       <a href="../../LuckyFlow/Selector.html">Selector</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Selenium" data-name="luckyflow::selenium">
+      <a href="../../LuckyFlow/Selenium.html">Selenium</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Selenium/Chrome" data-name="luckyflow::selenium::chrome">
+      <a href="../../LuckyFlow/Selenium/Chrome.html">Chrome</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selenium/Chrome/Driver" data-name="luckyflow::selenium::chrome::driver">
+      <a href="../../LuckyFlow/Selenium/Chrome/Driver.html">Driver</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selenium/Driver" data-name="luckyflow::selenium::driver">
+      <a href="../../LuckyFlow/Selenium/Driver.html">Driver</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selenium/Element" data-name="luckyflow::selenium::element">
+      <a href="../../LuckyFlow/Selenium/Element.html">Element</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -190,12 +205,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> LuckyFlow::Drivers::Chrome
+  <span class="kind">struct</span> LuckyFlow::Expectations::HaveElementExpectation
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../LuckyFlow/Drivers/Chrome.html">LuckyFlow::Drivers::Chrome</a></li><li class="superclass"><a href="../../LuckyFlow/Driver.html">LuckyFlow::Driver</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../LuckyFlow/Expectations/HaveElementExpectation.html">LuckyFlow::Expectations::HaveElementExpectation</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
 
 
 
@@ -223,8 +238,8 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/drivers/chrome.cr#L1" target="_blank">
-        lucky_flow/drivers/chrome.cr
+      <a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/expectations/have_element_expectation.cr#L1" target="_blank">
+        lucky_flow/expectations/have_element_expectation.cr
       </a>
     
     <br/>
@@ -245,7 +260,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(&)-class-method" class="signature"><strong>.new</strong>(&)</a>
+        <a href="#new(css_selector:String,text:String?,visible:Bool)-class-method" class="signature"><strong>.new</strong>(css_selector : String, text : String?, visible : Bool)</a>
         
       </li>
     
@@ -266,12 +281,17 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#start_session:Selenium::Session-instance-method" class="signature"><strong>#start_session</strong> : Selenium::Session</a>
+        <a href="#failure_message(flow:LuckyFlow)-instance-method" class="signature"><strong>#failure_message</strong>(flow : LuckyFlow)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#stop-instance-method" class="signature"><strong>#stop</strong></a>
+        <a href="#match(flow:LuckyFlow):Bool-instance-method" class="signature"><strong>#match</strong>(flow : LuckyFlow) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#negative_failure_message(flow:LuckyFlow)-instance-method" class="signature"><strong>#negative_failure_message</strong>(flow : LuckyFlow)</a>
         
       </li>
     
@@ -284,40 +304,6 @@
 <div class="methods-inherited">
   
     
-
-  <h3>Instance methods inherited from class <code><a href="../../LuckyFlow/Driver.html">LuckyFlow::Driver</a></code></h3>
-  
-  
-    <a href="../../LuckyFlow/Driver.html#reset:Nil-instance-method" class="tooltip">
-      <span>reset : Nil</span>
-    reset</a>, 
-    
-  
-    <a href="../../LuckyFlow/Driver.html#screenshot(path:String)-instance-method" class="tooltip">
-      <span>screenshot(path : String)</span>
-    screenshot</a>, 
-    
-  
-    <a href="../../LuckyFlow/Driver.html#session:Selenium::Session-instance-method" class="tooltip">
-      <span>session : Selenium::Session</span>
-    session</a>, 
-    
-  
-    <a href="../../LuckyFlow/Driver.html#shutdown:Nil-instance-method" class="tooltip">
-      <span>shutdown : Nil</span>
-    shutdown</a>, 
-    
-  
-    <a href="../../LuckyFlow/Driver.html#start_session:Selenium::Session-instance-method" class="tooltip">
-      <span>start_session : Selenium::Session</span>
-    start_session</a>, 
-    
-  
-    <a href="../../LuckyFlow/Driver.html#stop-instance-method" class="tooltip">
-      <span>stop</span>
-    stop</a>
-    
-  
 
 
     
@@ -359,18 +345,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(&)-class-method">
+    <div class="entry-detail" id="new(css_selector:String,text:String?,visible:Bool)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(&)
+        def self.<strong>new</strong>(css_selector : String, text : String?, visible : Bool)
 
-        <a class="method-permalink" href="#new(&)-class-method">#</a>
+        <a class="method-permalink" href="#new(css_selector:String,text:String?,visible:Bool)-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/drivers/chrome.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/expectations/have_element_expectation.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -389,34 +375,50 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="start_session:Selenium::Session-instance-method">
+    <div class="entry-detail" id="failure_message(flow:LuckyFlow)-instance-method">
       <div class="signature">
         
-        def <strong>start_session</strong> : Selenium::Session
+        def <strong>failure_message</strong>(flow : <a href="../../LuckyFlow.html">LuckyFlow</a>)
 
-        <a class="method-permalink" href="#start_session:Selenium::Session-instance-method">#</a>
+        <a class="method-permalink" href="#failure_message(flow:LuckyFlow)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/drivers/chrome.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/expectations/have_element_expectation.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="stop-instance-method">
+    <div class="entry-detail" id="match(flow:LuckyFlow):Bool-instance-method">
       <div class="signature">
         
-        def <strong>stop</strong>
+        def <strong>match</strong>(flow : <a href="../../LuckyFlow.html">LuckyFlow</a>) : Bool
 
-        <a class="method-permalink" href="#stop-instance-method">#</a>
+        <a class="method-permalink" href="#match(flow:LuckyFlow):Bool-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/da9c94776ab00a531796e15cb79f4f841ac5cd41/src/lucky_flow/drivers/chrome.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/expectations/have_element_expectation.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="negative_failure_message(flow:LuckyFlow)-instance-method">
+      <div class="signature">
+        
+        def <strong>negative_failure_message</strong>(flow : <a href="../../LuckyFlow.html">LuckyFlow</a>)
+
+        <a class="method-permalink" href="#negative_failure_message(flow:LuckyFlow)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/expectations/have_element_expectation.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>

@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 0.36.1">
+<meta name="crystal_docs.project_version" content="master">
+<meta name="crystal_docs.project_name" content="lucky_flow">
+
+
+
+<link href="../../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../../js/doc.js"></script>
+
+  <meta name="repository-name" content="lucky_flow">
+  <title>LuckyFlow::Selenium::Element - lucky_flow master</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../../index.html">
+          lucky_flow
+        </a>
+      </h1>
+
+      <span class="project-version">
+        master
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="lucky_flow/LuckyFlow" data-name="luckyflow">
+      <a href="../../LuckyFlow.html">LuckyFlow</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Driver" data-name="luckyflow::driver">
+      <a href="../../LuckyFlow/Driver.html">Driver</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/DriverInstallationError" data-name="luckyflow::driverinstallationerror">
+      <a href="../../LuckyFlow/DriverInstallationError.html">DriverInstallationError</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Element" data-name="luckyflow::element">
+      <a href="../../LuckyFlow/Element.html">Element</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/ElementNotFoundError" data-name="luckyflow::elementnotfounderror">
+      <a href="../../LuckyFlow/ElementNotFoundError.html">ElementNotFoundError</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Error" data-name="luckyflow::error">
+      <a href="../../LuckyFlow/Error.html">Error</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/ErrorMessageWhenNotFound" data-name="luckyflow::errormessagewhennotfound">
+      <a href="../../LuckyFlow/ErrorMessageWhenNotFound.html">ErrorMessageWhenNotFound</a>
+      
+    </li>
+  
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Expectations" data-name="luckyflow::expectations">
+      <a href="../../LuckyFlow/Expectations.html">Expectations</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveCurrentPathExpectation" data-name="luckyflow::expectations::havecurrentpathexpectation">
+      <a href="../../LuckyFlow/Expectations/HaveCurrentPathExpectation.html">HaveCurrentPathExpectation</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveElementExpectation" data-name="luckyflow::expectations::haveelementexpectation">
+      <a href="../../LuckyFlow/Expectations/HaveElementExpectation.html">HaveElementExpectation</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveTextExpectation" data-name="luckyflow::expectations::havetextexpectation">
+      <a href="../../LuckyFlow/Expectations/HaveTextExpectation.html">HaveTextExpectation</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/HabitatSettings" data-name="luckyflow::habitatsettings">
+      <a href="../../LuckyFlow/HabitatSettings.html">HabitatSettings</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/InvalidMultiSelectError" data-name="luckyflow::invalidmultiselecterror">
+      <a href="../../LuckyFlow/InvalidMultiSelectError.html">InvalidMultiSelectError</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/InvalidOperationError" data-name="luckyflow::invalidoperationerror">
+      <a href="../../LuckyFlow/InvalidOperationError.html">InvalidOperationError</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Registry" data-name="luckyflow::registry">
+      <a href="../../LuckyFlow/Registry.html">Registry</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selector" data-name="luckyflow::selector">
+      <a href="../../LuckyFlow/Selector.html">Selector</a>
+      
+    </li>
+  
+  <li class="parent open current" data-id="lucky_flow/LuckyFlow/Selenium" data-name="luckyflow::selenium">
+      <a href="../../LuckyFlow/Selenium.html">Selenium</a>
+      
+        <ul>
+  
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Selenium/Chrome" data-name="luckyflow::selenium::chrome">
+      <a href="../../LuckyFlow/Selenium/Chrome.html">Chrome</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selenium/Chrome/Driver" data-name="luckyflow::selenium::chrome::driver">
+      <a href="../../LuckyFlow/Selenium/Chrome/Driver.html">Driver</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selenium/Driver" data-name="luckyflow::selenium::driver">
+      <a href="../../LuckyFlow/Selenium/Driver.html">Driver</a>
+      
+    </li>
+  
+  <li class=" current" data-id="lucky_flow/LuckyFlow/Selenium/Element" data-name="luckyflow::selenium::element">
+      <a href="../../LuckyFlow/Selenium/Element.html">Element</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyFlow/Spec" data-name="luckyflow::spec">
+      <a href="../../LuckyFlow/Spec.html">Spec</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class="parent " data-id="lucky_flow/Spec" data-name="spec">
+      <a href="../../Spec.html">Spec</a>
+      
+        <ul>
+  
+  <li class=" " data-id="lucky_flow/Spec/Item" data-name="spec::item">
+      <a href="../../Spec/Item.html">Item</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> LuckyFlow::Selenium::Element
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../LuckyFlow/Selenium/Element.html">LuckyFlow::Selenium::Element</a></li><li class="superclass"><a href="../../LuckyFlow/Element.html">LuckyFlow::Element</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L1" target="_blank">
+        lucky_flow/selenium/element.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(driver,raw_selector,inner_element)-class-method" class="signature"><strong>.new</strong>(driver, raw_selector, inner_element)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#attribute(name:String):String?-instance-method" class="signature"><strong>#attribute</strong>(name : String) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#clear-instance-method" class="signature"><strong>#clear</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#click-instance-method" class="signature"><strong>#click</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#displayed?:Bool-instance-method" class="signature"><strong>#displayed?</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#midpoint:NamedTuple()?-instance-method" class="signature"><strong>#midpoint</strong> : NamedTuple()?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#property(name:String):String?-instance-method" class="signature"><strong>#property</strong>(name : String) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select_option(value:String)-instance-method" class="signature"><strong>#select_option</strong>(value : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#select_options(values:Array(String))-instance-method" class="signature"><strong>#select_options</strong>(values : Array(String))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#selected?:Bool-instance-method" class="signature"><strong>#selected?</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#send_keys(keys:Array(String%7CSymbol))-instance-method" class="signature"><strong>#send_keys</strong>(keys : Array(String | Symbol))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#send_keys(*args,**options)-instance-method" class="signature"><strong>#send_keys</strong>(*args, **options)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#send_keys(*args,**options,&)-instance-method" class="signature"><strong>#send_keys</strong>(*args, **options, &)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#tag_name:String-instance-method" class="signature"><strong>#tag_name</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#text:String-instance-method" class="signature"><strong>#text</strong> : String</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../../LuckyFlow/Element.html">LuckyFlow::Element</a></code></h3>
+  
+  
+    <a href="../../LuckyFlow/Element.html#append(value:String)-instance-method" class="tooltip">
+      <span>append(value : String)</span>
+    append</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#attribute(name:Symbol):String?-instance-method" class="tooltip">
+      <span>attribute(name : Symbol) : String?<br/>attribute(name : String) : String?</span>
+    attribute</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#clear-instance-method" class="tooltip">
+      <span>clear</span>
+    clear</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#click-instance-method" class="tooltip">
+      <span>click</span>
+    click</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#displayed?:Bool-instance-method" class="tooltip">
+      <span>displayed? : Bool</span>
+    displayed?</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#driver:LuckyFlow::Driver-instance-method" class="tooltip">
+      <span>driver : LuckyFlow::Driver</span>
+    driver</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#fill(value:String)-instance-method" class="tooltip">
+      <span>fill(value : String)</span>
+    fill</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#hover-instance-method" class="tooltip">
+      <span>hover</span>
+    hover</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#midpoint:NamedTuple()?-instance-method" class="tooltip">
+      <span>midpoint : NamedTuple()?</span>
+    midpoint</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#property(name:String):String?-instance-method" class="tooltip">
+      <span>property(name : String) : String?<br/>property(name : Symbol) : String?</span>
+    property</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#raw_selector:String-instance-method" class="tooltip">
+      <span>raw_selector : String</span>
+    raw_selector</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#select_option(value:String)-instance-method" class="tooltip">
+      <span>select_option(value : String)</span>
+    select_option</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#select_options(values:Array(String))-instance-method" class="tooltip">
+      <span>select_options(values : Array(String))</span>
+    select_options</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#selected?:Bool-instance-method" class="tooltip">
+      <span>selected? : Bool</span>
+    selected?</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#selector:String-instance-method" class="tooltip">
+      <span>selector : String</span>
+    selector</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#send_keys(key:String)-instance-method" class="tooltip">
+      <span>send_keys(key : String)<br/>send_keys(keys : Array(String | Symbol))</span>
+    send_keys</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#tag_name:String-instance-method" class="tooltip">
+      <span>tag_name : String</span>
+    tag_name</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#text:String-instance-method" class="tooltip">
+      <span>text : String</span>
+    text</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#value-instance-method" class="tooltip">
+      <span>value</span>
+    value</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(driver,raw_selector,inner_element)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(driver, raw_selector, inner_element)
+
+        <a class="method-permalink" href="#new(driver,raw_selector,inner_element)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L6" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="attribute(name:String):String?-instance-method">
+      <div class="signature">
+        
+        def <strong>attribute</strong>(name : String) : String?
+
+        <a class="method-permalink" href="#attribute(name:String):String?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L22" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="clear-instance-method">
+      <div class="signature">
+        
+        def <strong>clear</strong>
+
+        <a class="method-permalink" href="#clear-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="click-instance-method">
+      <div class="signature">
+        
+        def <strong>click</strong>
+
+        <a class="method-permalink" href="#click-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L38" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="displayed?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>displayed?</strong> : Bool
+
+        <a class="method-permalink" href="#displayed?:Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="midpoint:NamedTuple()?-instance-method">
+      <div class="signature">
+        
+        def <strong>midpoint</strong> : NamedTuple()?
+
+        <a class="method-permalink" href="#midpoint:NamedTuple()?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L58" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="property(name:String):String?-instance-method">
+      <div class="signature">
+        
+        def <strong>property</strong>(name : String) : String?
+
+        <a class="method-permalink" href="#property(name:String):String?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select_option(value:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>select_option</strong>(value : String)
+
+        <a class="method-permalink" href="#select_option(value:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L46" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="select_options(values:Array(String))-instance-method">
+      <div class="signature">
+        
+        def <strong>select_options</strong>(values : Array(String))
+
+        <a class="method-permalink" href="#select_options(values:Array(String))-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L51" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="selected?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>selected?</strong> : Bool
+
+        <a class="method-permalink" href="#selected?:Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="send_keys(keys:Array(String|Symbol))-instance-method">
+      <div class="signature">
+        
+        def <strong>send_keys</strong>(keys : Array(String | Symbol))
+
+        <a class="method-permalink" href="#send_keys(keys:Array(String%7CSymbol))-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L42" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="send_keys(*args,**options)-instance-method">
+      <div class="signature">
+        
+        def <strong>send_keys</strong>(*args, **options)
+
+        <a class="method-permalink" href="#send_keys(*args,**options)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L2" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="send_keys(*args,**options,&)-instance-method">
+      <div class="signature">
+        
+        def <strong>send_keys</strong>(*args, **options, &)
+
+        <a class="method-permalink" href="#send_keys(*args,**options,&)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L2" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="tag_name:String-instance-method">
+      <div class="signature">
+        
+        def <strong>tag_name</strong> : String
+
+        <a class="method-permalink" href="#tag_name:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L30" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="text:String-instance-method">
+      <div class="signature">
+        
+        def <strong>text</strong> : String
+
+        <a class="method-permalink" href="#text:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/35b6239e0afde6a3fd3708860d605b5063aef0b8/src/lucky_flow/selenium/element.cr#L10" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
