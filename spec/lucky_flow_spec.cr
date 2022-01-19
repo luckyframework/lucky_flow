@@ -90,6 +90,24 @@ describe LuckyFlow do
     flow.field("question:body").value.should eq "Sally"
   end
 
+  it "can submit form" do
+    handle_route("/foo") do |context|
+      <<-HTML
+        <p flow-id="result">#{context.request.body.not_nil!.gets_to_end}</p>
+      HTML
+    end
+
+    flow = visit_page_with <<-HTML
+      <form action="/foo" method="post">
+        <input name="secret" value="abc" type="hidden"/>
+        <button flow-id="submit" type="submit">Submit</button>
+      </form>
+    HTML
+
+    flow.el("@submit").click
+    flow.should have_element("@result", text: "secret=abc")
+  end
+
   it "clears existing text before filling" do
     flow = visit_page_with <<-HTML
       <input name="question:title"/>

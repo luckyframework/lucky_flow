@@ -34,3 +34,7 @@ def visit_page_with(html) : LuckyFlow
   flow.visit("/home")
   flow
 end
+
+def handle_route(path : String, &block : HTTP::Server::Context -> String)
+  TestServer.middleware.route(path, block)
+end
