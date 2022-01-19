@@ -1,4 +1,6 @@
 class LuckyFlow::Registry
+  class_property default_driver : String = "headless_chrome"
+
   @@registry = Hash(String, Proc(LuckyFlow::Driver)).new
   @@running_registry = Hash(String, LuckyFlow::Driver).new
 
@@ -10,7 +12,7 @@ class LuckyFlow::Registry
     Set.new(@@registry.keys)
   end
 
-  def self.get_driver(name : String) : LuckyFlow::Driver
+  def self.get_driver(name : String = default_driver) : LuckyFlow::Driver
     @@running_registry[name] ||= @@registry[name].call
   end
 
