@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="lucky_flow">
-  <title>LuckyFlow::Selenium - lucky_flow master</title>
+  <title>LuckyFlow::FindElement - lucky_flow master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -111,7 +111,7 @@
       
     </li>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/FindElement" data-name="luckyflow::findelement">
+  <li class=" current" data-id="lucky_flow/LuckyFlow/FindElement" data-name="luckyflow::findelement">
       <a href="../LuckyFlow/FindElement.html">FindElement</a>
       
     </li>
@@ -141,7 +141,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="lucky_flow/LuckyFlow/Selenium" data-name="luckyflow::selenium">
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Selenium" data-name="luckyflow::selenium">
       <a href="../LuckyFlow/Selenium.html">Selenium</a>
       
         <ul>
@@ -210,13 +210,26 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">module</span> LuckyFlow::Selenium
+  <span class="kind">class</span> LuckyFlow::FindElement
 
 </h1>
 
 
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LuckyFlow/FindElement.html">LuckyFlow::FindElement</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Find element on a page with a retry</p>
 
 
 
@@ -241,15 +254,8 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/aea9f7a5591c7ddf54f89a6bb9e80c908c003643/src/lucky_flow/selenium/chrome/driver.cr#L1" target="_blank">
-        lucky_flow/selenium/chrome/driver.cr
-      </a>
-    
-    <br/>
-  
-    
-      <a href="https://github.com/luckyframework/lucky_flow/blob/aea9f7a5591c7ddf54f89a6bb9e80c908c003643/src/lucky_flow/selenium/driver.cr#L1" target="_blank">
-        lucky_flow/selenium/driver.cr
+      <a href="https://github.com/luckyframework/lucky_flow/blob/aea9f7a5591c7ddf54f89a6bb9e80c908c003643/src/lucky_flow/find_element.cr#L2" target="_blank">
+        lucky_flow/find_element.cr
       </a>
     
     <br/>
@@ -259,9 +265,60 @@
 
 
 
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(driver,selector,textinner_text=nil)-class-method" class="signature"><strong>.new</strong>(driver, selector, text inner_text = <span class="n">nil</span>)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
+  <h2>
+    <a id="class-method-summary" class="anchor" href="#class-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#run(*args,**named_args):LuckyFlow::Element-class-method" class="signature"><strong>.run</strong>(*args, **named_args) : LuckyFlow::Element</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#run:LuckyFlow::Element-instance-method" class="signature"><strong>#run</strong> : LuckyFlow::Element</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -269,12 +326,110 @@
 
 <div class="methods-inherited">
   
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
 </div>
 
 
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(driver,selector,textinner_text=nil)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(driver, selector, text inner_text = <span class="n">nil</span>)
+
+        <a class="method-permalink" href="#new(driver,selector,textinner_text=nil)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/aea9f7a5591c7ddf54f89a6bb9e80c908c003643/src/lucky_flow/find_element.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
+  <h2>
+    <a id="class-method-detail" class="anchor" href="#class-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Class Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="run(*args,**named_args):LuckyFlow::Element-class-method">
+      <div class="signature">
+        
+        def self.<strong>run</strong>(*args, **named_args) : <a href="../LuckyFlow/Element.html">LuckyFlow::Element</a>
+
+        <a class="method-permalink" href="#run(*args,**named_args):LuckyFlow::Element-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/aea9f7a5591c7ddf54f89a6bb9e80c908c003643/src/lucky_flow/find_element.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="run:LuckyFlow::Element-instance-method">
+      <div class="signature">
+        
+        def <strong>run</strong> : <a href="../LuckyFlow/Element.html">LuckyFlow::Element</a>
+
+        <a class="method-permalink" href="#run:LuckyFlow::Element-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/aea9f7a5591c7ddf54f89a6bb9e80c908c003643/src/lucky_flow/find_element.cr#L16" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
 
 
 
