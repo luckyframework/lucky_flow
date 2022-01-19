@@ -1,19 +1,19 @@
 class TestHandler
   include HTTP::Handler
-  private getter routes = {} of String => String
+  private getter routes = {} of String => Proc(HTTP::Server::Context, String)
 
   def call(context)
     if context.request.resource == "/favicon.ico"
       context.response.print ""
     else
-      html = routes[context.request.resource]
+      handler = routes[context.request.resource]
       context.response.content_type = "text/html"
-      context.response.print html
+      context.response.print handler.call(context)
     end
   end
 
-  def route(path : String, html : String)
-    routes[path] = html
+  def route(path : String, handler : Proc(HTTP::Server::Context, String))
+    routes[path] = handler
   end
 
   def reset
