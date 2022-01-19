@@ -13,8 +13,6 @@ class LuckyFlow
 
   @@driver : LuckyFlow::Driver?
 
-  class_property default_driver : String = "headless_chrome"
-
   Habitat.create do
     setting screenshot_directory : String = "./tmp/screenshots"
     setting base_uri : String
@@ -23,12 +21,16 @@ class LuckyFlow
     setting driver_path : String?
   end
 
+  def self.default_driver=(value : String)
+    LuckyFlow::Registry.default_driver = value
+  end
+
   def self.driver : LuckyFlow::Driver
-    @@driver ||= LuckyFlow::Registry.get_driver(self.default_driver)
+    @@driver ||= LuckyFlow::Registry.get_driver
   end
 
   def self.driver(name : String) : LuckyFlow::Driver
-    @@driver = LuckyFlow::Registry.get_driver(self.default_driver)
+    @@driver = LuckyFlow::Registry.get_driver(name)
   end
 
   def self.shutdown : Nil
