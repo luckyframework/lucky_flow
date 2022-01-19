@@ -23,7 +23,7 @@ jobs:
       matrix:
         crystal_version:
           - 1.0.0
-          - current
+          - latest
           - nightly
         experimental:
           - false
