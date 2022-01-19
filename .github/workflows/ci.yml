@@ -23,7 +23,8 @@ jobs:
       matrix:
         crystal_version:
           - 1.0.0
-          - 1.3.0
+          - current
+          - nightly
         experimental:
           - false
     runs-on: ubuntu-latest
