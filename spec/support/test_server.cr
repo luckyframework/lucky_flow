@@ -8,7 +8,7 @@ class TestServer
   end
 
   def self.route(path : String, html : String)
-    middleware.route(path, ->(context : HTTP::Server::Context) { html })
+    middleware.route(path, ->(_context : HTTP::Server::Context) { html })
   end
 
   def self.reset
