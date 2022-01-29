@@ -11,8 +11,6 @@ require "./ext/spec/item"
 class LuckyFlow
   include LuckyFlow::Expectations
 
-  @@driver : LuckyFlow::Driver?
-
   Habitat.create do
     setting screenshot_directory : String = "./tmp/screenshots"
     setting base_uri : String
