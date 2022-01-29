@@ -167,7 +167,7 @@ class LuckyFlow
     fields_and_values.each do |name, value|
       element = field("#{form.param_key}:#{name}")
       if element.tag_name == "select"
-        self.select(element, value)
+        self.select(element, value.to_s)
       else
         self.fill(element, with: value)
       end
