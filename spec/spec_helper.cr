@@ -9,7 +9,7 @@ LuckyFlow::Registry.register :webless do
   LuckyFlow::Webless::Driver.new(TestServer.middleware)
 end
 
-LuckyFlow.default_driver = "webless"
+LuckyFlow.default_driver = ENV.fetch("LUCKYFLOW_DRIVER", "webless")
 
 LuckyFlow::Spec.setup
 

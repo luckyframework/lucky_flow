@@ -13,26 +13,28 @@ jobs:
       - uses: actions/checkout@v2
       - uses: crystal-lang/install-crystal@v1
       - run: shards install
-      - name: Format
-        run: crystal tool format --check
-      - name: Lint
-        run: ./bin/ameba
-  specs:
+      - run: crystal tool format --check
+      - run: ./bin/ameba
+  webless_specs:
     strategy:
-      fail-fast: false
       matrix:
         crystal_version:
           - 1.0.0
           - latest
           - nightly
-        experimental:
-          - false
     runs-on: ubuntu-latest
-    continue-on-error: ${{ matrix.experimental }}
     steps:
       - uses: actions/checkout@v2
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: ${{matrix.crystal_version}}
       - run: shards install
-      - run: crystal spec
+      - run: LUCKYFLOW_DRIVER=webless crystal spec --tag ~headless_chrome
+  selenium_specs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: crystal-lang/install-crystal@v1
+      - run: shards install
+      - run: LUCKYFLOW_DRIVER=headless_chrome crystal spec
+  
