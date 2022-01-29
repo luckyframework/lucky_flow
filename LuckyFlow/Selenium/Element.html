@@ -243,7 +243,7 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L1" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L1" target="_blank">
         lucky_flow/selenium/element.cr
       </a>
     
@@ -291,6 +291,11 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#checked?:Bool-instance-method" class="signature"><strong>#checked?</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#clear-instance-method" class="signature"><strong>#clear</strong></a>
         
       </li>
@@ -302,6 +307,13 @@
     
       <li class="entry-summary">
         <a href="#displayed?:Bool-instance-method" class="signature"><strong>#displayed?</strong> : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#fill(value:Time)-instance-method" class="signature"><strong>#fill</strong>(value : Time)</a>
+        
+          <div class="summary"><p>To set the value of date inputs correctly you must put the year last but it still submits the form with the date first ...any questions?</p></div>
         
       </li>
     
@@ -373,9 +385,14 @@
     append</a>, 
     
   
-    <a href="../../LuckyFlow/Element.html#attribute(name:Symbol):String?-instance-method" class="tooltip">
-      <span>attribute(name : Symbol) : String?<br/>attribute(name : String) : String?</span>
+    <a href="../../LuckyFlow/Element.html#attribute(name:String):String?-instance-method" class="tooltip">
+      <span>attribute(name : String) : String?<br/>attribute(name : Symbol) : String?</span>
     attribute</a>, 
+    
+  
+    <a href="../../LuckyFlow/Element.html#checked?:Bool-instance-method" class="tooltip">
+      <span>checked? : Bool</span>
+    checked?</a>, 
     
   
     <a href="../../LuckyFlow/Element.html#clear-instance-method" class="tooltip">
@@ -398,8 +415,8 @@
     driver</a>, 
     
   
-    <a href="../../LuckyFlow/Element.html#fill(value:String)-instance-method" class="tooltip">
-      <span>fill(value : String)</span>
+    <a href="../../LuckyFlow/Element.html#fill(value:Time)-instance-method" class="tooltip">
+      <span>fill(value : Time)<br/>fill(value : String)</span>
     fill</a>, 
     
   
@@ -515,7 +532,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -545,7 +562,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L22" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="checked?:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>checked?</strong> : Bool
+
+        <a class="method-permalink" href="#checked?:Bool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L22" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -561,7 +594,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L38" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -577,7 +610,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L38" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L42" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -593,7 +626,31 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L14" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="fill(value:Time)-instance-method">
+      <div class="signature">
+        
+        def <strong>fill</strong>(value : Time)
+
+        <a class="method-permalink" href="#fill(value:Time)-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>To set the value of date inputs correctly
+you must put the year last
+but it still submits the form with the date first
+...any questions?</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L50" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -609,7 +666,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L58" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -625,7 +682,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L30" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -641,7 +698,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L46" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -657,7 +714,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L63" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -673,7 +730,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -689,7 +746,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L42" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L54" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -705,7 +762,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L2" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -721,7 +778,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L2" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -737,7 +794,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L30" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -753,7 +810,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/c9774e5ab76afe965abc0706023f3e87bf9e4222/src/lucky_flow/selenium/element.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/a8597b1a1e03852ff8369c75cd13e1b6c131448c/src/lucky_flow/selenium/element.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
