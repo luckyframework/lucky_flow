@@ -5,8 +5,6 @@ class LuckyFlow::Registry
   @@registry = Hash(String, Proc(LuckyFlow::Driver)).new
   @@running_registry = Hash(String, LuckyFlow::Driver).new
 
-  class_property current_driver : LuckyFlow::Driver?
-
   def self.register(name : String | Symbol, &block : -> LuckyFlow::Driver)
     @@registry[name.to_s] = block
   end
