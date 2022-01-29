@@ -1,5 +1,6 @@
 class LuckyFlow::Registry
   class_property default_driver : String = "headless_chrome"
+  class_property current_driver : LuckyFlow::Driver?
 
   @@registry = Hash(String, Proc(LuckyFlow::Driver)).new
   @@running_registry = Hash(String, LuckyFlow::Driver).new

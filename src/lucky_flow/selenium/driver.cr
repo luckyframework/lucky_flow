@@ -64,6 +64,10 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
     session.cookie_manager.get_cookie(key).value
   end
 
+  def html : String
+    session.document_manager.page_source
+  end
+
   def reset : Nil
     @session.try &.cookie_manager.delete_all_cookies
   end

@@ -26,11 +26,11 @@ class LuckyFlow
   end
 
   def self.driver : LuckyFlow::Driver
-    @@driver ||= LuckyFlow::Registry.get_driver
+    LuckyFlow::Registry.current_driver ||= LuckyFlow::Registry.get_driver
   end
 
   def self.driver(name : String) : LuckyFlow::Driver
-    @@driver = LuckyFlow::Registry.get_driver(name)
+    LuckyFlow::Registry.current_driver = LuckyFlow::Registry.get_driver(name)
   end
 
   def self.shutdown : Nil
@@ -38,11 +38,11 @@ class LuckyFlow
   end
 
   def self.use_default_driver
-    @@driver = nil
+    LuckyFlow::Registry.current_driver = nil
   end
 
   def self.reset : Nil
-    @@driver.try(&.reset)
+    LuckyFlow::Registry.current_driver.try(&.reset)
   end
 
   def visit(path : String)
@@ -109,11 +109,11 @@ class LuckyFlow
   # ```
   # fill("comment:body", with: "Lucky is great!")
   # ```
-  def fill(name_attr : String, with value : String)
+  def fill(name_attr : String, with value)
     fill(field(name_attr), with: value)
   end
 
-  def fill(element : Element, with value : String)
+  def fill(element : Element, with value)
     element.fill(value)
   end
 
@@ -186,6 +186,10 @@ class LuckyFlow
 
   def field(name_attr : String) : LuckyFlow::Element
     el("[name='#{name_attr}']")
+  end
+
+  def html : String
+    driver.html
   end
 
   def current_path

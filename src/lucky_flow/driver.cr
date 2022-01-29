@@ -15,4 +15,5 @@ abstract class LuckyFlow::Driver
   abstract def current_url : String
   abstract def add_cookie(key : String, value : String)
   abstract def get_cookie(key : String) : String?
+  abstract def html : String
 end
