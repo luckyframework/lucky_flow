@@ -90,6 +90,42 @@ describe LuckyFlow do
     flow.field("question:body").value.should eq "Sally"
   end
 
+  it "can fill in textarea" do
+    flow = visit_page_with <<-HTML
+      <textarea name="question:text"></textarea>
+    HTML
+    flow.field("question:text").value.should eq ""
+
+    flow.field("question:text").fill("What's up?")
+
+    flow.field("question:text").value.should eq "What's up?"
+  end
+
+  it "can select option" do
+    flow = visit_page_with <<-HTML
+    <select name="options">
+      <option value="a">A</option>
+      <option value="b" flow-id="option-b">B</option>
+      <option value="c" flow-id="option-c" selected>C</option>
+    </select>
+    HTML
+
+    flow.select("options", "b")
+    flow.el("@option-b").selected?.should be_true
+    flow.el("@option-c").selected?.should be_false
+  end
+
+  it "can check checkbox" do
+    flow = visit_page_with <<-HTML
+    <input name="agree" type="checkbox" flow-id="agree">
+    HTML
+
+    flow.click("@agree")
+    flow.el("@agree").checked?.should be_true
+    flow.click("@agree")
+    flow.el("@agree").checked?.should be_false
+  end
+
   it "can submit form" do
     handle_route("/foo") do |context|
       <<-HTML
@@ -99,13 +135,55 @@ describe LuckyFlow do
 
     flow = visit_page_with <<-HTML
       <form action="/foo" method="post">
-        <input name="secret" value="abc" type="hidden"/>
+        <input name="secret" value="abc" type="hidden">
+        <input name="car" value="ford" type="radio" checked>
+        <input name="othercar" value="toyota" type="radio">
+        <input name="horns" type="checkbox" checked>
+        <input name="scales" type="checkbox">
+        <textarea name="textarea">TEXT HERE</textarea>
+        <select name="options">
+          <option value="a">A</option>
+          <option value="b" selected>B</option>
+          <option value="c">C</option>
+        </select>
+        <select name="multiple" multiple>
+          <option value="a">A</option>
+          <option value="b" selected>B</option>
+          <option value="c" selected>C</option>
+        </select>
         <button flow-id="submit" type="submit">Submit</button>
       </form>
     HTML
 
     flow.el("@submit").click
     flow.should have_element("@result", text: "secret=abc")
+    flow.should have_element("@result", text: "car=ford")
+    flow.should_not have_element("@result", text: "othercar=toyota")
+    flow.should have_element("@result", text: "horns=on")
+    flow.should_not have_element("@result", text: "scales")
+    flow.should have_element("@result", text: "textarea=TEXT+HERE")
+    flow.should have_element("@result", text: "options=b")
+    flow.should have_element("@result", text: "multiple=b")
+    flow.should have_element("@result", text: "multiple=c")
+  end
+
+  it "submits dates appropriately" do
+    handle_route("/foo") do |context|
+      <<-HTML
+        <p flow-id="result">#{context.request.body.not_nil!.gets_to_end}</p>
+      HTML
+    end
+
+    flow = visit_page_with <<-HTML
+      <form action="/foo" method="post">
+        <input name="custom_date" type="date">
+        <button flow-id="submit" type="submit">Submit</button>
+      </form>
+    HTML
+
+    flow.fill "custom_date", with: Time.utc(2016, 2, 15)
+    flow.el("@submit").click
+    flow.should have_element("@result", text: "custom_date=2016-02-15")
   end
 
   it "clears existing text before filling" do
@@ -279,6 +357,28 @@ describe LuckyFlow do
     flow.el("#hidden").displayed?.should be_false
     flow.el("#hoverable").hover
     flow.el("#hidden").displayed?.should be_true
+  end
+
+  it "handles redirects" do
+    handle_route("/foo") do |context|
+      context.response.headers.add "Location", "/bar"
+      context.response.status_code = 302
+      "foo"
+    end
+
+    handle_route("/bar") do |_context|
+      <<-HTML
+        <span flow-id="bar">bar</span>
+      HTML
+    end
+
+    flow = visit_page_with <<-HTML
+      <a href="/foo" flow-id="link">Foo</a>
+    HTML
+
+    flow.click("@link")
+
+    flow.should have_element("@bar", text: "bar")
   end
 end
 

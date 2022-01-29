@@ -7,6 +7,7 @@ abstract class LuckyFlow::Element
   abstract def send_keys(keys : Array(String | Symbol))
   abstract def displayed? : Bool
   abstract def selected? : Bool
+  abstract def checked? : Bool
   abstract def attribute(name : String) : String?
   abstract def property(name : String) : String?
   abstract def tag_name : String
@@ -44,6 +45,10 @@ abstract class LuckyFlow::Element
   def fill(value : String)
     clear
     send_keys value
+  end
+
+  def fill(value : Time)
+    fill(value.to_s("%Y-%m-%d"))
   end
 
   # Add text to the end of a field

@@ -19,6 +19,10 @@ class LuckyFlow::Selenium::Element < LuckyFlow::Element
     @inner_element.selected?
   end
 
+  def checked? : Bool
+    selected?
+  end
+
   def attribute(name : String) : String?
     @inner_element.attribute(name)
   end
@@ -37,6 +41,14 @@ class LuckyFlow::Selenium::Element < LuckyFlow::Element
 
   def click
     @inner_element.click
+  end
+
+  # To set the value of date inputs correctly
+  # you must put the year last
+  # but it still submits the form with the date first
+  # ...any questions?
+  def fill(value : Time)
+    fill(value.to_s("%m-%d-%Y"))
   end
 
   def send_keys(keys : Array(String | Symbol))
