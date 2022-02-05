@@ -16,4 +16,9 @@ abstract class LuckyFlow::Driver
   abstract def add_cookie(key : String, value : String)
   abstract def get_cookie(key : String) : String?
   abstract def html : String
+
+  macro unsupported
+    method_name = \{{ @def.name.stringify }}
+    raise NotSupportedByDriverError.new("#{self.class}##{ method_name }")
+  end
 end

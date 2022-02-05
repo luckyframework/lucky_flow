@@ -5,6 +5,12 @@ class LuckyFlow
   class Error < Exception
   end
 
+  class NotSupportedByDriverError < Error
+  end
+
+  class NotSupportedByElementError < Error
+  end
+
   class ElementNotFoundError < Error
     def initialize(driver : LuckyFlow::Driver, selector : String, inner_text : String?)
       message = LuckyFlow::ErrorMessageWhenNotFound.build(

@@ -18,6 +18,12 @@ dependencies:
   habitat:
     github: luckyframework/habitat
     version: ~> 0.4.7
+  webless:
+    github: matthewmcgarvey/webless
+    version: ~> 0.1.0
+  html5:
+    github: naqvis/crystal-html5
+    version: ~> 0.4.0
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba

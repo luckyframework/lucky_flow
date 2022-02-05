@@ -5,6 +5,12 @@ require "./support/**"
 
 include LuckyFlow::Expectations
 
+LuckyFlow::Registry.register :webless do
+  LuckyFlow::Webless::Driver.new(TestServer.middleware)
+end
+
+LuckyFlow.default_driver = ENV.fetch("LUCKYFLOW_DRIVER", "webless")
+
 LuckyFlow::Spec.setup
 
 server = TestServer.new(3002)
