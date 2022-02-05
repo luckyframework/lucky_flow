@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="lucky_flow">
-  <title>LuckyFlow::Expectations::HaveElementExpectation - lucky_flow master</title>
+  <title>LuckyFlow::Webless::Browser - lucky_flow master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -86,7 +86,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="lucky_flow/LuckyFlow/Expectations" data-name="luckyflow::expectations">
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Expectations" data-name="luckyflow::expectations">
       <a href="../../LuckyFlow/Expectations.html">Expectations</a>
       
         <ul>
@@ -96,7 +96,7 @@
       
     </li>
   
-  <li class=" current" data-id="lucky_flow/LuckyFlow/Expectations/HaveElementExpectation" data-name="luckyflow::expectations::haveelementexpectation">
+  <li class=" " data-id="lucky_flow/LuckyFlow/Expectations/HaveElementExpectation" data-name="luckyflow::expectations::haveelementexpectation">
       <a href="../../LuckyFlow/Expectations/HaveElementExpectation.html">HaveElementExpectation</a>
       
     </li>
@@ -191,12 +191,12 @@
       
     </li>
   
-  <li class="parent " data-id="lucky_flow/LuckyFlow/Webless" data-name="luckyflow::webless">
+  <li class="parent open current" data-id="lucky_flow/LuckyFlow/Webless" data-name="luckyflow::webless">
       <a href="../../LuckyFlow/Webless.html">Webless</a>
       
         <ul>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Webless/Browser" data-name="luckyflow::webless::browser">
+  <li class=" current" data-id="lucky_flow/LuckyFlow/Webless/Browser" data-name="luckyflow::webless::browser">
       <a href="../../LuckyFlow/Webless/Browser.html">Browser</a>
       
     </li>
@@ -250,12 +250,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">struct</span> LuckyFlow::Expectations::HaveElementExpectation
+  <span class="kind">class</span> LuckyFlow::Webless::Browser
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../LuckyFlow/Expectations/HaveElementExpectation.html">LuckyFlow::Expectations::HaveElementExpectation</a></li><li class="superclass">Struct</li><li class="superclass">Value</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../LuckyFlow/Webless/Browser.html">LuckyFlow::Webless::Browser</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -283,8 +283,8 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/expectations/have_element_expectation.cr#L1" target="_blank">
-        lucky_flow/expectations/have_element_expectation.cr
+      <a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L1" target="_blank">
+        lucky_flow/webless/browser.cr
       </a>
     
     <br/>
@@ -305,7 +305,7 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#new(css_selector:String,text:String?,visible:Bool)-class-method" class="signature"><strong>.new</strong>(css_selector : String, text : String?, visible : Bool)</a>
+        <a href="#new(client:::Webless::Client)-class-method" class="signature"><strong>.new</strong>(client : ::Webless::Client)</a>
         
       </li>
     
@@ -326,17 +326,52 @@
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#failure_message(flow:LuckyFlow)-instance-method" class="signature"><strong>#failure_message</strong>(flow : LuckyFlow)</a>
+        <a href="#add_cookie(key:String,value:String)-instance-method" class="signature"><strong>#add_cookie</strong>(key : String, value : String)</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#match(flow:LuckyFlow):Bool-instance-method" class="signature"><strong>#match</strong>(flow : LuckyFlow) : Bool</a>
+        <a href="#current_url:String-instance-method" class="signature"><strong>#current_url</strong> : String</a>
         
       </li>
     
       <li class="entry-summary">
-        <a href="#negative_failure_message(flow:LuckyFlow)-instance-method" class="signature"><strong>#negative_failure_message</strong>(flow : LuckyFlow)</a>
+        <a href="#find_css(query:String):Array(HTML5::Node)-instance-method" class="signature"><strong>#find_css</strong>(query : String) : Array(HTML5::Node)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#find_xpath(query:String):Array(HTML5::Node)-instance-method" class="signature"><strong>#find_xpath</strong>(query : String) : Array(HTML5::Node)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#follow(method:String,url:String)-instance-method" class="signature"><strong>#follow</strong>(method : String, url : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_cookie(key:String):String?-instance-method" class="signature"><strong>#get_cookie</strong>(key : String) : String?</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#html:String-instance-method" class="signature"><strong>#html</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#reset-instance-method" class="signature"><strong>#reset</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#submit(request:HTTP::Request)-instance-method" class="signature"><strong>#submit</strong>(request : HTTP::Request)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#visit(url:String)-instance-method" class="signature"><strong>#visit</strong>(url : String)</a>
         
       </li>
     
@@ -347,16 +382,6 @@
 
 
 <div class="methods-inherited">
-  
-    
-
-
-    
-
-
-    
-
-
   
     
 
@@ -390,18 +415,18 @@
     Constructor Detail
   </h2>
   
-    <div class="entry-detail" id="new(css_selector:String,text:String?,visible:Bool)-class-method">
+    <div class="entry-detail" id="new(client:::Webless::Client)-class-method">
       <div class="signature">
         
-        def self.<strong>new</strong>(css_selector : String, text : String?, visible : Bool)
+        def self.<strong>new</strong>(client : ::Webless::Client)
 
-        <a class="method-permalink" href="#new(css_selector:String,text:String?,visible:Bool)-class-method">#</a>
+        <a class="method-permalink" href="#new(client:::Webless::Client)-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/expectations/have_element_expectation.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -420,50 +445,162 @@
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="failure_message(flow:LuckyFlow)-instance-method">
+    <div class="entry-detail" id="add_cookie(key:String,value:String)-instance-method">
       <div class="signature">
         
-        def <strong>failure_message</strong>(flow : <a href="../../LuckyFlow.html">LuckyFlow</a>)
+        def <strong>add_cookie</strong>(key : String, value : String)
 
-        <a class="method-permalink" href="#failure_message(flow:LuckyFlow)-instance-method">#</a>
+        <a class="method-permalink" href="#add_cookie(key:String,value:String)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/expectations/have_element_expectation.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L39" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="match(flow:LuckyFlow):Bool-instance-method">
+    <div class="entry-detail" id="current_url:String-instance-method">
       <div class="signature">
         
-        def <strong>match</strong>(flow : <a href="../../LuckyFlow.html">LuckyFlow</a>) : Bool
+        def <strong>current_url</strong> : String
 
-        <a class="method-permalink" href="#match(flow:LuckyFlow):Bool-instance-method">#</a>
+        <a class="method-permalink" href="#current_url:String-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/expectations/have_element_expectation.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L31" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="negative_failure_message(flow:LuckyFlow)-instance-method">
+    <div class="entry-detail" id="find_css(query:String):Array(HTML5::Node)-instance-method">
       <div class="signature">
         
-        def <strong>negative_failure_message</strong>(flow : <a href="../../LuckyFlow.html">LuckyFlow</a>)
+        def <strong>find_css</strong>(query : String) : Array(HTML5::Node)
 
-        <a class="method-permalink" href="#negative_failure_message(flow:LuckyFlow)-instance-method">#</a>
+        <a class="method-permalink" href="#find_css(query:String):Array(HTML5::Node)-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/expectations/have_element_expectation.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L23" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="find_xpath(query:String):Array(HTML5::Node)-instance-method">
+      <div class="signature">
+        
+        def <strong>find_xpath</strong>(query : String) : Array(HTML5::Node)
+
+        <a class="method-permalink" href="#find_xpath(query:String):Array(HTML5::Node)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L27" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="follow(method:String,url:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>follow</strong>(method : String, url : String)
+
+        <a class="method-permalink" href="#follow(method:String,url:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L11" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_cookie(key:String):String?-instance-method">
+      <div class="signature">
+        
+        def <strong>get_cookie</strong>(key : String) : String?
+
+        <a class="method-permalink" href="#get_cookie(key:String):String?-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L43" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="html:String-instance-method">
+      <div class="signature">
+        
+        def <strong>html</strong> : String
+
+        <a class="method-permalink" href="#html:String-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L47" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="reset-instance-method">
+      <div class="signature">
+        
+        def <strong>reset</strong>
+
+        <a class="method-permalink" href="#reset-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="submit(request:HTTP::Request)-instance-method">
+      <div class="signature">
+        
+        def <strong>submit</strong>(request : HTTP::Request)
+
+        <a class="method-permalink" href="#submit(request:HTTP::Request)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L17" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="visit(url:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>visit</strong>(url : String)
+
+        <a class="method-permalink" href="#visit(url:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/browser.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>

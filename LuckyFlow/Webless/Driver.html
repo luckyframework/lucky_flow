@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../../js/doc.js"></script>
 
   <meta name="repository-name" content="lucky_flow">
-  <title>LuckyFlow::Selenium::Driver - lucky_flow master</title>
+  <title>LuckyFlow::Webless::Driver - lucky_flow master</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../../";
   </script>
@@ -151,7 +151,7 @@
       
     </li>
   
-  <li class="parent open current" data-id="lucky_flow/LuckyFlow/Selenium" data-name="luckyflow::selenium">
+  <li class="parent " data-id="lucky_flow/LuckyFlow/Selenium" data-name="luckyflow::selenium">
       <a href="../../LuckyFlow/Selenium.html">Selenium</a>
       
         <ul>
@@ -171,7 +171,7 @@
       
     </li>
   
-  <li class=" current" data-id="lucky_flow/LuckyFlow/Selenium/Driver" data-name="luckyflow::selenium::driver">
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selenium/Driver" data-name="luckyflow::selenium::driver">
       <a href="../../LuckyFlow/Selenium/Driver.html">Driver</a>
       
     </li>
@@ -191,7 +191,7 @@
       
     </li>
   
-  <li class="parent " data-id="lucky_flow/LuckyFlow/Webless" data-name="luckyflow::webless">
+  <li class="parent open current" data-id="lucky_flow/LuckyFlow/Webless" data-name="luckyflow::webless">
       <a href="../../LuckyFlow/Webless.html">Webless</a>
       
         <ul>
@@ -201,7 +201,7 @@
       
     </li>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/Webless/Driver" data-name="luckyflow::webless::driver">
+  <li class=" current" data-id="lucky_flow/LuckyFlow/Webless/Driver" data-name="luckyflow::webless::driver">
       <a href="../../LuckyFlow/Webless/Driver.html">Driver</a>
       
     </li>
@@ -250,12 +250,12 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">abstract class</span> LuckyFlow::Selenium::Driver
+  <span class="kind">class</span> LuckyFlow::Webless::Driver
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../LuckyFlow/Selenium/Driver.html">LuckyFlow::Selenium::Driver</a></li><li class="superclass"><a href="../../LuckyFlow/Driver.html">LuckyFlow::Driver</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../../LuckyFlow/Webless/Driver.html">LuckyFlow::Webless::Driver</a></li><li class="superclass"><a href="../../LuckyFlow/Driver.html">LuckyFlow::Driver</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
@@ -267,20 +267,6 @@
 
 
 
-
-  <h2>
-    <a id="direct-known-subclasses" class="anchor" href="#direct-known-subclasses">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Direct Known Subclasses
-  </h2>
-  <ul class="other-types-list">
-    
-      <li class="other-type"><a href="../../LuckyFlow/Selenium/Chrome/Driver.html">LuckyFlow::Selenium::Chrome::Driver</a></li>
-    
-  </ul>
 
 
 
@@ -297,8 +283,8 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L1" target="_blank">
-        lucky_flow/selenium/driver.cr
+      <a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L1" target="_blank">
+        lucky_flow/webless/driver.cr
       </a>
     
     <br/>
@@ -307,6 +293,28 @@
 
 
 
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new(handlers:Array(HTTP::Handler))-class-method" class="signature"><strong>.new</strong>(handlers : Array(HTTP::Handler))</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new(handler:HTTP::Handler)-class-method" class="signature"><strong>.new</strong>(handler : HTTP::Handler)</a>
+        
+      </li>
+    
+  </ul>
 
 
 
@@ -353,6 +361,11 @@
       </li>
     
       <li class="entry-summary">
+        <a href="#follow(method:String,url:String)-instance-method" class="signature"><strong>#follow</strong>(method : String, url : String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
         <a href="#get_cookie(key:String):String?-instance-method" class="signature"><strong>#get_cookie</strong>(key : String) : String?</a>
         
       </li>
@@ -394,6 +407,11 @@
     
       <li class="entry-summary">
         <a href="#stop-instance-method" class="signature"><strong>#stop</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#submit(request:HTTP::Request)-instance-method" class="signature"><strong>#submit</strong>(request : HTTP::Request)</a>
         
       </li>
     
@@ -537,6 +555,48 @@
 </div>
 
 
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(handlers:Array(HTTP::Handler))-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(handlers : Array(HTTP::Handler))
+
+        <a class="method-permalink" href="#new(handlers:Array(HTTP::Handler))-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L2" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new(handler:HTTP::Handler)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(handler : HTTP::Handler)
+
+        <a class="method-permalink" href="#new(handler:HTTP::Handler)-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L8" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
 
 
 
@@ -561,7 +621,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L33" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -577,7 +637,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L60" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -593,7 +653,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L55" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L56" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -609,7 +669,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -625,7 +685,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L47" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -641,7 +701,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L51" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L52" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="follow(method:String,url:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>follow</strong>(method : String, url : String)
+
+        <a class="method-permalink" href="#follow(method:String,url:String)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -657,7 +733,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L63" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L64" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -673,7 +749,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L41" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -689,7 +765,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L68" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -705,7 +781,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L25" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -721,7 +797,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L71" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L76" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -737,7 +813,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L29" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -753,7 +829,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -769,7 +845,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L79" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L84" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -785,7 +861,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L75" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L80" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="submit(request:HTTP::Request)-instance-method">
+      <div class="signature">
+        
+        def <strong>submit</strong>(request : HTTP::Request)
+
+        <a class="method-permalink" href="#submit(request:HTTP::Request)-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L72" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -801,7 +893,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -817,7 +909,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/selenium/driver.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/f9df0735e9ca1b580c47c8e6d5e96e474a1f1ffc/src/lucky_flow/webless/driver.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
