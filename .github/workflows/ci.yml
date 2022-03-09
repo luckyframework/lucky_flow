@@ -36,5 +36,5 @@ jobs:
       - uses: actions/checkout@v2
       - uses: crystal-lang/install-crystal@v1
       - run: shards install
-      - run: LUCKYFLOW_DRIVER=headless_chrome crystal spec
+      - run: LUCKYFLOW_DRIVER=headless_chrome crystal spec --tag ~webless
   

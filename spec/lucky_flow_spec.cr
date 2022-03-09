@@ -380,6 +380,54 @@ describe LuckyFlow do
 
     flow.should have_element("@bar", text: "bar")
   end
+
+  it "handles multiple redirects" do
+    handle_route("/foo") do |context|
+      context.response.headers.add "Location", "/bar"
+      context.response.status_code = 302
+      "foo"
+    end
+
+    handle_route("/bar") do |context|
+      context.response.headers.add "Location", "/bazz"
+      context.response.status_code = 302
+      "foo"
+    end
+
+    handle_route("/bazz") do |_context|
+      <<-HTML
+        <span flow-id="bazz">bazz</span>
+      HTML
+    end
+
+    flow = visit_page_with <<-HTML
+      <a href="/foo" flow-id="link">Foo</a>
+    HTML
+
+    flow.click("@link")
+
+    flow.should have_element("@bazz", text: "bazz")
+  end
+
+  it "raises error on infinite redirect", tags: "webless" do
+    handle_route("/foo") do |context|
+      context.response.headers.add "Location", "/bar"
+      context.response.status_code = 302
+      "foo"
+    end
+
+    handle_route("/bar") do |context|
+      context.response.headers.add "Location", "/foo"
+      context.response.status_code = 302
+      "foo"
+    end
+
+    flow = visit_page_with <<-HTML
+      <a href="/foo" flow-id="link">Foo</a>
+    HTML
+
+    expect_raises(LuckyFlow::InfiniteRedirectError) { flow.click("@link") }
+  end
 end
 
 private class FakeProcess
