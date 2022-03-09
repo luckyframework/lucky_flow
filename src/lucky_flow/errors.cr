@@ -47,4 +47,7 @@ class LuckyFlow
       super "Unable to select multiple options when select element does not have 'multiple' attribute"
     end
   end
+
+  class InfiniteRedirectError < Error
+  end
 end

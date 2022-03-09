@@ -1,4 +1,6 @@
 class LuckyFlow::Webless::Browser
+  REDIRECT_LIMIT = 5
+
   @parsed_html : HTML5::Node? = nil
 
   def initialize(@client : ::Webless::Client)
@@ -53,8 +55,16 @@ class LuckyFlow::Webless::Browser
   end
 
   private def handle_redirects
+    REDIRECT_LIMIT.times do
+      if @client.last_response.status.redirection?
+        @client.follow_redirect!
+      else
+        return
+      end
+    end
+
     if @client.last_response.status.redirection?
-      @client.follow_redirect!
+      raise LuckyFlow::InfiniteRedirectError.new("Redirected more than #{REDIRECT_LIMIT} times. Could be an infinite redirect loop.")
     end
   end
 end
