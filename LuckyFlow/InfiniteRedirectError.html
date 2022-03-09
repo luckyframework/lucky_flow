@@ -13,7 +13,7 @@
 <script type="text/javascript" src="../js/doc.js"></script>
 
   <meta name="repository-name" content="lucky_flow">
-  <title>LuckyFlow::Selector - lucky_flow main</title>
+  <title>LuckyFlow::InfiniteRedirectError - lucky_flow main</title>
   <script type="text/javascript">
     CrystalDocs.base_path = "../";
   </script>
@@ -121,7 +121,7 @@
       
     </li>
   
-  <li class=" " data-id="lucky_flow/LuckyFlow/InfiniteRedirectError" data-name="luckyflow::infiniteredirecterror">
+  <li class=" current" data-id="lucky_flow/LuckyFlow/InfiniteRedirectError" data-name="luckyflow::infiniteredirecterror">
       <a href="../LuckyFlow/InfiniteRedirectError.html">InfiniteRedirectError</a>
       
     </li>
@@ -151,7 +151,7 @@
       
     </li>
   
-  <li class=" current" data-id="lucky_flow/LuckyFlow/Selector" data-name="luckyflow::selector">
+  <li class=" " data-id="lucky_flow/LuckyFlow/Selector" data-name="luckyflow::selector">
       <a href="../LuckyFlow/Selector.html">Selector</a>
       
     </li>
@@ -255,31 +255,15 @@
 <div class="main-content">
 <h1 class="type-name">
 
-  <span class="kind">class</span> LuckyFlow::Selector
+  <span class="kind">class</span> LuckyFlow::InfiniteRedirectError
 
 </h1>
 
 
-  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LuckyFlow/Selector.html">LuckyFlow::Selector</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../LuckyFlow/InfiniteRedirectError.html">LuckyFlow::InfiniteRedirectError</a></li><li class="superclass"><a href="../LuckyFlow/Error.html">LuckyFlow::Error</a></li><li class="superclass">Exception</li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
 
 
 
-
-  <h2>
-    <a id="overview" class="anchor" href="#overview">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Overview
-  </h2>
-
-  <p>Returns selector or transforms it into a flow-id selector</p>
-
-<p>Example:</p>
-
-<p>Selector.new(".some-class").parse # => ".some-class"
-  Selector.new("@new-comment-button").parse # => "[flow-id='new-comment-button']"</p>
 
 
 
@@ -304,8 +288,8 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/aae9cfa3244de83385746f16880f5fe4a9447896/src/lucky_flow/selector.cr#L7" target="_blank">
-        lucky_flow/selector.cr
+      <a href="https://github.com/luckyframework/lucky_flow/blob/aae9cfa3244de83385746f16880f5fe4a9447896/src/lucky_flow/errors.cr#L51" target="_blank">
+        lucky_flow/errors.cr
       </a>
     
     <br/>
@@ -315,43 +299,9 @@
 
 
 
-  <h2>
-    <a id="constructors" class="anchor" href="#constructors">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructors
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#new(raw_selector:String)-class-method" class="signature"><strong>.new</strong>(raw_selector : String)</a>
-        
-      </li>
-    
-  </ul>
 
 
 
-
-
-  <h2>
-    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Instance Method Summary
-  </h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#parse-instance-method" class="signature"><strong>#parse</strong></a>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -379,64 +329,32 @@
 
 
   
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
 </div>
 
 
-  <h2>
-    <a id="constructor-detail" class="anchor" href="#constructor-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Constructor Detail
-  </h2>
-  
-    <div class="entry-detail" id="new(raw_selector:String)-class-method">
-      <div class="signature">
-        
-        def self.<strong>new</strong>(raw_selector : String)
-
-        <a class="method-permalink" href="#new(raw_selector:String)-class-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/aae9cfa3244de83385746f16880f5fe4a9447896/src/lucky_flow/selector.cr#L10" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 
-
-
-  <h2>
-    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
-  <svg class="octicon-link" aria-hidden="true">
-    <use href="#octicon-link"/>
-  </svg>
-</a>
-    Instance Method Detail
-  </h2>
-  
-    <div class="entry-detail" id="parse-instance-method">
-      <div class="signature">
-        
-        def <strong>parse</strong>
-
-        <a class="method-permalink" href="#parse-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/aae9cfa3244de83385746f16880f5fe4a9447896/src/lucky_flow/selector.cr#L13" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 
