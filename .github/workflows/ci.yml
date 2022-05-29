@@ -12,6 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: 1.4.1
       - run: shards install
       - run: crystal tool format --check
       - run: ./bin/ameba
@@ -19,7 +21,7 @@ jobs:
     strategy:
       matrix:
         crystal_version:
-          - 1.0.0
+          - 1.4.0
           - latest
           - nightly
     runs-on: ubuntu-latest
