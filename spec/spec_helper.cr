@@ -1,6 +1,9 @@
 require "spec"
 require "http"
 require "../src/lucky_flow"
+require "../src/ext/lucky"
+require "../src/ext/avram"
+require "../src/ext/authentic"
 require "./support/**"
 
 include LuckyFlow::Expectations

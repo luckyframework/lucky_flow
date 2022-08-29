@@ -47,6 +47,24 @@ Then view the guides: https://luckyframework.org/guides/browser-tests/
 
 You should be ready to go!
 
+For use with some of the Lucky shards (including Lucky itself), you'll need
+to require a few extensions:
+
+```crystal
+# This extension adds an override to `visit` allowing you
+# to pass in a Lucky::Action.class or Lucky::RouteHelper
+require "lucky_flow/ext/lucky"
+
+# This extension adds a `fill_form` method that you can pass
+# an Operation or SaveOperation to which will populate form
+# fields for you
+require "lucky_flow/ext/avram"
+
+# Similar to the Lucky extension, this gives an additional override
+# to `visit` that allows you to visit a page as a specific User
+require "lucky_flow/ext/authentic"
+```
+
 ## Usage
 
 > Note that you can only pass string paths to `visit` since only Lucky has
