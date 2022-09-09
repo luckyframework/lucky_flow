@@ -49,21 +49,6 @@ class LuckyFlow
     driver.visit("#{settings.base_uri}#{path}")
   end
 
-  def visit(action : Lucky::Action.class, as user : User? = nil)
-    visit(action.route, as: user)
-  end
-
-  def visit(route_helper : Lucky::RouteHelper, as user : User? = nil)
-    url = route_helper.url
-    uri = URI.parse(url)
-    if uri.query && user
-      url += "&backdoor_user_id=#{user.id}"
-    elsif uri.query.nil? && user
-      url += "?backdoor_user_id=#{user.id}"
-    end
-    driver.visit(url)
-  end
-
   def open_screenshot(process = Process, time = Time.utc, fullsize = false) : Void
     filename = generate_screenshot_filename(time)
     take_screenshot(filename, fullsize)
@@ -151,29 +136,6 @@ class LuckyFlow
 
   def select(element : Element, value : Array(String))
     element.select_options(value)
-  end
-
-  # Fill a form created by Lucky that uses an Avram::SaveOperation
-  #
-  # Note that Lucky and Avram are required to use this method
-  #
-  # ```
-  # fill_form QuestionForm,
-  #   title: "Hello there!",
-  #   body: "Just wondering what day it is"
-  # ```
-  def fill_form(
-    form : Avram::SaveOperation.class | Avram::Operation.class,
-    **fields_and_values
-  )
-    fields_and_values.each do |name, value|
-      element = field("#{form.param_key}:#{name}")
-      if element.tag_name == "select"
-        self.select(element, value.to_s)
-      else
-        self.fill(element, with: value)
-      end
-    end
   end
 
   def el(css_selector : String, text : String) : LuckyFlow::Element
