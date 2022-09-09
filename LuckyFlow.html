@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="generator" content="Crystal Docs 1.4.1">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="lucky_flow">
 
@@ -50,6 +50,21 @@
 
   <div class="types-list">
     <ul>
+  
+  <li class=" " data-id="lucky_flow/AuthenticLuckyFlowHelpers" data-name="authenticluckyflowhelpers">
+      <a href="AuthenticLuckyFlowHelpers.html">AuthenticLuckyFlowHelpers</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/AvramLuckyFlowHelpers" data-name="avramluckyflowhelpers">
+      <a href="AvramLuckyFlowHelpers.html">AvramLuckyFlowHelpers</a>
+      
+    </li>
+  
+  <li class=" " data-id="lucky_flow/LuckyActionLuckyFlowHelpers" data-name="luckyactionluckyflowhelpers">
+      <a href="LuckyActionLuckyFlowHelpers.html">LuckyActionLuckyFlowHelpers</a>
+      
+    </li>
   
   <li class="parent open current" data-id="lucky_flow/LuckyFlow" data-name="luckyflow">
       <a href="LuckyFlow.html">LuckyFlow</a>
@@ -265,6 +280,17 @@
 
 
 
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <pre><code class="language-crystal"><span class="k">require</span> <span class="s">&quot;lucky_flow/ext/lucky&quot;</span></code></pre>
+
 
 
 
@@ -279,9 +305,15 @@
   </h2>
   <ul class="other-types-list">
     
+      <li class="other-type"><a href="AuthenticLuckyFlowHelpers.html">AuthenticLuckyFlowHelpers</a></li>
+    
+      <li class="other-type"><a href="AvramLuckyFlowHelpers.html">AvramLuckyFlowHelpers</a></li>
+    
       <li class="other-type">Habitat::SettingsHelpers</li>
     
       <li class="other-type">Habitat::TempConfig</li>
+    
+      <li class="other-type"><a href="LuckyActionLuckyFlowHelpers.html">LuckyActionLuckyFlowHelpers</a></li>
     
       <li class="other-type"><a href="LuckyFlow/Expectations.html">LuckyFlow::Expectations</a></li>
     
@@ -306,35 +338,56 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L7" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/ext/authentic.cr#L23" target="_blank">
+        ext/authentic.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/ext/avram.cr#L31" target="_blank">
+        ext/avram.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/ext/lucky.cr#L17" target="_blank">
+        ext/lucky.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L7" target="_blank">
         lucky_flow.cr:7
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L13" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L13" target="_blank">
         lucky_flow.cr:13
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow/errors.cr#L1" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow/errors.cr#L1" target="_blank">
         lucky_flow/errors.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow/expectations.cr#L3" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow/expectations.cr#L3" target="_blank">
         lucky_flow/expectations.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow/version.cr#L1" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow/version.cr#L1" target="_blank">
         lucky_flow/version.cr
       </a>
     
@@ -500,13 +553,6 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#fill_form%28form%3AAvram%3A%3ASaveOperation.class%7CAvram%3A%3AOperation.class%2C%2A%2Afields_and_values%29-instance-method" class="signature"><strong>#fill_form</strong>(form : <span class="t">Avram</span><span class="t">::</span><span class="t">SaveOperation</span>.<span class="k">class</span> | <span class="t">Avram</span><span class="t">::</span><span class="t">Operation</span>.<span class="k">class</span>, **fields_and_values)</a>
-        
-          <div class="summary"><p>Fill a form created by Lucky that uses an Avram::SaveOperation</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#html%3AString-instance-method" class="signature"><strong>#html</strong> : String</a>
         
       </li>
@@ -554,16 +600,6 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#visit%28action%3ALucky%3A%3AAction.class%2Casuser%3AUser%3F%3Dnil%29-instance-method" class="signature"><strong>#visit</strong>(action : <span class="t">Lucky</span><span class="t">::</span><span class="t">Action</span>.<span class="k">class</span>, as user : User? = <span class="n">nil</span>)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#visit%28route_helper%3ALucky%3A%3ARouteHelper%2Casuser%3AUser%3F%3Dnil%29-instance-method" class="signature"><strong>#visit</strong>(route_helper : Lucky::RouteHelper, as user : User? = <span class="n">nil</span>)</a>
-        
-      </li>
-    
-      <li class="entry-summary">
         <a href="#with_fullsized_page%28%26%29-instance-method" class="signature"><strong>#with_fullsized_page</strong>(&)</a>
         
       </li>
@@ -575,6 +611,63 @@
 
 
 <div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="LuckyActionLuckyFlowHelpers.html">LuckyActionLuckyFlowHelpers</a></code></h3>
+  
+  
+    <a href="LuckyActionLuckyFlowHelpers.html#visit%28action%3ALucky%3A%3AAction.class%29-instance-method" class="tooltip">
+      <span>visit(action : <span class="t">Lucky</span><span class="t">::</span><span class="t">Action</span>.<span class="k">class</span>)<br/>visit(route_helper : Lucky::RouteHelper)</span>
+    visit</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="AvramLuckyFlowHelpers.html">AvramLuckyFlowHelpers</a></code></h3>
+  
+  
+    <a href="AvramLuckyFlowHelpers.html#fill_form%28form%3AAvram%3A%3ASaveOperation.class%7CAvram%3A%3AOperation.class%2C%2A%2Afields_and_values%29-instance-method" class="tooltip">
+      <span>fill_form(form : <span class="t">Avram</span><span class="t">::</span><span class="t">SaveOperation</span>.<span class="k">class</span> | <span class="t">Avram</span><span class="t">::</span><span class="t">Operation</span>.<span class="k">class</span>, **fields_and_values)</span>
+    fill_form</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from module <code><a href="AuthenticLuckyFlowHelpers.html">AuthenticLuckyFlowHelpers</a></code></h3>
+  
+  
+    <a href="AuthenticLuckyFlowHelpers.html#visit%28action%3ALucky%3A%3AAction.class%2Casuser%3AUser%29-instance-method" class="tooltip">
+      <span>visit(action : <span class="t">Lucky</span><span class="t">::</span><span class="t">Action</span>.<span class="k">class</span>, as user : User)<br/>visit(route_helper : Lucky::RouteHelper, as user : User)</span>
+    visit</a>
+    
+  
+
+
+    
+
+
+    
+
+
   
     
 
@@ -651,7 +744,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -667,7 +760,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L24" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L24" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -683,7 +776,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L32" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L32" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -699,7 +792,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L28" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L28" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -715,7 +808,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -731,7 +824,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -747,7 +840,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L36" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L36" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -763,7 +856,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L40" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L40" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -791,7 +884,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L200" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L162" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -815,7 +908,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L127" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L112" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -831,7 +924,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L103" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L88" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -847,7 +940,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L195" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L157" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -863,7 +956,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L204" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L166" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -879,7 +972,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L213" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L175" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -895,7 +988,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L179" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L141" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -911,7 +1004,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L183" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L145" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -927,7 +1020,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L85" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L70" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -943,7 +1036,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L187" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L149" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -965,7 +1058,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L112" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L97" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -981,32 +1074,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L116" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="fill_form(form:Avram::SaveOperation.class|Avram::Operation.class,**fields_and_values)-instance-method">
-      <div class="signature">
-        
-        def <strong>fill_form</strong>(form : <span class="t">Avram</span><span class="t">::</span><span class="t">SaveOperation</span>.<span class="k">class</span> | <span class="t">Avram</span><span class="t">::</span><span class="t">Operation</span>.<span class="k">class</span>, **fields_and_values)
-
-        <a class="method-permalink" href="#fill_form%28form%3AAvram%3A%3ASaveOperation.class%7CAvram%3A%3AOperation.class%2C%2A%2Afields_and_values%29-instance-method">#</a>
-      </div>
-      
-        <div class="doc">
-          
-          <p>Fill a form created by Lucky that uses an Avram::SaveOperation</p>
-<p>Note that Lucky and Avram are required to use this method</p>
-<pre><code class="language-crystal">fill_form <span class="t">QuestionForm</span>,
-  title: <span class="s">&quot;Hello there!&quot;</span>,
-  body: <span class="s">&quot;Just wondering what day it is&quot;</span></code></pre>
-        </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L165" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L101" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1022,7 +1090,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L191" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L153" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1038,7 +1106,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L67" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L52" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1054,7 +1122,7 @@ append(<span class="s">&quot;comment:body&quot;</span>, <span class="s">&quot; S
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L208" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L170" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1079,7 +1147,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L144" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L129" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1095,7 +1163,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L148" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L133" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1111,7 +1179,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L152" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L137" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1127,7 +1195,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1143,7 +1211,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L73" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L58" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1159,39 +1227,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L48" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="visit(action:Lucky::Action.class,asuser:User?=nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>visit</strong>(action : <span class="t">Lucky</span><span class="t">::</span><span class="t">Action</span>.<span class="k">class</span>, as user : User? = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#visit%28action%3ALucky%3A%3AAction.class%2Casuser%3AUser%3F%3Dnil%29-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L52" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="visit(route_helper:Lucky::RouteHelper,asuser:User?=nil)-instance-method">
-      <div class="signature">
-        
-        def <strong>visit</strong>(route_helper : Lucky::RouteHelper, as user : User? = <span class="n">nil</span>)
-
-        <a class="method-permalink" href="#visit%28route_helper%3ALucky%3A%3ARouteHelper%2Casuser%3AUser%3F%3Dnil%29-instance-method">#</a>
-      </div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L56" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L48" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -1207,7 +1243,7 @@ and will raise a <code><a href="LuckyFlow/InvalidMultiSelectError.html">LuckyFlo
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/d060f45d00613c8072c72070e01632706b07344a/src/lucky_flow.cr#L89" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/d8be1021518466c49a98260f73b7e3525f397e46/src/lucky_flow.cr#L74" target="_blank">View source</a>]
         
       </div>
     </div>
