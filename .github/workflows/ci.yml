@@ -39,7 +39,9 @@ jobs:
         with:
           crystal: ${{matrix.crystal_version}}
       - run: shards install --ignore-crystal-version --skip-executables --skip-postinstall
-      - run: LUCKYFLOW_DRIVER=webless crystal spec --tag ~headless_chrome
+      - run: crystal spec --tag ~headless_chrome
+        env:
+          LUCKYFLOW_DRIVER: webless
   selenium_specs:
     strategy:
       fail-fast: false
@@ -62,4 +64,6 @@ jobs:
         with:
           crystal: ${{matrix.crystal_version}}
       - run: shards install --ignore-crystal-version --skip-executables --skip-postinstall
-      - run: LUCKYFLOW_DRIVER=headless_chrome crystal spec --tag ~webless
+      - run: crystal spec --tag ~webless
+        env:
+          LUCKYFLOW_DRIVER: headless_chrome
