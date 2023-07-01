@@ -5,7 +5,7 @@ module LuckyFlow::Selenium
       ::Selenium::Driver.for(:chrome, service: service)
     end
 
-    def initialize(&block)
+    def initialize(&)
       super ::Selenium::Chrome::Capabilities.new
       yield @capabilities.as(::Selenium::Chrome::Capabilities)
     end

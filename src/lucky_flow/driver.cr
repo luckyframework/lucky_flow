@@ -19,6 +19,6 @@ abstract class LuckyFlow::Driver
 
   macro unsupported
     method_name = \{{ @def.name.stringify }}
-    raise NotSupportedByDriverError.new("#{self.class}##{ method_name }")
+    raise NotSupportedByDriverError.new("#{self.class}##{method_name}")
   end
 end

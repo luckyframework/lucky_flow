@@ -10,33 +10,60 @@ jobs:
   check_format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: crystal-lang/install-crystal@v1
         with:
-          crystal: 1.4.1
+          crystal: latest
       - run: shards install
       - run: crystal tool format --check
       - run: ./bin/ameba
   webless_specs:
     strategy:
+      fail-fast: false
       matrix:
-        crystal_version:
-          - 1.4.0
-          - latest
-          - nightly
-    runs-on: ubuntu-latest
+        include:
+          - os: ubuntu-latest
+            crystal: latest
+          - os: windows-latest
+            crystal: latest
+          - os: macos-latest
+            crystal: latest
+    runs-on: ${{matrix.os}}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+        if: matrix.os == 'windows-latest'
       - uses: crystal-lang/install-crystal@v1
         with:
           crystal: ${{matrix.crystal_version}}
-      - run: shards install
-      - run: LUCKYFLOW_DRIVER=webless crystal spec --tag ~headless_chrome
+      - run: shards install --ignore-crystal-version --skip-executables --skip-postinstall
+      - run: crystal spec --tag ~headless_chrome
+        env:
+          LUCKYFLOW_DRIVER: webless
   selenium_specs:
-    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            crystal: latest
+          - os: windows-latest
+            crystal: latest
+          - os: macos-latest
+            crystal: latest
+    runs-on: ${{matrix.os}}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+      - uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+        if: matrix.os == 'windows-latest'
       - uses: crystal-lang/install-crystal@v1
-      - run: shards install
-      - run: LUCKYFLOW_DRIVER=headless_chrome crystal spec --tag ~webless
-  
+        with:
+          crystal: ${{matrix.crystal_version}}
+      - run: shards install --ignore-crystal-version --skip-executables --skip-postinstall
+      - run: crystal spec --tag ~webless
+        env:
+          LUCKYFLOW_DRIVER: headless_chrome

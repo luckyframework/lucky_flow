@@ -73,6 +73,6 @@ abstract class LuckyFlow::Element
 
   macro unsupported
     method_name = \{{ @def.name.stringify }}
-    raise NotSupportedByElementError.new("#{self.class}##{ method_name }")
+    raise NotSupportedByElementError.new("#{self.class}##{method_name}")
   end
 end
