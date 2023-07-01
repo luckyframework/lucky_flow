@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.4.1">
+<meta name="generator" content="Crystal Docs 1.7.3">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="lucky_flow">
 
@@ -319,7 +319,7 @@
   </h2>
   
     
-      <a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L1" target="_blank">
+      <a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L1" target="_blank">
         lucky_flow/driver.cr
       </a>
     
@@ -375,7 +375,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#get_cookie%28key%3AString%29%3AString%3F-instance-method" class="signature"><strong>#get_cookie</strong>(key : String) : String?</a>
+        <a href="#get_cookie%28key%3AString%29%3AString%7CNil-instance-method" class="signature"><strong>#get_cookie</strong>(key : String) : String | Nil</a>
         
       </li>
     
@@ -400,7 +400,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#resize_window%28width%3AInt64%3F%2Cheight%3AInt64%3F%29-instance-method" class="signature"><strong>#resize_window</strong>(width : Int64?, height : Int64?)</a>
+        <a href="#resize_window%28width%3AInt64%7CNil%2Cheight%3AInt64%7CNil%29-instance-method" class="signature"><strong>#resize_window</strong>(width : Int64 | Nil, height : Int64 | Nil)</a>
         
       </li>
     
@@ -425,7 +425,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#window_size%3ANamedTuple%28width%3AInt64%3F%2Cheight%3AInt64%3F%29-instance-method" class="signature"><strong>#window_size</strong> : NamedTuple(width: Int64?, height: Int64?)</a>
+        <a href="#window_size%3ANamedTuple%28width%3AInt64%7CNil%2Cheight%3AInt64%7CNil%29-instance-method" class="signature"><strong>#window_size</strong> : NamedTuple(width: Int64 | Nil, height: Int64 | Nil)</a>
         
       </li>
     
@@ -501,7 +501,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L10" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L10" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -517,7 +517,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L16" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L16" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -533,7 +533,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L15" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L15" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -549,7 +549,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -565,7 +565,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L13" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L13" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -581,23 +581,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L14" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L14" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="get_cookie(key:String):String?-instance-method">
+    <div class="entry-detail" id="get_cookie(key:String):String|Nil-instance-method">
       <div class="signature">
         abstract 
-        def <strong>get_cookie</strong>(key : String) : String?
+        def <strong>get_cookie</strong>(key : String) : String | Nil
 
-        <a class="method-permalink" href="#get_cookie%28key%3AString%29%3AString%3F-instance-method">#</a>
+        <a class="method-permalink" href="#get_cookie%28key%3AString%29%3AString%7CNil-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -613,7 +613,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L12" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L12" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -629,7 +629,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -645,7 +645,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L8" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L8" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -661,23 +661,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L3" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L3" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="resize_window(width:Int64?,height:Int64?)-instance-method">
+    <div class="entry-detail" id="resize_window(width:Int64|Nil,height:Int64|Nil)-instance-method">
       <div class="signature">
         abstract 
-        def <strong>resize_window</strong>(width : Int64?, height : Int64?)
+        def <strong>resize_window</strong>(width : Int64 | Nil, height : Int64 | Nil)
 
-        <a class="method-permalink" href="#resize_window%28width%3AInt64%3F%2Cheight%3AInt64%3F%29-instance-method">#</a>
+        <a class="method-permalink" href="#resize_window%28width%3AInt64%7CNil%2Cheight%3AInt64%7CNil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L9" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L9" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -693,7 +693,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -709,7 +709,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L4" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L4" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -725,7 +725,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L2" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L2" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -741,23 +741,23 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L6" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L6" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="window_size:NamedTuple(width:Int64?,height:Int64?)-instance-method">
+    <div class="entry-detail" id="window_size:NamedTuple(width:Int64|Nil,height:Int64|Nil)-instance-method">
       <div class="signature">
         abstract 
-        def <strong>window_size</strong> : NamedTuple(width: Int64?, height: Int64?)
+        def <strong>window_size</strong> : NamedTuple(width: Int64 | Nil, height: Int64 | Nil)
 
-        <a class="method-permalink" href="#window_size%3ANamedTuple%28width%3AInt64%3F%2Cheight%3AInt64%3F%29-instance-method">#</a>
+        <a class="method-permalink" href="#window_size%3ANamedTuple%28width%3AInt64%7CNil%2Cheight%3AInt64%7CNil%29-instance-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L7" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L7" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -785,7 +785,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/luckyframework/lucky_flow/blob/76709e83ebe32112bf0bcba563b19c8b051cbd75/src/lucky_flow/driver.cr#L20" target="_blank">View source</a>]
+          [<a href="https://github.com/luckyframework/lucky_flow/blob/5568553d28f0ca7bf7da480b066cc2f001fe9598/src/lucky_flow/driver.cr#L20" target="_blank">View source</a>]
         
       </div>
     </div>
