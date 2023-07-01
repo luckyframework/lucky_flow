@@ -71,7 +71,7 @@ class LuckyFlow
     driver.maximize_window
   end
 
-  def with_fullsized_page(&block)
+  def with_fullsized_page(&)
     original_size = driver.window_size
     expand_page_to_fullsize
     yield

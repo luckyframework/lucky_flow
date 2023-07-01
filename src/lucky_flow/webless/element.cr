@@ -29,7 +29,7 @@ class LuckyFlow::Webless::Element < LuckyFlow::Element
   def click
     if link?
       method = attribute("data-method") || "get"
-      driver.as(LuckyFlow::Webless::Driver).follow(method, attribute("href").not_nil!)
+      driver.as(LuckyFlow::Webless::Driver).follow(method, attribute("href").to_s)
     elsif submits? && (f = form)
       LuckyFlow::Webless::Form.new(f, @inner_element).submit(driver.as(LuckyFlow::Webless::Driver))
     elsif checkable?

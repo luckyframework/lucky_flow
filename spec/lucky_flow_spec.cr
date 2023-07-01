@@ -129,7 +129,7 @@ describe LuckyFlow do
   it "can submit form" do
     handle_route("/foo") do |context|
       <<-HTML
-        <p flow-id="result">#{context.request.body.not_nil!.gets_to_end}</p>
+        <p flow-id="result">#{context.request.body.as(IO).gets_to_end}</p>
       HTML
     end
 
@@ -170,7 +170,7 @@ describe LuckyFlow do
   it "submits dates appropriately", tags: "headless_chrome" do
     handle_route("/foo") do |context|
       <<-HTML
-        <p flow-id="result">#{context.request.body.not_nil!.gets_to_end}</p>
+        <p flow-id="result">#{context.request.body.as(IO).gets_to_end}</p>
       HTML
     end
 
@@ -444,7 +444,7 @@ private class FakeProcess
   end
 end
 
-private def expect_to_raise_without_suggestion
+private def expect_to_raise_without_suggestion(&)
   error = expect_raises LuckyFlow::ElementNotFoundError do
     yield
   end
