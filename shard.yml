@@ -11,10 +11,10 @@ license: MIT
 dependencies:
   selenium:
     github: crystal-loot/selenium.cr
-    version: ~> 0.12.0
+    version: ~> 0.12
   webdrivers:
     github: crystal-loot/webdrivers.cr
-    version: ~> 0.4.2
+    version: ~> 0.4
   habitat:
     github: luckyframework/habitat
     version: ~> 0.4.7
