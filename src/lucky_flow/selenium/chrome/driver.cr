@@ -24,6 +24,7 @@ end
 
 LuckyFlow::Registry.register :headless_chrome do
   LuckyFlow::Selenium::Chrome::Driver.new do |config|
-    config.chrome_options.args = ["no-sandbox", "headless", "disable-gpu"]
+    remote_debuggin_port = ENV["CHROME_REMOTE_DEBUGGING_PORT"]? || 9222
+    config.chrome_options.args = ["no-sandbox", "headless", "disable-gpu", "remote-debugging-port=#{remote_debuggin_port}"]
   end
 end
