@@ -1,29 +1,29 @@
 name: lucky_flow
-version: 0.9.1
+version: 0.9.2
 
 authors:
   - Paul Smith <paulcsmith0218@gmail.com>
 
-crystal: ">= 1.4.0"
+crystal: "~> 1.4"
 
 license: MIT
 
 dependencies:
   selenium:
     github: crystal-loot/selenium.cr
-    version: ~> 0.12
+    version: ">= 0.12.1, < 0.13"
   webdrivers:
     github: crystal-loot/webdrivers.cr
-    version: ~> 0.4
+    version: ">= 0.4.3, < 0.5"
   habitat:
     github: luckyframework/habitat
-    version: ~> 0.4.7
+    version: ">= 0.4.7, < 0.5"
   webless:
     github: crystal-loot/webless
-    version: ~> 0.1.0
+    version: ">= 0.1.0, < 0.2"
   html5:
     github: naqvis/crystal-html5
-    version: ~> 0.5.0
+    version: ">= 0.5.0, < 0.6"
 development_dependencies:
   ameba:
     github: crystal-ameba/ameba
