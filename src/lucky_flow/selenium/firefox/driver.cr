@@ -24,14 +24,14 @@ end
 
 LuckyFlow::Registry.register :headless_firefox do
   LuckyFlow::Selenium::Firefox::Driver.new do |config|
-    remote_debuggin_port = ENV["FIREFOX_REMOTE_DEBUGGING_PORT"]? || 9222
+    remote_debugging_port = ENV.fetch("FIREFOX_REMOTE_DEBUGGING_PORT", "9222")
     config.firefox_options.args = [
       "--headless",
       "--disable-gpu",
       "--disable-software-rasterizer",
       "--no-sandbox",
       "--disable-dev-shm-usage",
-      "--start-debugger-server=#{remote_debuggin_port}",
+      "--start-debugger-server=#{remote_debugging_port}",
     ]
   end
 end
