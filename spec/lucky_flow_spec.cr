@@ -167,7 +167,7 @@ describe LuckyFlow do
     flow.should have_element("@result", text: "multiple=c")
   end
 
-  it "submits dates appropriately", tags: "headless_chrome" do
+  it "submits dates appropriately" do
     handle_route("/foo") do |context|
       <<-HTML
         <p flow-id="result">#{context.request.body.as(IO).gets_to_end}</p>
@@ -237,7 +237,7 @@ describe LuckyFlow do
     flow.should have_element("h1", text: "Target")
   end
 
-  it "can open screenshots", tags: "headless_chrome" do
+  it "can open screenshots", tags: "headless_firefox" do
     flow = LuckyFlow.new
     fake_process = FakeProcess
     time = Time.utc
@@ -248,7 +248,7 @@ describe LuckyFlow do
     fake_process.command.should eq "open ./tmp/screenshots/#{time.to_unix}.png"
   end
 
-  it "can open fullsize screenshots", tags: "headless_chrome" do
+  it "can open fullsize screenshots", tags: "headless_firefox" do
     flow = LuckyFlow.new
     fake_process = FakeProcess
     time = Time.utc
@@ -259,7 +259,7 @@ describe LuckyFlow do
     fake_process.command.should eq "open ./tmp/screenshots/#{time.to_unix}.png"
   end
 
-  it "can reset the session", tags: "headless_chrome" do
+  it "can reset the session", tags: "headless_firefox" do
     flow = visit_page_with <<-HTML
       <h1>Title</h1>
     HTML
@@ -273,7 +273,7 @@ describe LuckyFlow do
     end
   end
 
-  it "can accept and dismiss alerts", tags: "headless_chrome" do
+  it "can accept and dismiss alerts", tags: "headless_firefox" do
     flow = visit_page_with <<-HTML
       <button onclick="createAlert()" flow-id="button" data-count="0">Click Me - 0</button>
       <script>
@@ -340,7 +340,7 @@ describe LuckyFlow do
     end
   end
 
-  it "can hover over an element", tags: "headless_chrome" do
+  it "can hover over an element", tags: "headless_firefox" do
     flow = visit_page_with <<-HTML
       <style>
         #hidden {
