@@ -167,7 +167,7 @@ describe LuckyFlow do
     flow.should have_element("@result", text: "multiple=c")
   end
 
-  it "submits dates appropriately" do
+  it "submits dates appropriately", tags: "headless_chrome" do
     handle_route("/foo") do |context|
       <<-HTML
         <p flow-id="result">#{context.request.body.as(IO).gets_to_end}</p>
@@ -237,60 +237,120 @@ describe LuckyFlow do
     flow.should have_element("h1", text: "Target")
   end
 
-  it "can open screenshots", tags: "headless_firefox" do
-    flow = LuckyFlow.new
-    fake_process = FakeProcess
-    time = Time.utc
+  context "with headless chrome" do
+    it "can open screenshots", tags: "headless_chrome" do
+      flow = LuckyFlow.new
+      fake_process = FakeProcess
+      time = Time.utc
 
-    flow.open_screenshot(fake_process, time)
+      flow.open_screenshot(fake_process, time)
 
-    fake_process.shell.should be_true
-    fake_process.command.should eq "open ./tmp/screenshots/#{time.to_unix}.png"
-  end
+      fake_process.shell.should be_true
+      fake_process.command.should eq "open ./tmp/screenshots/#{time.to_unix}.png"
+    end
 
-  it "can open fullsize screenshots", tags: "headless_firefox" do
-    flow = LuckyFlow.new
-    fake_process = FakeProcess
-    time = Time.utc
+    it "can open fullsize screenshots", tags: "headless_chrome" do
+      flow = LuckyFlow.new
+      fake_process = FakeProcess
+      time = Time.utc
 
-    flow.open_screenshot(fake_process, time, fullsize: true)
+      flow.open_screenshot(fake_process, time, fullsize: true)
 
-    fake_process.shell.should be_true
-    fake_process.command.should eq "open ./tmp/screenshots/#{time.to_unix}.png"
-  end
+      fake_process.shell.should be_true
+      fake_process.command.should eq "open ./tmp/screenshots/#{time.to_unix}.png"
+    end
 
-  it "can reset the session", tags: "headless_firefox" do
-    flow = visit_page_with <<-HTML
-      <h1>Title</h1>
-    HTML
-    flow.driver.add_cookie("hello", "world")
-    flow.driver.get_cookie("hello").should eq "world"
+    it "can reset the session", tags: "headless_chrome" do
+      flow = visit_page_with <<-HTML
+        <h1>Title</h1>
+      HTML
+      flow.driver.add_cookie("hello", "world")
+      flow.driver.get_cookie("hello").should eq "world"
 
-    LuckyFlow.reset
+      LuckyFlow.reset
 
-    expect_raises Selenium::Error do
-      flow.driver.get_cookie("hello")
+      expect_raises Selenium::Error do
+        flow.driver.get_cookie("hello")
+      end
+    end
+
+    it "can accept and dismiss alerts", tags: "headless_chrome" do
+      flow = visit_page_with <<-HTML
+        <button onclick="createAlert()" flow-id="button" data-count="0">Click Me - 0</button>
+        <script>
+        function createAlert() {
+          alert("Are you sure?");
+          const button = document.querySelector("[flow-id='button']");
+          button.innerText = 'Click Me - ' + (++button.dataset.count);
+        }
+        </script>
+      HTML
+
+      flow.click("@button")
+      flow.accept_alert
+      flow.should have_element("@button", text: "Click Me - 1")
+      flow.click("@button")
+      flow.dismiss_alert
+      flow.should have_element("@button", text: "Click Me - 2")
     end
   end
 
-  it "can accept and dismiss alerts", tags: "headless_firefox" do
-    flow = visit_page_with <<-HTML
-      <button onclick="createAlert()" flow-id="button" data-count="0">Click Me - 0</button>
-      <script>
-      function createAlert() {
-        alert("Are you sure?");
-        const button = document.querySelector("[flow-id='button']");
-        button.innerText = 'Click Me - ' + (++button.dataset.count);
-      }
-      </script>
-    HTML
+  context "with headless firefox" do
+    it "can open screenshots", tags: "headless_firefox" do
+      flow = LuckyFlow.new
+      fake_process = FakeProcess
+      time = Time.utc
 
-    flow.click("@button")
-    flow.accept_alert
-    flow.should have_element("@button", text: "Click Me - 1")
-    flow.click("@button")
-    flow.dismiss_alert
-    flow.should have_element("@button", text: "Click Me - 2")
+      flow.open_screenshot(fake_process, time)
+
+      fake_process.shell.should be_true
+      fake_process.command.should eq "open ./tmp/screenshots/#{time.to_unix}.png"
+    end
+
+    it "can open fullsize screenshots", tags: "headless_firefox" do
+      flow = LuckyFlow.new
+      fake_process = FakeProcess
+      time = Time.utc
+
+      flow.open_screenshot(fake_process, time, fullsize: true)
+
+      fake_process.shell.should be_true
+      fake_process.command.should eq "open ./tmp/screenshots/#{time.to_unix}.png"
+    end
+
+    it "can reset the session", tags: "headless_firefox" do
+      flow = visit_page_with <<-HTML
+        <h1>Title</h1>
+      HTML
+      flow.driver.add_cookie("hello", "world")
+      flow.driver.get_cookie("hello").should eq "world"
+
+      LuckyFlow.reset
+
+      expect_raises Selenium::Error do
+        flow.driver.get_cookie("hello")
+      end
+    end
+
+    it "can accept and dismiss alerts", tags: "headless_firefox" do
+      flow = visit_page_with <<-HTML
+        <button onclick="createAlert()" flow-id="button" data-count="0">Click Me - 0</button>
+        <script>
+        function createAlert() {
+          alert("Are you sure?");
+          const button = document.querySelector("[flow-id='button']");
+          button.innerText = 'Click Me - ' + (++button.dataset.count);
+        }
+        </script>
+      HTML
+
+      flow.click("@button")
+      flow.accept_alert
+      flow.should have_element("@button", text: "Click Me - 1")
+      flow.click("@button")
+      flow.dismiss_alert
+      flow.should have_element("@button", text: "Click Me - 2")
+    end
   end
 
   it "can choose option in select input" do
