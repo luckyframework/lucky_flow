@@ -24,7 +24,7 @@ end
 
 LuckyFlow::Registry.register :headless_firefox do
   LuckyFlow::Selenium::Firefox::Driver.new do |config|
-    remote_debuggin_port = ENV["CHROME_REMOTE_DEBUGGING_PORT"]? || 9222
+    remote_debuggin_port = ENV["FIREFOX_REMOTE_DEBUGGING_PORT"]? || 9222
     config.firefox_options.args = [
       "--headless",
       "--disable-gpu",
