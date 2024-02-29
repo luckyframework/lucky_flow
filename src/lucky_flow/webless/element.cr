@@ -77,7 +77,7 @@ class LuckyFlow::Webless::Element < LuckyFlow::Element
   end
 
   def remove_attribute(name : String, element : HTML5::Node = @inner_element)
-    element.attr.reject! { |at| at.key == name }
+    element.attr.reject! { |attr| attr.key == name }
   end
 
   def property(name : String) : String?
@@ -96,8 +96,9 @@ class LuckyFlow::Webless::Element < LuckyFlow::Element
     @inner_element.xpath_nodes(".//option[@selected]")
       .each { |node| remove_attribute("selected", node) }
 
-    @inner_element.xpath(".//option[@value='#{value}']")
-      .try { |el| find_or_create_attr("selected", el).val = "selected" }
+    @inner_element.xpath(".//option[@value='#{value}']").try do |elem|
+      find_or_create_attr("selected", elem).val = "selected"
+    end
   end
 
   def select_options(values : Array(String))
@@ -107,8 +108,9 @@ class LuckyFlow::Webless::Element < LuckyFlow::Element
       .each { |node| remove_attribute("selected", node) }
 
     values.each do |value|
-      @inner_element.xpath(".//option[@value='#{value}']")
-        .try { |el| find_or_create_attr("selected", el).val = "selected" }
+      @inner_element.xpath(".//option[@value='#{value}']").try do |elem|
+        find_or_create_attr("selected", elem).val = "selected"
+      end
     end
   end
 

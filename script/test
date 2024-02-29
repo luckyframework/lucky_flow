@@ -4,7 +4,11 @@
 set -e
 set -o pipefail
 
-COMPOSE="docker-compose run app"
+if command -v docker-compose > /dev/null; then
+  COMPOSE="docker-compose run app"
+elif command -v docker compose > /dev/null; then
+  COMPOSE="docker compose run app"
+fi
 
 printf "\nrunning specs with 'crystal spec'\n\n"
 $COMPOSE crystal spec

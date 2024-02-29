@@ -46,11 +46,11 @@ class LuckyFlow::Webless::Driver < LuckyFlow::Driver
   end
 
   def find_css(query : String) : Array(LuckyFlow::Element)
-    @browser.find_css(query).map { |el| element(query, el) }
+    @browser.find_css(query).map { |elem| element(query, elem) }
   end
 
   def find_xpath(query : String) : Array(LuckyFlow::Element)
-    @browser.find_xpath(query).map { |el| element(query, el) }
+    @browser.find_xpath(query).map { |elem| element(query, elem) }
   end
 
   def current_url : String

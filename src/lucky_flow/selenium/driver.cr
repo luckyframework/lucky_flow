@@ -96,8 +96,14 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
     end
   end
 
-  private def find_elements(strategy : Symbol, query : String) : Array(LuckyFlow::Element)
-    session.find_elements(strategy, query)
-      .map { |el| LuckyFlow::Selenium::Element.new(self, query, el).as(LuckyFlow::Element) }
+  private def find_elements(
+    strategy : Symbol,
+    query : String
+  ) : Array(LuckyFlow::Element)
+    session.find_elements(strategy, query).map do |element|
+      LuckyFlow::Selenium::Element
+        .new(self, query, element)
+        .as(LuckyFlow::Element)
+    end
   end
 end
