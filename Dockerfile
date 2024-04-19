@@ -1,4 +1,4 @@
-FROM crystallang/crystal:1.5.1
+FROM crystallang/crystal:1.10.0
 WORKDIR /data
 EXPOSE 3002
 

@@ -11,13 +11,3 @@ Naming/AccessorMethodName:
     - src/lucky_flow/webless/element.cr
   Enabled: true
   Severity: Convention
-
-# Problems found: 5
-# Run `ameba --only Lint/UselessAssign` for details
-Lint/UselessAssign:
-  Description: Disallows useless variable assignments
-  ExcludeTypeDeclarations: false
-  Excluded:
-    - src/lucky_flow.cr
-  Enabled: true
-  Severity: Warning
