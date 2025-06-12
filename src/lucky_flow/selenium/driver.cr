@@ -89,7 +89,7 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
 
   private def retry_start_session(e)
     if Time.utc <= @retry_limit
-      sleep(100.miliseconds)
+      sleep(100.milliseconds)
       start_session
     else
       raise e
