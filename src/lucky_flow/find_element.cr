@@ -19,7 +19,7 @@ class LuckyFlow::FindElement
       return matching_elements.first if matching_elements.first?
 
       break unless has_retries_left?
-      sleep retry_delay_in_ms
+      sleep retry_delay_in_ms.miliseconds
     end
 
     raise_element_not_found_error
@@ -33,8 +33,8 @@ class LuckyFlow::FindElement
     (settings.stop_retrying_after / settings.retry_delay).to_i
   end
 
-  private def retry_delay_in_ms : Float
-    settings.retry_delay.total_milliseconds / 1_000
+  private def retry_delay_in_ms : Int32
+    settings.retry_delay.total_milliseconds
   end
 
   private def settings

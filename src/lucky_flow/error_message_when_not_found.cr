@@ -11,7 +11,7 @@ class LuckyFlow::ErrorMessageWhenNotFound
     @driver : LuckyFlow::Driver,
     @selector : String,
     @inner_text : String?,
-    @negate : Bool = false
+    @negate : Bool = false,
   )
   end
 

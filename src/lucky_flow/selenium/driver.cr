@@ -89,7 +89,7 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
 
   private def retry_start_session(e)
     if Time.utc <= @retry_limit
-      sleep(0.1)
+      sleep(100.miliseconds)
       start_session
     else
       raise e
@@ -98,7 +98,7 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
 
   private def find_elements(
     strategy : Symbol,
-    query : String
+    query : String,
   ) : Array(LuckyFlow::Element)
     session.find_elements(strategy, query).map do |element|
       LuckyFlow::Selenium::Element
