@@ -9,7 +9,7 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
   end
 
   def screenshot(path : String)
-    FileUtils.mkdir_p(File.dirname(path))
+    Dir.mkdir_p(File.dirname(path))
     session.screenshot(path)
   end
 
