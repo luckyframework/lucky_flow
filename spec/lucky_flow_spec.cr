@@ -494,12 +494,12 @@ private class FakeProcess
   class_property command : String?
   class_property shell : Bool?
 
-  def initialize(command, shell)
+  def initialize(command : String?, shell : Bool?)
     @@command = command
     @@shell = shell
   end
 
-  def self.find_executable(string)
+  def self.find_executable(string : String)
     "/fake_path_to_executable"
   end
 end

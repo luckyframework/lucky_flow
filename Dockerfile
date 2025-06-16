@@ -1,4 +1,4 @@
-FROM crystallang/crystal:1.10.0
+FROM crystallang/crystal:1.14.1
 WORKDIR /data
 EXPOSE 3002
 
@@ -7,7 +7,7 @@ RUN apt-get update \
     libnss3 \
     libgconf-2-4 \
     chromium-browser \
-    firefox-geckodriver \
+    firefox \
   && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 COPY . /data

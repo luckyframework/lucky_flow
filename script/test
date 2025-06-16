@@ -4,9 +4,7 @@
 set -e
 set -o pipefail
 
-if command -v docker-compose > /dev/null; then
-  COMPOSE="docker-compose run app"
-elif command -v docker compose > /dev/null; then
+if command -v docker compose > /dev/null; then
   COMPOSE="docker compose run app"
 fi
 

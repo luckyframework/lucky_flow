@@ -49,7 +49,7 @@ class LuckyFlow
     driver.visit("#{settings.base_uri}#{path}")
   end
 
-  def open_screenshot(process = Process, time = Time.utc, fullsize = false) : Void
+  def open_screenshot(process = Process, time = Time.utc, fullsize = false) : Nil
     filename = generate_screenshot_filename(time)
     take_screenshot(filename, fullsize)
     process.new(command: "#{open_command(process)} #{filename}", shell: true)

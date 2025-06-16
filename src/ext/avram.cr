@@ -12,7 +12,7 @@ module AvramLuckyFlowHelpers
   # ```
   def fill_form(
     form : Avram::SaveOperation.class | Avram::Operation.class,
-    **fields_and_values
+    **fields_and_values,
   )
     fields_and_values.each do |name, value|
       element = field("#{form.param_key}:#{name}")
