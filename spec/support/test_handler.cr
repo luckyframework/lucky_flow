@@ -10,12 +10,6 @@ class TestHandler
       context.response.content_type = "text/html"
       context.response.print handler.call(context)
     end
-  rescue
-    raise <<-ERROR
-    Missing Resource #{context.request.resource} in:
-
-    #{routes}
-    ERROR
   end
 
   def route(path : String, handler : Proc(HTTP::Server::Context, String))
