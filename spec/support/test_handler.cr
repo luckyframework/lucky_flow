@@ -6,9 +6,10 @@ class TestHandler
     if context.request.resource == "/favicon.ico"
       context.response.print ""
     else
-      handler = routes[context.request.resource]
-      context.response.content_type = "text/html"
-      context.response.print handler.call(context)
+      if handler = routes[context.request.resource]?
+        context.response.content_type = "text/html"
+        context.response.print handler.call(context)
+      end
     end
   end
 

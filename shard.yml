@@ -20,7 +20,7 @@ dependencies:
     version: ">= 0.4.7, < 0.5"
   webless:
     github: crystal-loot/webless
-    version: ">= 0.1.0, < 0.2"
+    version: ">= 0.2.0, < 0.3"
   html5:
     github: naqvis/crystal-html5
     version: ">= 0.5.0, < 0.6"
