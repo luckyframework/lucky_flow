@@ -16,6 +16,18 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
 
   def visit(url : String)
     session.navigate_to(url)
+    wait_for_ready
+  end
+
+  private def wait_for_ready
+    retry_interval = 10.milliseconds
+    retries = (LuckyFlow.settings.stop_retrying_after / retry_interval).to_i
+    retries.times do
+      ready = session.document_manager.execute_script("return document.readyState;")
+      return if ready == "complete"
+
+      sleep(retry_interval)
+    end
   end
 
   def window_size : NamedTuple(width: Int64?, height: Int64?)
