@@ -82,7 +82,10 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
   end
 
   def reset : Nil
-    @session.try &.cookie_manager.delete_all_cookies
+    @session.try do |session|
+      session.navigate_to("about:blank")
+      session.cookie_manager.delete_all_cookies
+    end
   end
 
   def stop
