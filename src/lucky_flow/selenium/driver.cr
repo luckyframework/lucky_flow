@@ -1,5 +1,6 @@
 abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
-  @retry_limit : Time = 2.seconds.from_now
+  SESSION_RETRY_LIMIT = 2.seconds
+
   @driver : ::Selenium::Driver?
   @capabilities : ::Selenium::Capabilities
 
@@ -82,18 +83,16 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
   end
 
   private def start_session : ::Selenium::Session
-    driver.create_session(@capabilities)
-  rescue e : IO::Error
-    retry_start_session(e)
-  end
+    retry_interval = 100.milliseconds
+    retries = (SESSION_RETRY_LIMIT / retry_interval).to_i
 
-  private def retry_start_session(e)
-    if Time.utc <= @retry_limit
-      sleep(100.milliseconds)
-      start_session
-    else
-      raise e
+    retries.times do
+      return driver.create_session(@capabilities)
+    rescue IO::Error
+      sleep(retry_interval)
     end
+
+    driver.create_session(@capabilities)
   end
 
   private def find_elements(
