@@ -45,6 +45,23 @@ class LuckyFlow
     LuckyFlow::Registry.current_driver.try(&.reset)
   end
 
+  def self.wait_for_server(timeout : Time::Span = 5.seconds)
+    uri = URI.parse(settings.base_uri)
+    host = uri.host || "127.0.0.1"
+    port = uri.port || 3000
+    retry_interval = 100.milliseconds
+    retries = (timeout / retry_interval).to_i
+
+    retries.times do
+      TCPSocket.open(host, port) { }
+      return
+    rescue IO::Error
+      sleep(retry_interval)
+    end
+
+    raise "Server at #{host}:#{port} did not start within #{timeout}"
+  end
+
   def visit(path : String)
     driver.visit("#{settings.base_uri}#{path}")
   end

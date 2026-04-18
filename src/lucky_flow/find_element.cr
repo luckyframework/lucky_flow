@@ -44,13 +44,16 @@ class LuckyFlow::FindElement
   private def find_matching_elements : Array(LuckyFlow::Element)
     self.tries += 1
     driver.find_css(selector).select do |element|
-      text_to_check_for = inner_text
-      if text_to_check_for
+      if text_to_check_for = inner_text
         element.text.includes?(text_to_check_for)
       else
         true
       end
     end
+  rescue ex : ::Selenium::Error
+    raise ex unless ex.message.try(&.includes?("stale element"))
+
+    [] of LuckyFlow::Element
   end
 
   private def raise_element_not_found_error

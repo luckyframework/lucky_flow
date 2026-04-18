@@ -1,5 +1,6 @@
 abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
-  @retry_limit : Time = 2.seconds.from_now
+  SESSION_RETRY_LIMIT = 2.seconds
+
   @driver : ::Selenium::Driver?
   @capabilities : ::Selenium::Capabilities
 
@@ -15,6 +16,18 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
 
   def visit(url : String)
     session.navigate_to(url)
+    wait_for_ready
+  end
+
+  private def wait_for_ready
+    retry_interval = 10.milliseconds
+    retries = (LuckyFlow.settings.stop_retrying_after / retry_interval).to_i
+    retries.times do
+      ready = session.document_manager.execute_script("return document.readyState;")
+      return if ready == "complete"
+
+      sleep(retry_interval)
+    end
   end
 
   def window_size : NamedTuple(width: Int64?, height: Int64?)
@@ -69,7 +82,10 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
   end
 
   def reset : Nil
-    @session.try &.cookie_manager.delete_all_cookies
+    @session.try do |session|
+      session.navigate_to("about:blank")
+      session.cookie_manager.delete_all_cookies
+    end
   end
 
   def stop
@@ -82,18 +98,16 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
   end
 
   private def start_session : ::Selenium::Session
-    driver.create_session(@capabilities)
-  rescue e : IO::Error
-    retry_start_session(e)
-  end
+    retry_interval = 100.milliseconds
+    retries = (SESSION_RETRY_LIMIT / retry_interval).to_i
 
-  private def retry_start_session(e)
-    if Time.utc <= @retry_limit
-      sleep(100.milliseconds)
-      start_session
-    else
-      raise e
+    retries.times do
+      return driver.create_session(@capabilities)
+    rescue IO::Error
+      sleep(retry_interval)
     end
+
+    driver.create_session(@capabilities)
   end
 
   private def find_elements(
