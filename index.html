@@ -356,6 +356,21 @@ to require a few extensions:</p>
 route helpers described in the guide below. Example: <code>visit &quot;/my-path&quot;</code></p>
 </blockquote>
 <p>View guide at: https://luckyframework.org/guides/browser-tests/</p>
+<h2><a id="development" class="anchor" href="#development">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>Development</h2>
+<blockquote>
+<p>[!NOTE]
+If you use Flatpak to install Chrome, specs will fail to detect your Chrome binary.
+Install Chrome via a standard package install.</p>
+</blockquote>
+<ul>
+<li>Run format <code>crystal tool format spec/ src/</code></li>
+<li>Run Ameba <code>./bin/ameba</code></li>
+<li>Run specs <code>crystal spec</code> (or via docker with <code>./script/setup</code> and <code>./script/test</code>)</li>
+</ul>
 <h2><a id="contributing" class="anchor" href="#contributing">
   <svg class="octicon-link" aria-hidden="true">
     <use href="#octicon-link"/>
