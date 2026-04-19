@@ -72,6 +72,16 @@ require "lucky_flow/ext/authentic"
 
 View guide at: https://luckyframework.org/guides/browser-tests/
 
+## Development
+
+> [!NOTE]
+> If you use Flatpak to install Chrome, specs will fail to detect your Chrome binary.
+> Install Chrome via a standard package install.
+
+- Run format `crystal tool format spec/ src/`
+- Run Ameba `./bin/ameba`
+- Run specs `crystal spec` (or via docker with `./script/setup` and `./script/test`)
+
 ## Contributing
 
 1. Fork it ( https://github.com/luckyframework/lucky_flow/fork )
