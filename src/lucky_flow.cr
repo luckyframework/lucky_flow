@@ -17,7 +17,7 @@ class LuckyFlow
     setting screenshot_directory : String = "./tmp/screenshots"
     setting base_uri : String
     setting retry_delay : Time::Span = 10.milliseconds
-    setting stop_retrying_after : Time::Span = 1.second
+    setting stop_retrying_after : Time::Span = 3.seconds
     setting driver_path : String?
   end
 

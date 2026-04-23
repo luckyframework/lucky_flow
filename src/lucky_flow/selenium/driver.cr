@@ -15,6 +15,7 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
   end
 
   def visit(url : String)
+    session.document_manager.execute_script("window.__lucky_flow_pending = true;") if @session
     session.navigate_to(url)
     wait_for_ready
   end
@@ -22,10 +23,10 @@ abstract class LuckyFlow::Selenium::Driver < LuckyFlow::Driver
   private def wait_for_ready
     retry_interval = 10.milliseconds
     retries = (LuckyFlow.settings.stop_retrying_after / retry_interval).to_i
-    retries.times do
-      ready = session.document_manager.execute_script("return document.readyState;")
-      return if ready == "complete"
+    script = "return !window.__lucky_flow_pending && document.readyState === 'complete';"
 
+    retries.times do
+      return if session.document_manager.execute_script(script) == "true"
       sleep(retry_interval)
     end
   end
