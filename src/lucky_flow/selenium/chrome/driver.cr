@@ -24,6 +24,7 @@ end
 
 LuckyFlow::Registry.register :headless_chrome do
   LuckyFlow::Selenium::Chrome::Driver.new do |config|
+    ENV["LC_ALL"] = "en_US.UTF-8"
     remote_debugging_port = ENV.fetch("CHROME_REMOTE_DEBUGGING_PORT", "9222")
     config.chrome_options.args = [
       "--no-sandbox",

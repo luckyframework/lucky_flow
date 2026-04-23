@@ -82,12 +82,6 @@ View guide at: https://luckyframework.org/guides/browser-tests/
 - Run Ameba `./bin/ameba`
 - Run specs `crystal spec` (or via docker with `./script/setup` and `./script/test`)
 
-> [!NOTE]
-> When running `crystal spec` on non-US systems, the custom date spec will
-> fail. To work around this issue on Ubuntu for example, run:
->
-> `LANG=en_US.UTF-8 LC_TIME=en_US.UTF-8 crystal spec`
-
 ## Contributing
 
 1. Fork it ( https://github.com/luckyframework/lucky_flow/fork )
