@@ -1,5 +1,9 @@
 # Find element on a page with a retry
 class LuckyFlow::FindElement
+  # Selenium messages meaning the page changed under us. Chrome and
+  # ChromeDriver word this differently depending on the version.
+  STALE_ELEMENT_MESSAGES = ["stale element", "does not belong to the document"]
+
   private property tries : Int32 = 0
   private getter driver : LuckyFlow::Driver
   private getter selector : String
@@ -51,7 +55,8 @@ class LuckyFlow::FindElement
       end
     end
   rescue ex : ::Selenium::Error
-    raise ex unless ex.message.try(&.includes?("stale element"))
+    message = ex.message || ""
+    raise ex unless STALE_ELEMENT_MESSAGES.any? { |stale| message.includes?(stale) }
 
     [] of LuckyFlow::Element
   end
